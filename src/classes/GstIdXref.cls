@@ -7,7 +7,7 @@ public with sharing class GstIdXref extends ExternalObjectResponse implements Ex
     public List<Record> body {get; set;}
 
     public class Record {
-        public final String id {get; set;}
+        public String id {get; set;}
 
         public final String c_quality_cd {get; set;}
         public final String c_xref_type {get; set;}

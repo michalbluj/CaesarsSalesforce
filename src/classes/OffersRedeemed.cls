@@ -7,7 +7,7 @@ public with sharing class OffersRedeemed extends ExternalObjectResponse implemen
     public List<Record> body {get; set;}
 
     public class Record {
-        public final String id {get; set;}
+        public String id {get; set;}
 
         public final String c_collateral_id {get; set;}
         public final String c_coupon_id {get; set;}

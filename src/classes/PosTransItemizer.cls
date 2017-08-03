@@ -7,7 +7,7 @@ public with sharing class PosTransItemizer extends ExternalObjectResponse implem
     public List<Record> body {get; set;}
 
     public class Record {
-        public final String id {get; set;}
+        public String id {get; set;}
 
         public final String c_file_prop_cd {get; set;}
         public final String c_itemizer_type_desc {get; set;}

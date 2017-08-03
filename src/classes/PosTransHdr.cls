@@ -7,7 +7,7 @@ public with sharing class PosTransHdr extends ExternalObjectResponse implements 
     public List<Record> body {get; set;}
 
     public class Record {
-        public final String id {get; set;}
+        public String id {get; set;}
 
         public final String c_file_prop_cd {get; set;}
         public final String c_pos_employee_name {get; set;}
