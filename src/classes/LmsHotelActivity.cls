@@ -67,8 +67,8 @@ public with sharing class LmsHotelActivity extends ExternalObjectResponse implem
 		public final Decimal f_room_rev {get; set;}
 		public final Decimal f_room_rev_reserved {get; set;}
 		public final Decimal f_room_tax_reserved {get; set;}
-		public final Integer hotel_act_status_code_fk {get; set;}
-		public final Integer hotel_wing_codes_fk {get; set;}
+		public final String hotel_act_status_code_fk {get; set;}
+		public final String hotel_wing_codes_fk {get; set;}
 		public final Integer i_customer_segment {get; set;}
 		public final Integer i_nbr_occupants {get; set;}
 		public final Integer i_nbr_rooms {get; set;}

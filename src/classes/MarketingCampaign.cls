@@ -215,7 +215,7 @@ public with sharing class MarketingCampaign extends ExternalObjectResponse imple
 		public final Integer i_lop_game_1mn_ap_ah {get;set;}
 		public final Integer i_lop_game_3mn_ap_ah {get;set;}
 		public final Integer i_lop_game_6mn_ap_ah {get;set;}
-		public final Integer i_profitable_pct {get;set;}
+		public final Decimal i_profitable_pct {get;set;}
 		public final Integer i_prop_pct_worth_1 {get;set;}
 		public final Integer i_prop_pct_worth_2 {get;set;}
 		public final Integer i_random_1 {get;set;}

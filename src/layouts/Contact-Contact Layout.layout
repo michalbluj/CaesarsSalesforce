@@ -511,6 +511,16 @@
     <relatedLists>
         <fields>ExternalId</fields>
         <fields>DisplayUrl</fields>
+        <relatedList>lms_hotel_activity__x.contact1__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ExternalId</fields>
+        <fields>DisplayUrl</fields>
+        <relatedList>lms_hotel_activity__x.contact2__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ExternalId</fields>
+        <fields>DisplayUrl</fields>
         <relatedList>guest_hotel_activity_vedw__x.contact__c</relatedList>
     </relatedLists>
     <relatedLists>

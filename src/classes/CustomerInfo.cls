@@ -13,7 +13,7 @@ public class CustomerInfo {
     public String id {get;set;}
     public String recordType {get;set;}
     public String contact {get;set;}
-    public Integer i_dmid {get;set;}
+    public String i_dmid {get;set;}
     public CustomerInfoData data {get;set;}
 
     public class CustomerInfoData {

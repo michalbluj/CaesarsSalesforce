@@ -69,6 +69,113 @@
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
+    <fields>
+        <fullName>Final_Studio_File_Name_and_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Studio File Name and Location</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Languages__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Languages</globalPicklist>
+        <label>Languages</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Number_of_Elements_Submitted__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Elements Submitted</label>
+        <summaryForeignKey>Campaign_Project_Studio_Element__c.Campaign_Project_Studio_Scope__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Reference_Previous_Project_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Reference Previous Project Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Sample_Images_Attached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sample Images Attached</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Studio_Copywriting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Studio Copywriting</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Studio_Marked_Up_PDF_s_Attached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Studio Marked Up PDF(s) Attached</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Studio_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Studio Notes</label>
+        <length>1200</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Studio_Project_Tier__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Campaign_Project__r.Studio_Project_Tier__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Studio Project Tier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Studio_Ship_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Studio Ship Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Translation_Needed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Translation Needed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
     <label>Campaign Project Studio Scope</label>
     <listViews>
         <fullName>All</fullName>
@@ -76,9 +183,10 @@
         <label>All</label>
     </listViews>
     <nameField>
+        <displayFormat>CPS-{0000}</displayFormat>
         <label>Campaign Project Studio  Name</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Campaign Project Studio Scopes</pluralLabel>
     <searchLayouts/>

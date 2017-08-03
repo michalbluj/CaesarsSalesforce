@@ -85,6 +85,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AppLogTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AssociationCustomerInfo</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -150,6 +154,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>CompDetail</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CompDetailTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -293,7 +301,23 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>GstConsXrefTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>GstIdXref</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GstIdXrefTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GuestContactMasterCC</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GuestContactMasterTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -306,6 +330,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>GuestHotelActivityVedw</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GuestHotelActivityVedwTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -354,6 +382,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>HotelEvent</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>HotelEventTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -633,6 +665,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>OffersRedeemedTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>OperationBuilder</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -657,6 +693,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PdbTripInfoTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PdbTripTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PersonalCustomerInfo</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -665,7 +709,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PosTransDiscountTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PosTransHdr</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PosTransHdrTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -673,7 +725,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PosTransItemizerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PosTransLineItem</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PosTransLineItemTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -681,7 +741,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PosTransServiceChargeTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PosTransTender</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PosTransTenderTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -923,7 +991,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Campaign_Project_Blackout__c.Blackout_End_Minute__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Campaign_Project_Blackout__c.Blackout_Start_Hour__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Blackout__c.Blackout_Start_Minute__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1008,7 +1086,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Campaign_Project_Studio_Element__c.Element_Details__c</field>
+        <field>Campaign_Project_Studio_Element__c.Element_Detail__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1034,6 +1112,61 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Campaign_Project_Studio_Element__c.Non_Standard_Element__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Studio__c.Final_Studio_File_Name_and_Location__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Studio__c.Languages__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Studio__c.Number_of_Elements_Submitted__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Studio__c.Reference_Previous_Project_Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Studio__c.Sample_Images_Attached__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Studio__c.Studio_Copywriting__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Studio__c.Studio_Marked_Up_PDF_s_Attached__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Studio__c.Studio_Notes__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Studio__c.Studio_Project_Tier__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Studio__c.Studio_Ship_Date__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign_Project_Studio__c.Translation_Needed__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

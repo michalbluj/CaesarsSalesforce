@@ -36,14 +36,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Guest_Viewable_Channel__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Campaign_Redemption_Channel__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Campaign__c</field>
             </layoutItems>
             <layoutItems>
@@ -61,6 +53,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Redemption_Channel__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Campaign_Redemption_Channel__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Guest_Viewable_Channel__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -512,14 +512,6 @@
         <fields>NAME</fields>
         <fields>Event_Date__c</fields>
         <relatedList>Campaign_Project_Event_Date__c.Campaign_Project__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Element_Name__c</fields>
-        <fields>Element_Vendor__c</fields>
-        <fields>Element_Product_Type__c</fields>
-        <fields>Element_Details__c</fields>
-        <relatedList>Campaign_Project_Studio_Element__c.Campaign_Project__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

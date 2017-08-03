@@ -381,6 +381,11 @@
         <type>ExternalLookup</type>
     </fields>
     <label>LMS Folio Hdr</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <pluralLabel>LMS Folio Hdr</pluralLabel>
     <searchLayouts/>
 </CustomObject>

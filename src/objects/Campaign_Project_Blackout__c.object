@@ -74,6 +74,17 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Blackout_End_Minute__c</fullName>
+        <externalId>false</externalId>
+        <label>Blackout End Minute</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Blackout_Start_Hour__c</fullName>
         <externalId>false</externalId>
         <globalPicklist>Hour</globalPicklist>
@@ -81,6 +92,17 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Blackout_Start_Minute__c</fullName>
+        <externalId>false</externalId>
+        <label>Blackout Start Minute</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Campaign_Project__c</fullName>

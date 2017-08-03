@@ -26,6 +26,14 @@
                 <behavior>Edit</behavior>
                 <field>Blackout_End_Hour__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Blackout_Start_Minute__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Blackout_End_Minute__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>

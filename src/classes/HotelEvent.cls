@@ -7,7 +7,7 @@ public with sharing class HotelEvent extends ExternalObjectResponse implements E
     public List<Record> body {get; set;}
 
     public class Record {
-        public final String id {get; set;}
+        public String id {get; set;}
 
         public final String d_created_date {get; set;}
     }

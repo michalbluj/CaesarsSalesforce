@@ -7,7 +7,7 @@ public with sharing class PdbTripInfo extends ExternalObjectResponse implements 
     public List<Record> body {get; set;}
 
     public class Record {
-        public final String id {get; set;}
+        public String id {get; set;}
 
         public final String account_c_prop_cd_fk {get; set;}
         public final String c_prop_cd {get; set;}

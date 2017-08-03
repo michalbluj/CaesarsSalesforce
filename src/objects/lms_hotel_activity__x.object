@@ -1017,6 +1017,7 @@
     </fields>
     <fields>
         <fullName>hotel_act_status_code_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>hotel_act_status_code_fk</description>
         <externalDeveloperName>hotel_act_status_code_fk</externalDeveloperName>
         <externalId>false</externalId>
@@ -1024,14 +1025,15 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>hotel_act_status_code_fk</label>
-        <precision>18</precision>
+        <referenceTo>HotelActivityStatusCode__c</referenceTo>
+        <relationshipLabel>LMS Hotel Activities</relationshipLabel>
+        <relationshipName>LMS_Hotel_Activities</relationshipName>
         <required>false</required>
-        <scale>0</scale>
-        <type>Number</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>hotel_wing_codes_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>hotel_wing_codes__fk</description>
         <externalDeveloperName>hotel_wing_codes__fk</externalDeveloperName>
         <externalId>false</externalId>
@@ -1039,11 +1041,11 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>hotel_wing_codes__fk</label>
-        <precision>18</precision>
+        <referenceTo>HotelWingCode__c</referenceTo>
+        <relationshipLabel>LMS Hotel Activities</relationshipLabel>
+        <relationshipName>LMS_Hotel_Activities</relationshipName>
         <required>false</required>
-        <scale>0</scale>
-        <type>Number</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>i_customer_segment__c</fullName>
@@ -1196,6 +1198,11 @@
         <type>Lookup</type>
     </fields>
     <label>LMS Hotel Activity</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <pluralLabel>LMS Hotel Activities</pluralLabel>
     <searchLayouts/>
 </CustomObject>

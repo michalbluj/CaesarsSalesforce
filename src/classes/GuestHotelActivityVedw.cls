@@ -11,7 +11,7 @@ public with sharing class GuestHotelActivityVedw extends ExternalObjectResponse 
 
 	public class Record {
 
-		public final String id {get; set;}
+		public String id {get; set;}
 
 		public final String hotel_act_status_code_fk {get; set;}
 		public final String c_activity_status {get; set;}
