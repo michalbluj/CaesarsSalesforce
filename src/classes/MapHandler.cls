@@ -30,12 +30,6 @@ public with sharing class MapHandler {
         'caesars$pos_trans_line_item' => 'pos_trans_line_item',
         'caesars$pos_trans_service_charge' => 'pos_trans_service_charge',
         'caesars$pos_trans_tender' => 'pos_trans_tender',
-        'caesars$customer_control_segments' => 'customer_control_segments',
-        'caesars$hotel_act_status_code' => 'hotel_act_status_code',
-        'caesars$hotel_wing_code' => 'hotel_wing_code',
-        'caesars$lms_source_desc_sda' => 'lms_source_desc_sda',
-        'caesars$source_code' => 'source_code',
-        'caesars$lms_room_type_desc_sda' => 'lms_room_type_desc_sda',
         'caesars$ap_pdb_trip_cms' => 'ap_pdb_trip_cms',
         'caesars$ap_pdb_trip_cmx' => 'ap_pdb_trip_cmx',
         'caesars$ap_pdb_trip_hdr' => 'ap_pdb_trip_hdr',
@@ -43,7 +37,10 @@ public with sharing class MapHandler {
         'caesars$gst_cons_xref' => 'gst_cons_xref',
         'caesars$gst_id_xref' => 'gst_id_xref',
         'caesars$pdb_trip' => 'pdb_trip',
-        'caesars$pdb_trip_info' => 'pdb_trip_info'
+        'caesars$pdb_trip_info' => 'pdb_trip_info',
+        'caesars$offers_redeemed' => 'caesars_offers_redeemed',
+        'caesars$comp_detail' => 'caesars_comp_detail',
+        'caesars$hotel_event' => 'caesars_hotel_event'
     };
 
     public static final Map<String, String> externalTableToClassNameMap = new Map<String, String> {
@@ -69,12 +66,6 @@ public with sharing class MapHandler {
         'caesars$pos_trans_line_item' => 'PosTransLineItem',
         'caesars$pos_trans_service_charge' => 'PosTransServiceCharge',
         'caesars$pos_trans_tender' => 'PosTransTender',
-        'caesars$customer_control_segments' => 'CustomerControlSegments',
-        'caesars$hotel_act_status_code' => 'HotelActStatusCode',
-        'caesars$hotel_wing_code' => 'HotelWingCode',
-        'caesars$lms_source_desc_sda' => 'LmsSourceDescSda',
-        'caesars$source_code' => 'SourceCode',
-        'caesars$lms_room_type_desc_sda' => 'LmsRoomTypeDescSda',
         'caesars$ap_pdb_trip_cms' => 'ApPdbTripCms',
         'caesars$ap_pdb_trip_cmx' => 'ApPdbTripCmx',
         'caesars$ap_pdb_trip_hdr' => 'ApPdbTripHdr',
@@ -82,7 +73,10 @@ public with sharing class MapHandler {
         'caesars$gst_cons_xref' => 'GstConsXref',
         'caesars$gst_id_xref' => 'GstIdXref',
         'caesars$pdb_trip' => 'PdbTrip',
-        'caesars$pdb_trip_info' => 'PdbTripInfo'
+        'caesars$pdb_trip_info' => 'PdbTripInfo',
+        'caesars$offers_redeemed' => 'OffersRedeemed',
+        'caesars$comp_detail' => 'CompDetail',
+        'caesars$hotel_event' => 'HotelEvent'
     };
 
     private static Map<String, Id> acquisitionCodeMap = null;

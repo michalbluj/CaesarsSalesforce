@@ -37,12 +37,6 @@ public with sharing class ExternalDataSourceUtil {
             'pos_trans_line_item' => new ExternalDataSourceTable(),
             'pos_trans_service_charge' => new ExternalDataSourceTable(),
             'pos_trans_tender' => new ExternalDataSourceTable(),
-            'customer_control_segments' => new ExternalDataSourceTable(),
-            'hotel_act_status_code' => new ExternalDataSourceTable(),
-            'hotel_wing_code' => new ExternalDataSourceTable(),
-            'lms_source_desc_sda' => new ExternalDataSourceTable(),
-            'source_code' => new ExternalDataSourceTable(),
-            'lms_room_type_desc_sda' => new ExternalDataSourceTable(),
             'ap_pdb_trip_cms' => new ExternalDataSourceTable(),
             'ap_pdb_trip_cmx' => new ExternalDataSourceTable(),
             'ap_pdb_trip_hdr' => new ExternalDataSourceTable(),
@@ -50,7 +44,10 @@ public with sharing class ExternalDataSourceUtil {
             'gst_cons_xref' => new ExternalDataSourceTable(),
             'gst_id_xref' => new ExternalDataSourceTable(),
             'pdb_trip' => new ExternalDataSourceTable(),
-            'pdb_trip_info' => new ExternalDataSourceTable()
+            'pdb_trip_info' => new ExternalDataSourceTable(),
+            'caesars_offers_redeemed' => new ExternalDataSourceTable(),
+            'caesars_comp_detail' => new ExternalDataSourceTable(),
+            'caesars_hotel_event' => new ExternalDataSourceTable()
         };
     }
 
@@ -83,12 +80,6 @@ public with sharing class ExternalDataSourceUtil {
                                  'pos_trans_line_item',
                                  'pos_trans_service_charge',
                                  'pos_trans_tender',
-                                 'customer_control_segments',
-                                 'hotel_act_status_code',
-                                 'hotel_wing_code',
-                                 'lms_source_desc_sda',
-                                 'source_code',
-                                 'lms_room_type_desc_sda',
                                  'ap_pdb_trip_cms',
                                  'ap_pdb_trip_cmx',
                                  'ap_pdb_trip_hdr',
@@ -96,7 +87,10 @@ public with sharing class ExternalDataSourceUtil {
                                  'gst_cons_xref',
                                  'gst_id_xref',
                                  'pdb_trip',
-                                 'pdb_trip_info'
+                                 'pdb_trip_info',
+                                 'caesars_offers_redeemed',
+                                 'caesars_comp_detail',
+                                 'caesars_hotel_event'
                                 };
     }
 }
