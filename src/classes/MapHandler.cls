@@ -37,7 +37,10 @@ public with sharing class MapHandler {
         'caesars$gst_cons_xref' => 'gst_cons_xref',
         'caesars$gst_id_xref' => 'gst_id_xref',
         'caesars$pdb_trip' => 'pdb_trip',
-        'caesars$pdb_trip_info' => 'pdb_trip_info'
+        'caesars$pdb_trip_info' => 'pdb_trip_info',
+        'caesars$offers_redeemed' => 'caesars_offers_redeemed',
+        'caesars$comp_detail' => 'caesars_comp_detail',
+        'caesars$hotel_event' => 'caesars_hotel_event'
     };
 
     public static final Map<String, String> externalTableToClassNameMap = new Map<String, String> {
@@ -70,7 +73,10 @@ public with sharing class MapHandler {
         'caesars$gst_cons_xref' => 'GstConsXref',
         'caesars$gst_id_xref' => 'GstIdXref',
         'caesars$pdb_trip' => 'PdbTrip',
-        'caesars$pdb_trip_info' => 'PdbTripInfo'
+        'caesars$pdb_trip_info' => 'PdbTripInfo',
+        'caesars$offers_redeemed' => 'OffersRedeemed',
+        'caesars$comp_detail' => 'CompDetail',
+        'caesars$hotel_event' => 'HotelEvent'
     };
 
     private static Map<String, Id> acquisitionCodeMap = null;

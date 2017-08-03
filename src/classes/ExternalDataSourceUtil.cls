@@ -44,7 +44,10 @@ public with sharing class ExternalDataSourceUtil {
             'gst_cons_xref' => new ExternalDataSourceTable(),
             'gst_id_xref' => new ExternalDataSourceTable(),
             'pdb_trip' => new ExternalDataSourceTable(),
-            'pdb_trip_info' => new ExternalDataSourceTable()
+            'pdb_trip_info' => new ExternalDataSourceTable(),
+            'caesars_offers_redeemed' => new ExternalDataSourceTable(),
+            'caesars_comp_detail' => new ExternalDataSourceTable(),
+            'caesars_hotel_event' => new ExternalDataSourceTable()
         };
     }
 
@@ -84,7 +87,10 @@ public with sharing class ExternalDataSourceUtil {
                                  'gst_cons_xref',
                                  'gst_id_xref',
                                  'pdb_trip',
-                                 'pdb_trip_info'
+                                 'pdb_trip_info',
+                                 'caesars_offers_redeemed',
+                                 'caesars_comp_detail',
+                                 'caesars_hotel_event'
                                 };
     }
 }
