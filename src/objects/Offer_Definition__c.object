@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Offer_Definition</fullName>
+        <fields>Offer_Id__c</fields>
+        <fields>RecordTypeId</fields>
+        <label>Offer Definition</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Campaign_Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Campaign Project</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Campaign Project</inlineHelpText>
+        <label>Campaign Project</label>
+        <referenceTo>Campaign_Project__c</referenceTo>
+        <relationshipLabel>Offer Definitions</relationshipLabel>
+        <relationshipName>Offer_Definitions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Offer Description</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Description</inlineHelpText>
+        <label>Offer Description</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Max_Choice__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( text(Offer_Definition_Type__c) , &apos;Choice&apos;, 1,  Offer_Incentive_Group_Count__c +   NULLVALUE(Offer_Incentive_Count__c, 0) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Max Choice</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offer_Definition_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Offer Definition Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Choice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Package</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Offer_Employee_Description__c</fullName>
+        <description>Information to help the Employee understand the terms and conditions for the Package.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Information to help the Employee understand the terms and conditions for the Package.</inlineHelpText>
+        <label>Offer Employee Description</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Offer_Guest_Label__c</fullName>
+        <description>Offer Guest Label</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Label is seen by the Guest. E.g. &quot;Join us for Summer Fun!&quot;</inlineHelpText>
+        <label>Offer Guest Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offer_Id__c</fullName>
+        <description>Offer Id - system generated , 6 char base 30 alphanumeric number</description>
+        <externalId>true</externalId>
+        <inlineHelpText>System Generated Offer Number</inlineHelpText>
+        <label>Offer Id</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offer_Incentive_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Offer Incentive Group Count</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Incentive Group Count</inlineHelpText>
+        <label>Offer Incentive Count</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offer_Incentive_Group_Count__c</fullName>
+        <description>Offer Incentive Group Count</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Incentive Group Count</inlineHelpText>
+        <label>Offer Incentive Group Count</label>
+        <summaryForeignKey>Offer_Incentive_Group__c.Offer_Definition__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Offer_Intent__c</fullName>
+        <description>Offer Intent</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Intent</inlineHelpText>
+        <label>Offer Intent</label>
+        <picklist>
+            <picklistValues>
+                <fullName>BOUNCE BACK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HOTEL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NEW BUSINESS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SPECIAL EVENTS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Offer Definition</label>
+    <nameField>
+        <displayFormat>OD-{000000000}</displayFormat>
+        <label>Offer Definition Record Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Offer Definitions</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>Choice</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Offer_Definition</compactLayoutAssignment>
+        <description>Choice Offer is also known as &apos;OR&apos; Offer. For example, Three free room night  OR  $50 casino play</description>
+        <label>Choice</label>
+        <picklistValues>
+            <picklist>Offer_Definition_Type__c</picklist>
+            <values>
+                <fullName>Choice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Package</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Offer_Intent__c</picklist>
+            <values>
+                <fullName>BOUNCE BACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HOTEL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEW BUSINESS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPECIAL EVENTS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Package</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Offer_Definition</compactLayoutAssignment>
+        <description>Package offer has multiple offer incentives. For example Three free room night  AND $50 casino play AND $50 F&amp;B credit</description>
+        <label>Package</label>
+        <picklistValues>
+            <picklist>Offer_Definition_Type__c</picklist>
+            <values>
+                <fullName>Choice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Package</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Offer_Intent__c</picklist>
+            <values>
+                <fullName>BOUNCE BACK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HOTEL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEW BUSINESS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPECIAL EVENTS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

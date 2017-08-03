@@ -1,0 +1,1377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Offer_Incentive_General</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Offer Incentive</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <description>The Amount is a dollar value or a %. 
+E.g. You can have 5 dollars off
+E.g. You can have 5% off.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Amount is a dollar value or a %. 
+E.g. You can have 5 dollars off
+E.g. You can have 5% off.</inlineHelpText>
+        <label>Amount</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bank_Expiration_End_Date__c</fullName>
+        <description>Bank Expiration End Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Bank Expiration End Date</inlineHelpText>
+        <label>Bank Expiration End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Bank_Expiration_End_Hour__c</fullName>
+        <description>Bank Expiration End Hour</description>
+        <externalId>false</externalId>
+        <globalPicklist>Hour</globalPicklist>
+        <inlineHelpText>Bank Expiration End Hour</inlineHelpText>
+        <label>Bank Expiration End Hour</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Bank_Expiration_End_Minute__c</fullName>
+        <description>Bank Expiration End Minute</description>
+        <externalId>false</externalId>
+        <globalPicklist>Minute_Offer</globalPicklist>
+        <inlineHelpText>Bank Expiration End Minute</inlineHelpText>
+        <label>Bank Expiration End Minute</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Bank_Expiration_Start_Date__c</fullName>
+        <description>Bank Expiration Start Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Bank Expiration Start Date</inlineHelpText>
+        <label>Bank Expiration Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Bank_Expiration_Start_Minute__c</fullName>
+        <description>Bank Expiration Start Minute</description>
+        <externalId>false</externalId>
+        <globalPicklist>Minute_Offer</globalPicklist>
+        <inlineHelpText>Bank Expiration Start Minute</inlineHelpText>
+        <label>Bank Expiration Start Minute</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Bank__c</fullName>
+        <description>Bank Expiration Start Hour</description>
+        <externalId>false</externalId>
+        <globalPicklist>Hour</globalPicklist>
+        <inlineHelpText>Bank Expiration Start Hour</inlineHelpText>
+        <label>Bank Expiration Start Hour</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Booking_End_Date__c</fullName>
+        <description>Last date on which a guest can book a reservation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last date on which a guest can book a reservation.</inlineHelpText>
+        <label>Booking End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Booking_End_Hour__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Hour</globalPicklist>
+        <label>Booking End Hour</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Booking_End_Minute__c</fullName>
+        <description>Booking End Minute</description>
+        <externalId>false</externalId>
+        <globalPicklist>Minute_Offer</globalPicklist>
+        <inlineHelpText>Booking End Minute</inlineHelpText>
+        <label>Booking End Minute</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Booking_Start_Date__c</fullName>
+        <description>First date on which they can book a reservation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>First date on which they can book a reservation.</inlineHelpText>
+        <label>Booking Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Booking_Start_Hour__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Hour</globalPicklist>
+        <label>Booking Start Hour</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Booking_Start_Minute__c</fullName>
+        <description>Booking Start Minute</description>
+        <externalId>false</externalId>
+        <globalPicklist>Minute_Offer</globalPicklist>
+        <inlineHelpText>Booking Start Minute</inlineHelpText>
+        <label>Booking Start Minute</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Calculation_Type__c</fullName>
+        <description>Method of calculating dynamic offer value</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Method of calculating dynamic offer value</inlineHelpText>
+        <label>Calculation Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>UP1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UP5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DOWN1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DOWN5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FLAT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Vaild_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Vaild End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Valid_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>today()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Valid Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Companion_Share__c</fullName>
+        <description>Number of Companion Guests Eligible for Offer Incentive</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of Companion Guests Eligible for Offer Incentive</inlineHelpText>
+        <label>Companion Share</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Disclaimer__c</fullName>
+        <description>This is a text string for placement on the collateral and visible to Guest on Channels.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is a text string for placement on the collateral and visible to Guest on Channels.</inlineHelpText>
+        <label>Disclaimer</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Employee_Description__c</fullName>
+        <description>Offer Description for Employee</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Description for Employee</inlineHelpText>
+        <label>Employee Description</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Entertainment_Type__c</fullName>
+        <description>Entertainment Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Entertainment Type</inlineHelpText>
+        <label>Entertainment Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Concert</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sporting Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Entertainment Admission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TBD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Flat_Multiplier__c</fullName>
+        <description>Think of this as providing the guest a flat amount of credits such as 500 reward credits or a Reward Credit Multiplier such as times 5.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Think of this as providing the guest a flat amount of credits such as 500 reward credits or a Reward Credit Multiplier such as times 5.</inlineHelpText>
+        <label>Reward Credit or Multiplier</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Flat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multiplier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Guest_Description__c</fullName>
+        <description>The Guest Description is a long description displayed on Guest View Channels. Business wants 3K characters.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Guest Description is a long description displayed on Guest View Channels. Business wants 3K characters.</inlineHelpText>
+        <label>Guest Description</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Hotel_Booking_Code__c</fullName>
+        <description>Hotel Booking Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hotel Booking Code</inlineHelpText>
+        <label>Hotel Booking Code</label>
+        <length>12</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Market_Time_Zone__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;PST&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Market Time Zone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Market__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL( Offer_Definition__c ) ,IF(ISNULL( Offer_Incentive_Group__c ), &apos;&apos;,     Offer_Incentive_Group__r.Offer_Definition__r.Campaign_Project__r.Market_Text__c) , Offer_Definition__r.Campaign_Project__r.Market_Text__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Market</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_Offer_Amount__c</fullName>
+        <description>Max offer amount, used in dynamic value offer calculation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Max offer amount, used in dynamic value offer calculation</inlineHelpText>
+        <label>Maximum Offer Amount</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_Redemption__c</fullName>
+        <description>Max Redemption</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Max Redemption</inlineHelpText>
+        <label>Max Redemption Allowed</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>14</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>16</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>17</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>21</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>22</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>23</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>24</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>26</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>27</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>28</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>29</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>30</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>31</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>32</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>33</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>34</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>35</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>36</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>37</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>38</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>39</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>40</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>41</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>42</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>43</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>44</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>45</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>46</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>47</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>48</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>49</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>51</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>52</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>53</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>54</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>55</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>56</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>57</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>58</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>59</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>60</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>61</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>62</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>63</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>64</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>65</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>66</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>67</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>68</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>69</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>70</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>71</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>72</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>73</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>74</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>76</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>77</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>78</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>79</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>80</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>81</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>82</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>83</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>84</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>85</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>86</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>87</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>88</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>89</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>90</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>91</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>92</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>93</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>94</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>95</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>96</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>97</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>98</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>99</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Max_Reward_Credit__c</fullName>
+        <description>Max Reward Credit, for loyalty credit incentive</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Max Reward Credit, for loyalty credit incentive</inlineHelpText>
+        <label>Max Reward Credit</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Min_Offer_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Minimum Offer Amount</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Min_Reward_Credit__c</fullName>
+        <description>Min reward credit, if Loyalty Credits Incentive Category/Subcategory is selected</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Min reward credit, if Loyalty Credits Incentive Category/Subcategory is selected</inlineHelpText>
+        <label>Min Reward Credit</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Nights__c</fullName>
+        <description>Number of Nights, applies to travel/hotel incentive</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of Nights, applies to travel/hotel incentive</inlineHelpText>
+        <label>Number of Nights</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offer_Definition__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Offer Definition</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to Offer Definition</inlineHelpText>
+        <label>Offer Definition</label>
+        <referenceTo>Offer_Definition__c</referenceTo>
+        <relationshipLabel>Offer Incentives</relationshipLabel>
+        <relationshipName>Offer_Incentives</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Offer_Incentive_Category__c</fullName>
+        <description>Offer Incentive Category</description>
+        <externalId>false</externalId>
+        <globalPicklist>Offer_Incentive_Category</globalPicklist>
+        <inlineHelpText>Offer Incentive Category</inlineHelpText>
+        <label>Incentive Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Offer_Incentive_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Offer Incentive Group</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Incentive Group</inlineHelpText>
+        <label>Offer Incentive Group</label>
+        <referenceTo>Offer_Incentive_Group__c</referenceTo>
+        <relationshipLabel>Offer Incentives</relationshipLabel>
+        <relationshipName>Offer_Incentives</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Offer_Incentive_Id__c</fullName>
+        <description>Offer Incentive Id</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Incentive Id</inlineHelpText>
+        <label>Offer Incentive Id</label>
+        <length>13</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offer_Incentive_Label__c</fullName>
+        <description>Incentive Choice/Package Description</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Incentive Choice/Package Description</inlineHelpText>
+        <label>Incentive Choice/Package Description</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offer_Incentive_Subcategory__c</fullName>
+        <description>Offer Incentive Subcategory</description>
+        <externalId>false</externalId>
+        <globalPicklist>Offer_Incentive_Subcategory</globalPicklist>
+        <inlineHelpText>Offer Incentive Subcategory</inlineHelpText>
+        <label>Incentive Subcategory</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Offer_Valid_Day_Count__c</fullName>
+        <description>Offer Valid day count (applicable for Time Valid = Daily)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Valid day count (applicable for Time Valid = Daily)</inlineHelpText>
+        <label>Offer Valid Day Count</label>
+        <summaryForeignKey>Offer_Incentive_Valid_Date__c.Offer_Incentive__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Open_to_TR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Offer Incentive open to all Total Reward Members</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Incentive open to all Total Reward Members</inlineHelpText>
+        <label>Open to TR</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Override_Campaign_Date__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Use campaign project date or override the date setting</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use campaign project date or override the date setting</inlineHelpText>
+        <label>Override Campaign Date Setting</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Percentage_of_Worth__c</fullName>
+        <description>Percentage of worth for dynamic value offer calculation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Percentage of worth for dynamic value offer calculation</inlineHelpText>
+        <label>Percentage of Worth</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Redemption_Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Redemption Channel</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Kiosk - APS Promo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk - TR Enhanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk - games</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PlaybyTR-Mobile messaging</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hotel System</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Table Voucher</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COVPOS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reservation_Phone_Number__c</fullName>
+        <description>Reservation Contact Number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reservation Contact Number</inlineHelpText>
+        <label>Reservation Phone Number</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Reward_Credit_Visible_Guest__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Reward Credit or Multiplier Visible to Guest</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reward Credit or Multiplier Visible to Guest</inlineHelpText>
+        <label>Reward Credit or Multiplier Visible to G</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Time_Valid_Type__c</fullName>
+        <description>This is a choice of (1) DURATION. E.g. this offer can be redeemed for the duration of the offer,  from the Offer Start Date/Time until the Offer End Date/Time or (2) DAILY. E.g. this offer can be redeemed each day from 10am until 2pm from Offer Start Date to Offer End Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is a choice of (1) DURATION. E.g. this offer can be redeemed for the duration of the offer,  from the Offer Start Date/Time until the Offer End Date/Time or (2) DAILY. E.g. this offer can be redeemed each day from 10am until 2pm from Offer Start Date</inlineHelpText>
+        <label>Time Valid  (Daily or Duration)</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Duration</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Valid_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Valid End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Valid_End_Duration__c</fullName>
+        <description>The duration, in minute, from valid start to valid end date and time. It is used for validation purpose only</description>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL( Valid_Start_Date__c), 0, 
+IF(ISNULL(  Valid_End_Date__c), 0,
+IF ( (Valid_End_Date__c - Valid_Start_Date__c) &lt;0, 0,
+
+(Valid_End_Date__c - Valid_Start_Date__c) * 24 * 60 + 
+(24 - ( value(text(Valid_Start_Hour__c)) +  value(text(Valid_Start_Minute__c)) )) * 60   +  value(text(Valid_End_Hour__c))  +  value(text(Valid_End_Minute__c)) 
+
+
+
+)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The duration, in minute, from valid start to valid end date and time. It is used for validation purpose only</inlineHelpText>
+        <label>Valid End Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Valid_End_Hour__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Hour</globalPicklist>
+        <label>Valid End Hour</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Valid_End_Minute__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Minute_Offer</globalPicklist>
+        <label>Valid End Minute</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Valid_Start_Date__c</fullName>
+        <description>Valid start date for this incentive</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Valid start date for this incentive</inlineHelpText>
+        <label>Valid Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Valid_Start_Hour__c</fullName>
+        <description>Valid Start Hour</description>
+        <externalId>false</externalId>
+        <globalPicklist>Hour</globalPicklist>
+        <inlineHelpText>Valid Start Hour</inlineHelpText>
+        <label>Valid Start Hour</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Valid_Start_Minute__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Minute_Offer</globalPicklist>
+        <label>Valid Start Minute</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Value_Type__c</fullName>
+        <description>The value type (Amount, Percentage, Dynamic) of this incentive</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value type (Amount, Percentage, Dynamic) of this incentive</inlineHelpText>
+        <label>Value Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Amount</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Percentage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dynamic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Venue_Type__c</fullName>
+        <description>Venue Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Venue Type</inlineHelpText>
+        <label>Venue Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>External</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TBD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Visible_to_Employee__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Make Offer Incentive Visible to Employee</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Make Offer Incentive Visible to Employee</inlineHelpText>
+        <label>Visible to Employee</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Visible_to_Guest__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Make Offer Incentive Visible to Guest</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Make Offer Incentive Visible to Guest</inlineHelpText>
+        <label>Visible to Guest</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Offer Incentive</label>
+    <nameField>
+        <displayFormat>OI-{0000000000}</displayFormat>
+        <label>Offer Incentive Record Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Offer Incentives</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

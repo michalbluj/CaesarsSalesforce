@@ -1,0 +1,3277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChangeStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloneAsChild</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloseCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MassClose</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <businessProcesses>
+        <fullName>Campaign Project</fullName>
+        <description>Campaign Project Milestone</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Campaign Workflow</fullName>
+        <description>Campaign Workflow Case Process</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Ready to Start</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted for Approval</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Campaign_Project_Milestone</fullName>
+        <fields>Campaign_Project_Formula__c</fields>
+        <fields>DMC_Workflow__c</fields>
+        <fields>Market_Workflow__c</fields>
+        <label>Campaign Project Milestone</label>
+    </compactLayouts>
+    <enableFeeds>true</enableFeeds>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Anchored__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Anchored</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is created as part of US1397. If this field is true it means this case is a Approval task.</description>
+        <externalId>false</externalId>
+        <label>Approval Case?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Approver_Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver Role</label>
+        <picklist>
+            <picklistValues>
+                <fullName>POD Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing Campaign Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Decision Support Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Property Marketer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio Account Executive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing Campaign Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email QA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>AssetId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Associated_Proforma__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is created to create a relationship between the case and proforma. 
+
+ref: US1397</description>
+        <externalId>false</externalId>
+        <label>Associated Proforma</label>
+        <referenceTo>Proforma__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>ProformaCase</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BusinessHoursId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Project_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project__r.RecordType.DeveloperName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Project</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Campaign_Project_Record_Type_Workflow__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project__r.RecordType.DeveloperName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Project Record Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Campaign_Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign Project</label>
+        <referenceTo>Campaign_Project__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Case_Sub_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Sub-Group</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Project Kick Off</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event Setup</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio Project Requirements</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tier 3 Prod Studio Content Development &amp; Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Close Out</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio Tier 1 Content Development and Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Content and Design Project Kickoff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Content Design</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Content Copy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Content Review &amp; Deploy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Design Copy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Design</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital QA and Close Out</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Content Merchandising</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Close_Case_QuickAction__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Close Case QuickAction</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Close_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Close Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ClosedDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Comments</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactFax</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContactMobile</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>ContactPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Controlling_Anchored_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field will be used to associate a case to an anchored case</description>
+        <externalId>false</externalId>
+        <label>Controlling Anchored Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Controlling Anchored Type</relationshipLabel>
+        <relationshipName>ControllingAnchored</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Controlling_Anchored_Type__c</fullName>
+        <description>- determines the start date and end date of the record based on the respective anchored date.</description>
+        <externalId>false</externalId>
+        <label>Controlling Anchored Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Review Pro Forma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drop Mail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Execute Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prepare &amp; Deploy Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vendor Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Final Revisions and Push Live</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Requestor Confirms Receipt of Deliverables</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approve Pro Forma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DMC_Workflow__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Campaign_Project__r.Direct_Marketing_Center__r.DMC_Name__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DMC</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dependencies__c</fullName>
+        <externalId>false</externalId>
+        <label>Dependencies</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EntitlementId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Escalation_Assignment__c</fullName>
+        <description>Escalation Assignment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Escalation Assignment</inlineHelpText>
+        <label>Escalation Assignment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Final_Approval_Timestamp__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Approval Timestamp</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Final_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_User_Assignment_Date__c</fullName>
+        <description>Timestamp of when the case owner changed from a queue to an individual user</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Timestamp of when the case owner changed from a queue to an individual user</inlineHelpText>
+        <label>First User Assignment Timestamp</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Intermediate_Approval_1_Timestamp__c</fullName>
+        <externalId>false</externalId>
+        <label>Intermediate Approval 1 Timestamp</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Intermediate_Approval_2_Timestamp__c</fullName>
+        <externalId>false</externalId>
+        <label>Intermediate Approval 2 Timestamp</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Intermediate_Approver_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Intermediate Approver 1</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Intermediate_Approver_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Intermediate Approver 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsClosedOnCreate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsEscalated</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>IsStopped</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Item_Rejected_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Rejected By</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item_Rejection_Timestamp__c</fullName>
+        <externalId>false</externalId>
+        <label>Item Rejection Timestamp</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Milestone_Violated__c</fullName>
+        <description>the name of the milestone that violated most recently</description>
+        <externalId>false</externalId>
+        <inlineHelpText>the name of the milestone that violated most recently</inlineHelpText>
+        <label>Last Milestone Violated</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_Task_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy Task Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_DM_Drop_Date__c</fullName>
+        <description>DM Drop Date milestone status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>DM Drop Date milestone status</inlineHelpText>
+        <label>MS DM Drop Date</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_Email_Drop_Date__c</fullName>
+        <description>Email Drop Date milestone status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email Drop Date milestone status</inlineHelpText>
+        <label>MS Email Drop Date</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_Email_Job_Complete__c</fullName>
+        <description>Email Job Complete milestone status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email Job Complete milestone status</inlineHelpText>
+        <label>MS Email Job Complete</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_Email_Job_Start__c</fullName>
+        <description>Email Job Start milestone status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email Job Start milestone status</inlineHelpText>
+        <label>MS Email Job Start</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_Email_Proof_Approved__c</fullName>
+        <description>Email Proof Approved milestone status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email Proof Approved milestone status</inlineHelpText>
+        <label>MS Email Proof Approved</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_POD_Submitted_Job__c</fullName>
+        <description>POD Submitted Job milestone status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>POD Submitted Job milestone status</inlineHelpText>
+        <label>MS POD Submitted Job</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_Proforma_Approved__c</fullName>
+        <description>Proforma Approved milestone status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Proforma Approved milestone status</inlineHelpText>
+        <label>MS Proforma Approved</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_R_R_Approved__c</fullName>
+        <description>Milestone status MS R&amp;R Approved</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Milestone status MS R&amp;R Approved</inlineHelpText>
+        <label>MS R&amp;R Approved</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_Standard_Project_Kickoff__c</fullName>
+        <description>Milestone Standard Project Kickoff status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Milestone Standard Project Kickoff status</inlineHelpText>
+        <label>MS Standard Project Kickoff</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_Std_Campaign_Project_Complete__c</fullName>
+        <description>Campaign Project Complete milestone status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Campaign Project Complete milestone status</inlineHelpText>
+        <label>MS Campaign Project Complete</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_Studio_Art_Approved__c</fullName>
+        <description>Status of milestone Studio Art Approved Due</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of milestone Studio Art Approved Due</inlineHelpText>
+        <label>MS Studio Art Approved</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSS_Studio_Job_Complete__c</fullName>
+        <description>Status of milestone Studio Job Complete</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of milestone Studio Job Complete</inlineHelpText>
+        <label>MS Studio Job Complete</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MS_DM_Drop_Date__c</fullName>
+        <description>Target Due date for the milestone DM Drop Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Target Due date for the milestone DM Drop Date</inlineHelpText>
+        <label>MS DM Drop Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MS_Email_Drop_Date__c</fullName>
+        <description>Target Due date for the milestone Email Drop Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Target Due date for the milestone Email Drop Date</inlineHelpText>
+        <label>MS Email Drop Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MS_Email_Job_Complete__c</fullName>
+        <description>Target Due date for the milestone Email Job Complete</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Target Due date for the milestone Email Job Complete</inlineHelpText>
+        <label>MS Email Job Complete Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MS_Email_Job_Start__c</fullName>
+        <description>Target Due date for the milestone Email Job Start</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Target Due date for the milestone Email Job Start</inlineHelpText>
+        <label>MS Email Job Start Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MS_Email_Proof_Approved__c</fullName>
+        <description>Target Due date for the milestone Email Proof Approved</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Target Due date for the milestone Email Proof Approved</inlineHelpText>
+        <label>MS Email Proof Approved Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MS_POD_Submitted_Job__c</fullName>
+        <description>Target Due date for the milestone POD Submitted Job</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Target Due date for the milestone POD Submitted Job</inlineHelpText>
+        <label>MS POD Submitted Job Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MS_Proforma_Approved__c</fullName>
+        <description>Timestamp for the due date of the milestone Proforma Approved</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Timestamp for the due date of the milestone Proforma Approved</inlineHelpText>
+        <label>MS Proforma Approved Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MS_R_R_Approved__c</fullName>
+        <description>Timestamp for the due date of the milestone R&amp;R Approved</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Timestamp for the due date of the milestone R&amp;R Approved</inlineHelpText>
+        <label>MS R&amp;R Approved Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MS_Standard_Campaign_Project_Complete__c</fullName>
+        <description>Timestamp for the due date of milestone Standard Campaign Project Complete</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Timestamp for the due date of milestone Standard Campaign Project Complete</inlineHelpText>
+        <label>MS Campaign Project Complete Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MS_Standard_Project_Kickoff__c</fullName>
+        <description>Target Due date for the milestone Standard Project Kickoff</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Target Due date for the milestone Standard Project Kickoff</inlineHelpText>
+        <label>MS Standard Project Kickoff Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MS_Studio_Art_Approved__c</fullName>
+        <description>Timestamp of the due date for milestone Studio Art Approved</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Timestamp of the due date for milestone Studio Art Approved</inlineHelpText>
+        <label>MS Studio Art Approved Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MS_Studio_Job_Complete__c</fullName>
+        <description>Timestamp of the due date for milestone Studio Job Complete</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Timestamp of the due date for milestone Studio Job Complete</inlineHelpText>
+        <label>MS Studio Job Complete Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Market_Workflow__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project__r.Market__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Market</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Member_Role_Queue_Derivation__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Definition of how Member Role Queues are derived from Campaign Project. For generic queues like Database Analyst, choose Generic.</inlineHelpText>
+        <label>Member Role Queue Derivation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Market</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DMC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Generic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Member_Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Member Role</label>
+        <picklist>
+            <picklistValues>
+                <fullName>POD Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing Campaign Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Database Analyst</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Property Marketer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio Account Executive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio Tier 3 Production Artist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio Copywriter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporate Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MilestoneStatus</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>MilestoneStatusIcon</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Milestone__c</fullName>
+        <description>The workflow case is identified as a campaign milestone</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The workflow case is identified as a campaign milestone</inlineHelpText>
+        <label>Campaign Milestone</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AEM Files Packaged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AEM Files to Vendor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AEM Job Start</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AEM Layout Built</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Counts Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Job Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Job Start</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DM Drop Date</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DM Job Start</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EA Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Drop Date</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Job Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Job Start</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Proof Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pod Submitted Job</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proforma Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Project Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Project Kickoff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R&amp;R Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio Art Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio Job Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio Job Start</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Standard Project Kickoff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Standard Campaign Project Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <length>5</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Origin</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Approval_Duration_Left__c</fullName>
+        <externalId>false</externalId>
+        <label>Pending Approval Duration Left</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Pending Approver</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planning_Task__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Planning Task?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Predecessor_Task_To_Anchored_Case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will be true if the Task is a Predecessor(task to be done before Associated Anchored case). This field will be false if it is Anchored task.</description>
+        <externalId>false</externalId>
+        <label>Predecessor Task To Anchored Case</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProductId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Type__c</fullName>
+        <description>This field is to capture whether the project type is CP/ Proforma. Was created part of US1398</description>
+        <externalId>false</externalId>
+        <label>Item To Approve</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Campaign Project</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proforma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Ready_To_Start_Date__c</fullName>
+        <description>The timestamp when the case is first marked as ready to start</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The timestamp when the case is first marked as ready to start</inlineHelpText>
+        <label>Ready To Start Timestamp</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Reason</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>User didn&apos;t attend training</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complex functionality</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Existing problem</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New problem</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Project</fullName>
+                <default>false</default>
+                <cssExposed>false</cssExposed>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Through__c</fullName>
+        <externalId>false</externalId>
+        <label>Scheduled Through</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Bus.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wkd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SlaExitDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SlaStartDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready to Start</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StopStartDate</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Successor_Task_To_Anchored_Case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will be true if the Task is a successor(task to be done before Associated Anchored case). This field will be false if it is Anchored task.</description>
+        <externalId>false</externalId>
+        <label>Successor Task To Anchored Case</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SuppliedCompany</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedEmail</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedName</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>SuppliedPhone</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Target_Duration_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Duration - Days</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target_Duration_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Duration - Hours</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target_Duration_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Duration - Minutes</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Target End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Target_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Task_Code__c</fullName>
+        <displayFormat>WFC-{000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Task Code</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Campaign Workflow Instance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Workflow Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Project Milestone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <listViews>
+        <fullName>ACM_Marketing_Campaign_Associate_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>ACM - Marketing Campaign Associate</label>
+        <queue>ACM_Marketing_Campaign_Associate</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>ACM_POD_Manaer_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>ACM - POD Manager</label>
+        <queue>ACM_POD_Manager</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AC_Analytics_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>ACM - Analytics</label>
+        <queue>ACM_Analytics</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AC_DMC_Associate_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>AC - DMC Associate</label>
+        <queue>AC_DMC_Associate</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AC_DMC_Manager_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>AC - DMC Manager</label>
+        <queue>AC_DMC_Manager</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AC_DMC_Supervisor_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>AC - DMC Supervisor</label>
+        <queue>AC_DMC_Supervisor</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AC_Decision_Support_Manager_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>AC - Decision Support Manager</label>
+        <queue>AC_Decision_Support_Manager</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AC_Property_Marketer_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>AC - Property Marketer</label>
+        <queue>AC_Property_Marketer</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AllOpenCases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>Case_Sub_Group__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Workflow_Instance_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Case_Sub_Group__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Campaign_Workflow_Instance</value>
+        </filters>
+        <label>All Workflow Instance Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Approval_Tasks</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Campaign_Workflow_Template</value>
+        </filters>
+        <filters>
+            <field>Approval_Case__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Approval Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>Database_Analyst_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Database Analyst</label>
+        <queue>Database_Analyst</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Email_Specialist_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Email Specialist</label>
+        <queue>Email_Specialist</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MPE_Workflow_Template</fullName>
+        <booleanFilter>1 AND (2 or 3 or 4)</booleanFilter>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>Controlling_Anchored_Case__c</columns>
+        <columns>Target_Duration_Days__c</columns>
+        <columns>Target_Duration_Hours__c</columns>
+        <columns>Target_Duration_Minutes__c</columns>
+        <columns>Anchored__c</columns>
+        <columns>CASES.RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Case.Campaign_Workflow_Template</value>
+        </filters>
+        <filters>
+            <field>Predecessor_Task_To_Anchored_Case__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Successor_Task_To_Anchored_Case__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Anchored__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Workflow Template Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>MyCases</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>MyOpenCases</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Studio_Copywriter_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Studio Copywriter</label>
+        <queue>Studio_Copywriter</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Studio_T3_Production_Artist_Manager_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Studio T3 Production Artist Manager</label>
+        <queue>Studio_T3_Production_Artist_Manager</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Campaign_Project_Approval</fullName>
+        <active>true</active>
+        <businessProcess>Campaign Workflow</businessProcess>
+        <description>This record type is created for US 1397 . We need to change the record type of a casse when  case status changes to Approved</description>
+        <label>Campaign Project Approval</label>
+        <picklistValues>
+            <picklist>Approver_Role__c</picklist>
+            <values>
+                <fullName>Decision Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POD Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Marketer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Account Executive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Sub_Group__c</picklist>
+            <values>
+                <fullName>Close Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Merchandising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Review %26 Deploy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content and Design Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Design Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital QA and Close Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Kick Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Project Requirements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Tier 1 Content Development and Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 Prod Studio Content Development %26 Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Controlling_Anchored_Type__c</picklist>
+            <values>
+                <fullName>Approve Pro Forma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Requestor Confirms Receipt of Deliverables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drop Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Execute Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Revisions and Push Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prepare %26 Deploy Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Pro Forma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Role_Queue_Derivation__c</picklist>
+            <values>
+                <fullName>DMC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Generic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Role__c</picklist>
+            <values>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Database Analyst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POD Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Marketer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Account Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Copywriter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Tier 3 Production Artist</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Milestone__c</picklist>
+            <values>
+                <fullName>AEM Files Packaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Files to Vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Layout Built</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Counts Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM Drop Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EA Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Drop Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Proof Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pod Submitted Job</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proforma Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R%26R Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Campaign Project Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Art Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Job Start</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>Campaign Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proforma</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Campaign Project</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Scheduled_Through__c</picklist>
+            <values>
+                <fullName>Bus%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wkd%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Campaign Workflow Instance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Campaign_Project_Milestone</fullName>
+        <active>true</active>
+        <businessProcess>Campaign Project</businessProcess>
+        <compactLayoutAssignment>Campaign_Project_Milestone</compactLayoutAssignment>
+        <description>Case for Campaign Project. Mainly used to show the campaign project milestones</description>
+        <label>Campaign Project Milestone</label>
+        <picklistValues>
+            <picklist>Approver_Role__c</picklist>
+            <values>
+                <fullName>Decision Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POD Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Marketer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Account Executive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Sub_Group__c</picklist>
+            <values>
+                <fullName>Close Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Merchandising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Review %26 Deploy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content and Design Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Design Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital QA and Close Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Kick Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Project Requirements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Tier 1 Content Development and Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 Prod Studio Content Development %26 Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Controlling_Anchored_Type__c</picklist>
+            <values>
+                <fullName>Approve Pro Forma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Requestor Confirms Receipt of Deliverables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drop Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Execute Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Revisions and Push Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prepare %26 Deploy Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Pro Forma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Role_Queue_Derivation__c</picklist>
+            <values>
+                <fullName>DMC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Generic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Role__c</picklist>
+            <values>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Database Analyst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POD Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Marketer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Account Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Copywriter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Tier 3 Production Artist</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Milestone__c</picklist>
+            <values>
+                <fullName>AEM Files Packaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Files to Vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Layout Built</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Counts Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM Drop Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EA Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Drop Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Proof Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pod Submitted Job</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proforma Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R%26R Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Campaign Project Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Art Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Job Start</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>Campaign Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proforma</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Campaign Project</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Scheduled_Through__c</picklist>
+            <values>
+                <fullName>Bus%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wkd%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Campaign Project Milestone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campaign Workflow Instance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Campaign_Workflow_Instance</fullName>
+        <active>true</active>
+        <businessProcess>Campaign Workflow</businessProcess>
+        <description>Create a Case for a Campaign Workflow Instance</description>
+        <label>Campaign Workflow Instance</label>
+        <picklistValues>
+            <picklist>Approver_Role__c</picklist>
+            <values>
+                <fullName>Decision Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POD Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Marketer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Account Executive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Sub_Group__c</picklist>
+            <values>
+                <fullName>Close Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Merchandising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Review %26 Deploy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content and Design Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Design Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital QA and Close Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Kick Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Project Requirements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Tier 1 Content Development and Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 Prod Studio Content Development %26 Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Controlling_Anchored_Type__c</picklist>
+            <values>
+                <fullName>Approve Pro Forma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Requestor Confirms Receipt of Deliverables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drop Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Execute Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Revisions and Push Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prepare %26 Deploy Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Pro Forma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Role_Queue_Derivation__c</picklist>
+            <values>
+                <fullName>DMC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Generic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Role__c</picklist>
+            <values>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Database Analyst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POD Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Marketer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Account Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Copywriter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Tier 3 Production Artist</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Milestone__c</picklist>
+            <values>
+                <fullName>AEM Files Packaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Files to Vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Layout Built</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Counts Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM Drop Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EA Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Drop Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Proof Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pod Submitted Job</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proforma Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R%26R Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Campaign Project Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Art Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Job Start</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>Campaign Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proforma</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Campaign Project</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Scheduled_Through__c</picklist>
+            <values>
+                <fullName>Bus%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wkd%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Campaign Workflow Instance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Campaign_Workflow_Template</fullName>
+        <active>true</active>
+        <businessProcess>Campaign Workflow</businessProcess>
+        <description>Create a Case to use in a Campaign Workflow Template</description>
+        <label>Campaign Workflow Template</label>
+        <picklistValues>
+            <picklist>Approver_Role__c</picklist>
+            <values>
+                <fullName>Decision Support Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email QA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POD Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Marketer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Account Executive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Sub_Group__c</picklist>
+            <values>
+                <fullName>Close Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Merchandising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content Review %26 Deploy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Content and Design Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Design Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital QA and Close Out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Setup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Kick Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Project Requirements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Tier 1 Content Development and Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3 Prod Studio Content Development %26 Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Controlling_Anchored_Type__c</picklist>
+            <values>
+                <fullName>Approve Pro Forma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Requestor Confirms Receipt of Deliverables</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drop Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Execute Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Final Revisions and Push Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prepare %26 Deploy Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Pro Forma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Management</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Role_Queue_Derivation__c</picklist>
+            <values>
+                <fullName>DMC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Generic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Market</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Role__c</picklist>
+            <values>
+                <fullName>Analytics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Database Analyst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Campaign Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POD Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Property Marketer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Account Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Copywriter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Tier 3 Production Artist</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Milestone__c</picklist>
+            <values>
+                <fullName>AEM Files Packaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Files to Vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AEM Layout Built</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Counts Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM Drop Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EA Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Drop Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Job Start</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Proof Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pod Submitted Job</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proforma Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R%26R Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Campaign Project Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Project Kickoff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Art Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Job Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio Job Start</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Type__c</picklist>
+            <values>
+                <fullName>Campaign Project</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proforma</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Campaign Project</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Scheduled_Through__c</picklist>
+            <values>
+                <fullName>Bus%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wkd%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Campaign Workflow Template</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.PRIORITY</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.STATUS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.CASE_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.SUBJECT</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.STATUS</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.RECORDTYPE</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CASE_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.RECORDTYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

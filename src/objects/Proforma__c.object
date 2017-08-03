@@ -1,0 +1,2044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Campaign_Project_Proforma</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Admission_Multiplier__c</fullName>
+        <externalId>false</externalId>
+        <label>Admission Multiplier</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Admission_Tax_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Admission Tax</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Admission_Tax_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Admission Tax Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Admission_Tax__c</fullName>
+        <externalId>false</externalId>
+        <formula>(1+ Campaign_Project_Proforma__r.Admission_Multiplier__c)* Rated_Days__c * Campaign_Project_Proforma__r.Admission_Tax_Rate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Admission Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Average_Daily_Worth__c</fullName>
+        <externalId>false</externalId>
+        <label>Average Daily Worth</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Average_Length_of_Trips__c</fullName>
+        <externalId>false</externalId>
+        <label>Average Length of Trip</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bad_Debt_Expense_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Bad Debt Expense Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Bad_Debt_Expenses_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Bad Debt Expenses</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Bad_Debt_Expenses__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project_Proforma__r.Bad_Debt_Expense_Rate__c *  Table_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bad Debt Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Base_RC_Reinvestment_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Base RC Reinvestment</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Base_RC_Reinvestment__c</fullName>
+        <externalId>false</externalId>
+        <label>Base RC Reinvestment</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CCR_RR_Tax_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>CCR RR Tax</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CCR_Tax_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>CCR Tax Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Criteria__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Criteria</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Campaign_Project_Begin_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project__r.Valid_Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Project Begin Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Project_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Project Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Campaign_Project_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project__r.Valid_End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Project End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Project_Proforma__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign Project Proforma</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Proforma__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Campaign Project Proforma</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Proforma__c</referenceTo>
+        <relationshipLabel>Proformas</relationshipLabel>
+        <relationshipName>Proformas</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign Project</label>
+        <referenceTo>Campaign_Project__c</referenceTo>
+        <relationshipLabel>Proformas</relationshipLabel>
+        <relationshipName>Proformas</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Casino_Gifts_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Casino Gifts</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Casino_Gifts__c</fullName>
+        <externalId>false</externalId>
+        <label>Casino Gifts</label>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.GL_Code__c</field>
+            <operation>equals</operation>
+            <value>7000-105</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Coin_In_and_Table_Drop__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(Slot_Hold_Percent__c = 0,
+Table_Hold_Percent__c = 0), 
+0, Slot_Hold_Amount__c +  Table_Hold_Amount__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Coin In and Table Drop</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Coin_In_and_Table_Drop_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Coin In and Table Drop for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Comp_Airfare_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Comp Airfare</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Comp_Airfare__c</fullName>
+        <externalId>false</externalId>
+        <label>Comp Airfare</label>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.GL_Code__c</field>
+            <operation>equals</operation>
+            <value>6250-020</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Comp_Transportation_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Comp Transportation</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Comp_Transportation__c</fullName>
+        <externalId>false</externalId>
+        <label>Comp Transportation</label>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.GL_Code__c</field>
+            <operation>equals</operation>
+            <value>6250-000</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Contra_Expenses_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra Expenses (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contra_Expenses_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra Expenses (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contra_Expenses_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra Expenses (Layered)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contra_P_L_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra P/L (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contra_P_L_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra P/L (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contra_P_L_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra P/L (Layered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contra_P_L_per_player_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra P/L per player (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contra_P_L_per_player_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra P/L per player (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contra_P_L_per_player_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra P/L per player (Layered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contra_ROI_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra ROI% (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Contra_ROI_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra ROI% (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Contra_ROI_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra ROI% (Layered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Contra_ROS_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra ROS% (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Contra_ROS_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra ROS% (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Contra_ROS_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra ROS% (Layered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Contra_Revenue_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra Revenue (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contra_Revenue_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra Revenue (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contra_Revenue_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Contra Revenue (Layered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DMC_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Campaign_Project__r.Direct_Marketing_Center__r.DMC_Name__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DMC (Text)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_in_Event__c</fullName>
+        <externalId>false</externalId>
+        <label>Days in Event</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Direct_Mail_Advertising_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Direct Mail Advertising</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Direct_Mail_Advertising__c</fullName>
+        <description>Rollup summary of All Directly Mail Advertising GL Expenses</description>
+        <externalId>false</externalId>
+        <label>Direct Mail Advertising</label>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.GL_Code__c</field>
+            <operation>equals</operation>
+            <value>7285-000</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>F_B_Comp_Expense_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>F&amp;B Comp Expense Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>F_B_Comp_Expenses_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>F&amp;B Comp Expenses</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>F_B_Comp_Expenses__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project_Proforma__r.F_B_Comp_Expense_Rate__c *  Layered_GGR__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>F&amp;B Comp Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Fixed_Expenses_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Fixed Expenses</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Fixed_Expenses__c</fullName>
+        <externalId>false</externalId>
+        <label>Fixed Expenses</label>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.GL_Code__c</field>
+            <operation>equals</operation>
+            <value>7280-000,7300-100,7930-000,7940-000,8014-000,8018-000,8024-000,8070-225</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Giveaways_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Giveaways</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Giveaways__c</fullName>
+        <description>Summary of all expenses related to GL Accounts associated with Giveaways</description>
+        <externalId>false</externalId>
+        <label>Giveaways</label>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.GL_Code__c</field>
+            <operation>contains</operation>
+            <value>7000-000,7000-002,7000-130,7000-400,8070-285</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Individualized_Slot_Percent__c</fullName>
+        <externalId>false</externalId>
+        <label>Individualized Slot %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Individualized_Table__c</fullName>
+        <externalId>false</externalId>
+        <label>Individualized Table %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Layered_GGR__c</fullName>
+        <externalId>false</externalId>
+        <formula>Unique_Players__c * Average_Daily_Worth__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Layered GGR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Layered_GGR_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Layered GGR for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Market_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project__r.Market__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Market (Text)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Trips__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Trips</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Comp_Expense_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Comp Expense</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Other_Comp_Expense_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Comp Expense Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Other_Comp_Expenses__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project_Proforma__r.Other_Comp_Expense_Rate__c * Layered_GGR__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Other Comp Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Overall_Rate_of_Redemption__c</fullName>
+        <externalId>false</externalId>
+        <formula>Unique_Players__c / Total_Invitations_Sent__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Redemption %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>POD_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Campaign_Project__r.POD__r.POD_Name__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>POD (Text)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Past_Similar_Campaign_Projects__c</fullName>
+        <externalId>false</externalId>
+        <label>Past Similar Campaign Projects</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Postage_Freight_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Postage &amp; Freight</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Postage_Freight__c</fullName>
+        <externalId>false</externalId>
+        <label>Postage &amp; Freight</label>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.GL_Code__c</field>
+            <operation>equals</operation>
+            <value>8044-000</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Promo_Chips_Match_Play_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Promo Chips/Match Play</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Promo_Chips_Match_Play__c</fullName>
+        <externalId>false</externalId>
+        <label>Promo Chips/Match Play</label>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.GL_Code__c</field>
+            <operation>equals</operation>
+            <value>Promo Chips/Match Play</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Property__c</fullName>
+        <externalId>false</externalId>
+        <label>Property</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RC_Gift_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>RC Gift</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RC_Gift__c</fullName>
+        <externalId>false</externalId>
+        <label>RC Gift</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RC_Multiplier_Investment_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>RC Multiplier Investment</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RC_Multiplier_Investment__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText># of Multiplier</inlineHelpText>
+        <label>RC Multiplier Investment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RR_GV_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>RR/GV</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RR_GV__c</fullName>
+        <externalId>false</externalId>
+        <label>RR/GV</label>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.GL_Code__c</field>
+            <operation>equals</operation>
+            <value>RR/GV</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Rated_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>ROUND( Unique_Players__c *  Number_of_Trips__c  * Average_Length_of_Trips__c ,0)*(1- Redeemed_No_Rated_Play__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rated Days (less No Play)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rated_Days_less_No_Play_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Rated Days (less No Play) for Cust. Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Redeemed_No_Rated_Play__c</fullName>
+        <externalId>false</externalId>
+        <label>Redeemed No Rated Play %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Rep_Host_Commissions_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Rep &amp; Host Commissions Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Rep_and_Host_Commissions_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Rep and Host Commissions</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Rep_and_Host_Commissions__c</fullName>
+        <externalId>false</externalId>
+        <formula>Layered_GGR__c *  Campaign_Project_Proforma__r.Rep_Host_Commissions_Rate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rep &amp; Host Commissions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenues_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Revenue (Layered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Room_Comp_Expense_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Room Comp Expense</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Room_Comp_Expense_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Room Comp Expense Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Room_Comp_Expenses__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project_Proforma__r.Room_Comp_Expense_Rate__c *  Layered_GGR__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Room Comp Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Layered_GGR__c *  Individualized_Slot_Percent__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Slot Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Amount_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Slot Amount  for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Hold_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Slot_Hold_Percent__c = 0,0, Slot_Amount__c/ Slot_Hold_Percent__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Slot Hold Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Hold_Amount_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Slot Hold Amount  for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Hold_Percent__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project_Proforma__r.Slot_Hold__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Slot Hold %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Hold__c</fullName>
+        <externalId>false</externalId>
+        <label>Slot Hold %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Hold_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Slot Hold % for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Slot_Percent__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project_Proforma__r.Slot__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Slot %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>Layered_GGR__c *  Individualized_Slot_Percent__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Slot Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Revenue_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Slot Revenue  for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Tax_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Slot Tax</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Tax_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Slot Tax Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Slot_Tax__c</fullName>
+        <externalId>false</externalId>
+        <label>Slot Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Slot__c</fullName>
+        <externalId>false</externalId>
+        <label>Slot %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Slot_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Slot % for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Table_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Layered_GGR__c *  Individualized_Table__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Table Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Table_Amount_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Table Amount  for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Table_Hold_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Table_Hold_Percent__c = 0,0, Table_Amount__c /  Table_Hold_Percent__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Table Hold Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Table_Hold_Amount_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Table Hold Amount  for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Table_Hold_Percent__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project_Proforma__r.Table_Hold__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Table Hold %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Table_Hold__c</fullName>
+        <externalId>false</externalId>
+        <label>Table Hold %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Table_Hold_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Table Hold %  for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Table_Percent__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign_Project_Proforma__r.Table__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Table %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Table_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>Layered_GGR__c *  Individualized_Table__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Table Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Table_Revenue_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Table Revenue  for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Table_Tax_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Table Tax</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Table_Tax_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Table Tax Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Table_Tax__c</fullName>
+        <externalId>false</externalId>
+        <label>Table Tax</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Table__c</fullName>
+        <externalId>false</externalId>
+        <label>Table %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Table_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Table %  for Cust Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Casino_Expenses_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Gaming_Tax_Cust_Grps__c +
+ Base_RC_Reinvestment_Cust_Grps__c +
+ Admission_Tax_Cust_Grps__c +
+ Bad_Debt_Expenses_Cust_Grps__c +
+ Rep_and_Host_Commissions_Cust_Grps__c +
+ F_B_Comp_Expenses_Cust_Grps__c +
+ Room_Comp_Expense_Cust_Grps__c +
+ Other_Comp_Expense_Cust_Grps__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Casino Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Casino_Expenses__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Gaming_Tax__c + 
+ Base_RC_Reinvestment__c +
+ Bad_Debt_Expenses__c +
+ Admission_Tax__c +
+ Rep_and_Host_Commissions__c +
+ F_B_Comp_Expenses__c +
+ Room_Comp_Expenses__c +
+ Other_Comp_Expenses__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Casino Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Expenses_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Expenses (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Expenses_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Expenses (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Expenses_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Expenses (Layered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Expenses__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_RC_Reinvestment__c +
+ Direct_Mail_Advertising__c +
+ Postage_Freight__c +
+ RR_GV__c +
+ Promo_Chips_Match_Play__c +
+ Giveaways__c +
+ Casino_Gifts__c +
+ Comp_Transportation__c +
+ Comp_Airfare__c +
+ Variable_Expenses__c +
+ Fixed_Expenses__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Gaming_Tax_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Gaming Tax</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Gaming_Tax__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Gaming Tax</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Invitations_Sent__c</fullName>
+        <description>Sum of Invitation sent for each type</description>
+        <externalId>false</externalId>
+        <label>Total Invitations Sent</label>
+        <summarizedField>Invitations__c.Sent__c</summarizedField>
+        <summaryForeignKey>Invitations__c.Customer_Group_Proforma__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Invitations_Sent_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Invitations Sent for Cust. Groups</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Offer_Expenses_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_RC_Reinvestment_Cust_Grps__c +
+ Direct_Mail_Advertising_Cust_Grps__c +
+ Postage_Freight_Cust_Grps__c +
+ RR_GV_Cust_Grps__c +
+ Promo_Chips_Match_Play_Cust_Grps__c + 
+ Giveaways_Cust_Grps__c +
+ Casino_Gifts_Cust_Grps__c +
+ Comp_Transportation_Cust_Grps__c +
+ Comp_Airfare_Cust_Grps__c +
+ Variable_Expenses_Cust_Grps__c +
+ Fixed_Expenses_Cust_Grps__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Offer Expenses</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_P_L_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total P/L (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_P_L_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Total P/L (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_P_L_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total P/L (Layered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_P_L_per_player_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total P/L per player (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_P_L_per_player_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Total P/L per player (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_P_L_per_player_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total P/L per player (Layered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_RC_Reinvestment_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Total RC Reinvestment</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_RC_Reinvestment__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>RC Cost Multiplier</inlineHelpText>
+        <label>Total RC Reinvestment</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_ROI_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total ROI% (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_ROI_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Total ROI % (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_ROI_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total ROI % (Layered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_ROS_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total ROS % (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_ROS_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Total ROS % (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_ROS_Layered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total ROS % (Layered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Redemption_Prct_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Redemption % for Cust. Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Redemption__c</fullName>
+        <externalId>false</externalId>
+        <formula>ROUND( Unique_Players__c *  Number_of_Trips__c ,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Redemption</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Redemption_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Redemption for Cust. Grps.</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Revenue_Delayered__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Revenue (Delayered)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Revenue_Incremental__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Revenue (Incremental)</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unique_Players_Total_for_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Unique Players (Total) for Cust. Grps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unique_Players__c</fullName>
+        <description>Sum of all invitation type redemptions.</description>
+        <externalId>false</externalId>
+        <label>Unique Players</label>
+        <summarizedField>Invitations__c.of_Responders__c</summarizedField>
+        <summaryForeignKey>Invitations__c.Customer_Group_Proforma__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Variable_Expenses_Cust_Grps__c</fullName>
+        <externalId>false</externalId>
+        <label>Variable Expenses</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Variable_Expenses__c</fullName>
+        <externalId>false</externalId>
+        <label>Variable Expenses</label>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.GL_Code__c</field>
+            <operation>contains</operation>
+            <value>3099-300,6200-000,6210-000,6220-000,6240-000,6240-015,6240-040,6240-050,6240-110,6260-000,6260-010,6260-020,6260-040,Other Expenses</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Proforma</label>
+    <listViews>
+        <fullName>AC_DSM_Proforma_Proforma</fullName>
+        <filterScope>Queue</filterScope>
+        <label>AC - Decision Support Managers</label>
+        <queue>AC_DSM_Proforma</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AC_POD_MKTMGR_Proforma_Proforma</fullName>
+        <filterScope>Queue</filterScope>
+        <label>AC - POD Market Manager</label>
+        <queue>AC_POD_MKTMGR_Proforma</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Campaign_Project_Proforma_RT</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Proforma__c.Campaign_Project_Proforma</value>
+        </filters>
+        <label>Campaign Project Proforma RT</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PR-{0000}</displayFormat>
+        <label>Proforma Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Proformas</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Campaign_Project_Proforma</fullName>
+        <active>true</active>
+        <label>Campaign Project Proforma</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Customer_Group_Proforma</fullName>
+        <active>true</active>
+        <label>Customer Group Proforma</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Campaign_Project__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

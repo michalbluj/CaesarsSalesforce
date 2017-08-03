@@ -1,0 +1,2237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Campaign_Project</fullName>
+        <fields>Campaign_Label__c</fields>
+        <fields>Valid_Start_Date__c</fields>
+        <fields>Valid_End_Date__c</fields>
+        <fields>Market__c</fields>
+        <fields>Creative_Tier__c</fields>
+        <label>Campaign Project</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>APS_Program__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>APS Program</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Of_Participants__c</fullName>
+        <description>Actual # Of Participants</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Actual # Of Participants</inlineHelpText>
+        <label>Actual # Of Participants</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Campaign_Label__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( CONTAINS(RecordType.Name , &apos;Standalone Creative&apos;) , &apos;C&apos;, &apos;S&apos;) +
+TEXT( YEAR(Valid_Start_Date__c)) +
+TEXT(  Creative_Tier__c ) +
+&apos;_&apos; +
+TEXT( Market__r.Market_Code__c ) + 
+&apos;_&apos; +
+ Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Label</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Campaign_Project_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to case associated with this campaign in order to show the milestones</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to case associated with this campaign in order to show the milestones</inlineHelpText>
+        <label>Campaign Project Milestones</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Campaign Projects</relationshipLabel>
+        <relationshipName>Campaign_Projects</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Project_Type__c</fullName>
+        <description>Campaign Type</description>
+        <externalId>false</externalId>
+        <label>Campaign Project Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Standard</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Creative Standalone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Redemption_Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Redemption Channel</label>
+        <picklist>
+            <picklistValues>
+                <fullName>PlaybyTR-Mobile messaging</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hotel System</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Table Voucher</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Total Rewards.com</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Play by TR - Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telemarketing (Host)-Outbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Call Center - Inbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 line reader (slot Machine)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PRISM display (slot Machine)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TotalRewards.com</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Time Valid</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Duration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Creative_Brief_Required__c</fullName>
+        <description>Indicate if creative brief is required</description>
+        <externalId>false</externalId>
+        <inlineHelpText>N/A: T3
+Studio: T1 or T2
+Digital: 
+Digital &amp; Studio : T1 or T2</inlineHelpText>
+        <label>Creative Brief Required</label>
+        <picklist>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Studio_Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Creative_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Creative Required</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Creative Required</inlineHelpText>
+        <label>Studio Creative Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Creative_Tier__c</fullName>
+        <description>Creative Tier</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Creative Tier</inlineHelpText>
+        <label>Creative Tier</label>
+        <picklist>
+            <controllingField>Creative_Brief_Required__c</controllingField>
+            <picklistValues>
+                <fullName>T1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Studio</controllingFieldValues>
+                <controllingFieldValues>Studio_Digital</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T2</fullName>
+                <default>false</default>
+                <controllingFieldValues>Studio</controllingFieldValues>
+                <controllingFieldValues>Studio_Digital</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T3</fullName>
+                <default>false</default>
+                <controllingFieldValues>N/A</controllingFieldValues>
+                <controllingFieldValues>Studio</controllingFieldValues>
+                <controllingFieldValues>Studio_Digital</controllingFieldValues>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DMC_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Direct_Marketing_Center__r.DMC_Name__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DMC (Text)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delivery_Channel__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Delivery_Channel</globalPicklist>
+        <label>Campaign Delivery Channel</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Direct_Mail_Drop_Date__c</fullName>
+        <description>Drop Date for Direct Mail</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Drop Date for Direct Mail</inlineHelpText>
+        <label>Campaign Direct Mail Drop Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Direct_Mail_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Direct Mail Required. If checked, additional details will be required</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Direct Mail Required. If checked, additional details will be required</inlineHelpText>
+        <label>Direct Mail Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Direct_Marketing_Center__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Direct Marketing Center (DMC)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Direct Marketing Center (DMC)</inlineHelpText>
+        <label>Direct Marketing Center</label>
+        <referenceTo>Direct_Marketing_Center__c</referenceTo>
+        <relationshipLabel>Campaign Projects</relationshipLabel>
+        <relationshipName>Campaign_Projects</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Disclaimer__c</fullName>
+        <description>Disclaimer</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Disclaimer</inlineHelpText>
+        <label>Disclaimer</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Email_Drop_Date__c</fullName>
+        <description>Drop date for Campaign Email</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Drop date for Campaign Email</inlineHelpText>
+        <label>Campaign Email Drop Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Email_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicate  if Email Setting is required. Check if Email channel is selected</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate  if Email Setting is required. Check if Email channel is selected</inlineHelpText>
+        <label>Email Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event_Activity_Information__c</fullName>
+        <description>Event Activity Information</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Event Activity Information</inlineHelpText>
+        <label>Event Activity Information</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Event_Announcement_Review_Notes__c</fullName>
+        <description>Event Announcement Review Notes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Event Announcement Review Notes</inlineHelpText>
+        <label>Event Announcement Review Notes</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Event_Announcement_Title__c</fullName>
+        <description>Event Announcement Title</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Event Announcement Title</inlineHelpText>
+        <label>Event Announcement Title</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Event_Contact__c</fullName>
+        <description>Event Contact</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Event Contact</inlineHelpText>
+        <label>Event Contact</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Criteria__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Criteria</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Event_Details_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Event Details Required</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Event Details Required</inlineHelpText>
+        <label>Event Details Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event_Details__c</fullName>
+        <description>Event Details</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Event Details</inlineHelpText>
+        <label>Event Details</label>
+        <length>1500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Event_Expiration_Date__c</fullName>
+        <description>Latest date encompassed in the event schedule</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Latest date encompassed in the event schedule</inlineHelpText>
+        <label>Event Expiration Date</label>
+        <summarizedField>Campaign_Project_Event_Date__c.Event_Date__c</summarizedField>
+        <summaryForeignKey>Campaign_Project_Event_Date__c.Campaign_Project__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Event_Setup_and_Preparation_Notes__c</fullName>
+        <description>Event Setup and Preparation Notes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Event Setup and Preparation Notes</inlineHelpText>
+        <label>Event Setup and Preparation Notes</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Event_Valid_Date__c</fullName>
+        <description>Earliest date encompassed in the event schedule</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Earliest date encompassed in the event schedule</inlineHelpText>
+        <label>Event Valid Date</label>
+        <summarizedField>Campaign_Project_Event_Date__c.Event_Date__c</summarizedField>
+        <summaryForeignKey>Campaign_Project_Event_Date__c.Campaign_Project__c</summaryForeignKey>
+        <summaryOperation>min</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Expected_of_Participants__c</fullName>
+        <description>Expected # of Participants</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expected # of Participants</inlineHelpText>
+        <label>Expected # of Participants</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guest_Viewable_Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Guest Viewable Channel</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PRISM display (slot Machine)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SMS (text messaging)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TotalRewards.com</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Market_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>Market__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Market (Text)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Market__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Market (Campaign and Marketing)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Market (Campaign and Marketing)</inlineHelpText>
+        <label>Market</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Market__c.Active_Flag__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Market__c</referenceTo>
+        <relationshipLabel>Campaign Projects</relationshipLabel>
+        <relationshipName>Campaign_Projects</relationshipName>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Properties__c</fullName>
+        <description>Number of Properties associated with this campaign project</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of Properties associated with this campaign project</inlineHelpText>
+        <label>Number of Properties</label>
+        <summaryForeignKey>Campaign_Project_Property__c.Campaign_Project__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>POD_Leadership_Review_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>POD Leadership Review Required?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>POD_Specialist_Role__c</fullName>
+        <description>The queue for the POD specialist assigned to this campaign</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The queue for the POD specialist assigned to this campaign</inlineHelpText>
+        <label>POD Specialist Role</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>POD_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(POD__r.POD_Name__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>POD (Text)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>POD__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>POD</description>
+        <externalId>false</externalId>
+        <inlineHelpText>POD</inlineHelpText>
+        <label>POD</label>
+        <referenceTo>POD__c</referenceTo>
+        <relationshipLabel>Campaign Projects</relationshipLabel>
+        <relationshipName>Campaign_Projects</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Property_Marketer_Approval_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Property Marketer Approval Required?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reference_Previous_Project_Name__c</fullName>
+        <description>Reference Previous Project Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference Previous Project Name</inlineHelpText>
+        <label>Reference Previous Project Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Regulatory_Approval_Code__c</fullName>
+        <description>Regulatory Approval Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Regulatory Approval Code</inlineHelpText>
+        <label>Regulatory Approval Code</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reservation_Phone_Number__c</fullName>
+        <description>Reservation Phone Number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reservation Phone Number</inlineHelpText>
+        <label>Reservation Phone Number</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Rules_Regulations__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicate if there are any state rules or regulations required</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate if there are any state rules or regulations required</inlineHelpText>
+        <label>Rules &amp; Regulations</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sample_Images_Attached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Sample Images Attached</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sample Images Attached</inlineHelpText>
+        <label>Sample Images Attached</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Selling_Point1__c</fullName>
+        <description>Selling point for event notification</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selling point for event notification</inlineHelpText>
+        <label>Selling Point1</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Selling_Point2__c</fullName>
+        <description>Selling point for event notification</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selling point for event notification</inlineHelpText>
+        <label>Selling Point2</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Selling_Point3__c</fullName>
+        <description>Selling point for event notification</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selling point for event notification</inlineHelpText>
+        <label>Selling Point3</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Live</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wrap Up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Void</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DMC Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>POD Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Studio_Account_Exec_Approval_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Studio Account Exec Approval Required?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Studio_Copywriting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Studio Copywriting</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Studio Copywriting</inlineHelpText>
+        <label>Studio Copywriting</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Studio_Markup_Attached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Studio Markup PDF(s) Attached?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Studio Markup PDF(s) Attached?</inlineHelpText>
+        <label>Studio Markup Attached</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Studio_Notes__c</fullName>
+        <description>Studio Notes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Studio Notes</inlineHelpText>
+        <label>Studio Notes</label>
+        <length>1200</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Studio_Project_Tier__c</fullName>
+        <description>Studio Project Tier</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Studio Project Tier</inlineHelpText>
+        <label>Studio Project Tier</label>
+        <picklist>
+            <controllingField>Creative_Required__c</controllingField>
+            <picklistValues>
+                <fullName>T1</fullName>
+                <default>false</default>
+                <controllingFieldValues>checked</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T2</fullName>
+                <default>false</default>
+                <controllingFieldValues>checked</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T3</fullName>
+                <default>false</default>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Studio_Ship_Date__c</fullName>
+        <description>Studio Ship Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Studio Ship Date</inlineHelpText>
+        <label>Studio Ship Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ticket_Price__c</fullName>
+        <description>Ticket Price</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Ticket Price</inlineHelpText>
+        <label>Ticket Price</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Translation_Needed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Translation Needed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Translation Needed</inlineHelpText>
+        <label>Translation Needed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Valid_End_Date__c</fullName>
+        <description>Valid End Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Valid End Date</inlineHelpText>
+        <label>Campaign Valid End Date</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Valid_End_Hour__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Hour</globalPicklist>
+        <label>Campaign Valid End Hour</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Valid_End_Minute__c</fullName>
+        <description>Valid End Minute</description>
+        <externalId>false</externalId>
+        <globalPicklist>Minute_Offer</globalPicklist>
+        <inlineHelpText>Valid End Minute</inlineHelpText>
+        <label>Campaign Valid End Minute</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Valid_Start_Date__c</fullName>
+        <description>Valid Start Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Valid Start Date</inlineHelpText>
+        <label>Campaign Valid Start Date</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Valid_Start_Hour__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Hour</globalPicklist>
+        <label>Campaign Valid Start Hour</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Valid_Start_Minute__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Minute_Offer</globalPicklist>
+        <label>Campaign Valid Start Minute</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Vendor_Rejected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Vendor Rejected</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Vendor_Rejection_Reason__c</fullName>
+        <description>Vendor Rejection Reasons</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Vendor Rejection Reasons</inlineHelpText>
+        <label>Vendor Rejection Reason</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <label>Campaign Project</label>
+    <listViews>
+        <fullName>ACM_DNC_Campaign_Project</fullName>
+        <filterScope>Queue</filterScope>
+        <label>ACM - DMC</label>
+        <queue>ACM_DMC_CP</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>ACM_POD_Manager_CP_Campaign_Project</fullName>
+        <filterScope>Queue</filterScope>
+        <label>ACM - POD Manager</label>
+        <queue>ACM_POD_Manager_CP</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Campaign_Label__c</columns>
+        <columns>Market__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Valid_Start_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Market_Text__c</field>
+            <operation>equals</operation>
+            <value>ACM</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Marketing_Calendar_2017_Atlantic_Cit</fullName>
+        <columns>NAME</columns>
+        <filterScope>Mine</filterScope>
+        <label>Marketing Calendar - 2017 - AC</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CP{00000000}</displayFormat>
+        <label>Campaign Project Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Campaign Projects</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Draft</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Campaign_Project</compactLayoutAssignment>
+        <description>Campaign Project in Draft Status</description>
+        <label>Draft</label>
+        <picklistValues>
+            <picklist>Campaign_Project_Type__c</picklist>
+            <values>
+                <fullName>Creative Standalone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign_Redemption_Channel__c</picklist>
+            <values>
+                <fullName>2 line reader %28slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call Center - Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM display %28slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR - Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PlaybyTR-Mobile messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Table Voucher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telemarketing %28Host%29-Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Total Rewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duration</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Creative_Brief_Required__c</picklist>
+            <values>
+                <fullName>Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Studio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio %26 Digital</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Creative_Tier__c</picklist>
+            <values>
+                <fullName>T1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Delivery_Channel</picklist>
+            <values>
+                <fullName>Advertise in Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decile Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - iGames</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Downloadable FSP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR app - Mobile messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR app - Push Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telemarketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eReel Rewards %28PRISM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iCRM %28PRISM%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Guest_Viewable_Channel__c</picklist>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM display %28slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28text messaging%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hour</picklist>
+            <values>
+                <fullName>1 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9 pm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Minute_Offer</picklist>
+            <values>
+                <fullName>00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrap Up</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Studio_Project_Tier__c</picklist>
+            <values>
+                <fullName>T1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Campaign_Project</compactLayoutAssignment>
+        <description>Standard Campaign Project</description>
+        <label>Standard</label>
+        <picklistValues>
+            <picklist>Campaign_Project_Type__c</picklist>
+            <values>
+                <fullName>Creative Standalone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign_Redemption_Channel__c</picklist>
+            <values>
+                <fullName>2 line reader %28slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call Center - Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM display %28slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR - Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PlaybyTR-Mobile messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Table Voucher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telemarketing %28Host%29-Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Total Rewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign__c</picklist>
+            <values>
+                <fullName>Daily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duration</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Creative_Brief_Required__c</picklist>
+            <values>
+                <fullName>Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Studio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Studio %26 Digital</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Creative_Tier__c</picklist>
+            <values>
+                <fullName>T1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Delivery_Channel</picklist>
+            <values>
+                <fullName>Advertise in Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decile Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - iGames</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Downloadable FSP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR app - Mobile messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR app - Push Notification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telemarketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eReel Rewards %28PRISM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iCRM %28PRISM%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Guest_Viewable_Channel__c</picklist>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM display %28slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28text messaging%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hour</picklist>
+            <values>
+                <fullName>1 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8 pm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9 am</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9 pm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Minute_Offer</picklist>
+            <values>
+                <fullName>00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrap Up</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Studio_Project_Tier__c</picklist>
+            <values>
+                <fullName>T1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Market__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+</CustomObject>

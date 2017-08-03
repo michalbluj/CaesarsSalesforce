@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Active Flag</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Active Flag</inlineHelpText>
+        <label>Active Flag</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Direct_Marketing_Center__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Direct Marketing Center</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Direct Marketing Center</inlineHelpText>
+        <label>Direct Marketing Center</label>
+        <referenceTo>Direct_Marketing_Center__c</referenceTo>
+        <relationshipLabel>Market</relationshipLabel>
+        <relationshipName>Market</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <description>For use in data migrations.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Market_Code__c</fullName>
+        <description>Market Code</description>
+        <externalId>false</externalId>
+        <globalPicklist>Market</globalPicklist>
+        <label>Market Code</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>POD__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>POD associated with this market</description>
+        <externalId>false</externalId>
+        <inlineHelpText>POD associated with this market</inlineHelpText>
+        <label>POD</label>
+        <referenceTo>POD__c</referenceTo>
+        <relationshipLabel>Market</relationshipLabel>
+        <relationshipName>Market</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Time_Zone__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Time_Zone</globalPicklist>
+        <label>Time Zone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Market</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>External_ID__c</columns>
+        <columns>NAME</columns>
+        <columns>Description__c</columns>
+        <columns>Market_Code__c</columns>
+        <columns>POD__c</columns>
+        <columns>Direct_Marketing_Center__c</columns>
+        <columns>Active_Flag__c</columns>
+        <columns>Time_Zone__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Market</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

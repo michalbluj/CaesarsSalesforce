@@ -1,0 +1,76 @@
+/**
+ * Created by ceezar on 31.07.2017.
+ */
+
+public with sharing class ApPdbTripCms extends ExternalObjectResponse implements ExternalObjectInterface{
+
+    public List<Record> body {get; set;}
+
+    public class Record {
+        public String id {get; set;}
+
+        public final Integer ap_pdb_trip_hdr_fk {get; set;}
+        public final String c_prop_market_cd {get; set;}
+        public final String c_quality_cd {get; set;}
+        public final String contact_fk {get; set;}
+        public final String d_end_dt {get; set;}
+        public final String d_start_dt {get; set;}
+        public final String d_timestamp {get; set;}
+        public final Decimal f_actual_all {get; set;}
+        public final Decimal f_actual_game {get; set;}
+        public final Decimal f_actual_oth {get; set;}
+        public final Decimal f_actual_slot {get; set;}
+        public final Decimal f_comp_worth {get; set;}
+        public final Decimal f_theo_all {get; set;}
+        public final Decimal f_theo_game {get; set;}
+        public final Decimal f_theo_oth {get; set;}
+        public final Decimal f_theo_slot {get; set;}
+        public final String i_ap_pdb_trip_id {get; set;}
+        public final Integer i_comped_trip {get; set;}
+        public final String i_dmid {get; set;}
+        public final Integer i_nbr_trip_game {get; set;}
+        public final Integer i_nbr_trip_oth {get; set;}
+        public final Integer i_nbr_trip_slot {get; set;}
+        public final Integer i_prop_market_type_id {get; set;}
+        public final Integer i_rated_days {get; set;}
+        public final Integer i_rated_trips {get; set;}
+        public final String market_fk {get; set;}
+    }
+
+    public List<Map<String, Object>> populateData(List<Map<String, Object>> rows) {
+        for (ApPdbTripCms.Record wrapper : this.body) {
+            Map<String, Object> row = new Map<String, Object>();
+            row.put('id', wrapper.id);
+            row.put('ExternalId', wrapper.id);
+            row.put('DisplayUrl', wrapper.id);
+            row.put('ap_pdb_trip_hdr_fk', wrapper.ap_pdb_trip_hdr_fk);
+            row.put('c_prop_market_cd', wrapper.c_prop_market_cd);
+            row.put('c_quality_cd', wrapper.c_quality_cd);
+            row.put('contact_fk', wrapper.contact_fk);
+            row.put('d_end_dt', wrapper.d_end_dt);
+            row.put('d_start_dt', wrapper.d_start_dt);
+            row.put('d_timestamp', wrapper.d_timestamp);
+            row.put('f_actual_all', wrapper.f_actual_all);
+            row.put('f_actual_game', wrapper.f_actual_game);
+            row.put('f_actual_oth', wrapper.f_actual_oth);
+            row.put('f_actual_slot', wrapper.f_actual_slot);
+            row.put('f_comp_worth', wrapper.f_comp_worth);
+            row.put('f_theo_all', wrapper.f_theo_all);
+            row.put('f_theo_game', wrapper.f_theo_game);
+            row.put('f_theo_oth', wrapper.f_theo_oth);
+            row.put('f_theo_slot', wrapper.f_theo_slot);
+            row.put('i_ap_pdb_trip_id', wrapper.i_ap_pdb_trip_id);
+            row.put('i_comped_trip', wrapper.i_comped_trip);
+            row.put('i_dmid', wrapper.i_dmid);
+            row.put('i_nbr_trip_game', wrapper.i_nbr_trip_game);
+            row.put('i_nbr_trip_oth', wrapper.i_nbr_trip_oth);
+            row.put('i_nbr_trip_slot', wrapper.i_nbr_trip_slot);
+            row.put('i_prop_market_type_id', wrapper.i_prop_market_type_id);
+            row.put('i_rated_days', wrapper.i_rated_days);
+            row.put('i_rated_trips', wrapper.i_rated_trips);
+            row.put('market_fk', wrapper.market_fk);
+            rows.add(row);
+        }
+        return rows;
+    }
+}

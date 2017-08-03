@@ -1,0 +1,2128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Dynamic_Config</fullName>
+        <fields>Configuration_Category__c</fields>
+        <fields>Configuration_Subcategory__c</fields>
+        <label>Dynamic Config</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Offer Incentive Dynamic Configuration - 
+Dynamic Qualification Rule
+Dynamic Value Rule
+Dynamic Treatment Rule
+     Viewable channel
+     Redemption channel
+     Delivery channel 
+     Booking channel 
+     Booking Phone 
+     Blackout dates</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Condition__c</fullName>
+        <description>Condition for dynamic configuration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Condition for dynamic configuration
+Use comma to separate multiple values</inlineHelpText>
+        <label>Condition</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Configuration_Category__c</fullName>
+        <description>Offer Incentive Dynamic Configuration Category</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Incentive Dynamic Configuration Category</inlineHelpText>
+        <label>Configuration Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Qualification Rule</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Value Rule</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Treatment Rule</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Configuration_Subcategory__c</fullName>
+        <description>Offer Incentive Dynamic Configuration Subcategory</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Incentive Dynamic Configuration Subcategory</inlineHelpText>
+        <label>Configuration Subcategory</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Viewable Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Redemption Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delivery Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Booking Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Booking Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blackout Dates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Configuration_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>&apos;&apos; + text(Configuration_Category__c)  + &apos; &apos; +  IF(isblank(text(Configuration_Subcategory__c)), &apos;&apos;, ( &apos; (&apos; + text(Configuration_Subcategory__c)+ &apos;)&apos; ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Configuration Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Default__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If check, this rule will be applied as default. The condition in this rule will be ignored</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If check, this rule will be applied as default. The condition in this rule will be ignored</inlineHelpText>
+        <label>Default?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Factor__c</fullName>
+        <description>Factor to calculate Value</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Factor to calculate Value</inlineHelpText>
+        <label>Factor</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Function__c</fullName>
+        <description>Function used to calculate the value</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Function used to calculate the value</inlineHelpText>
+        <label>Function</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Addition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Subtraction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multiplication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Division</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Guest_Attribute_Base__c</fullName>
+        <description>Guest Attribute Base</description>
+        <externalId>false</externalId>
+        <globalPicklist>Guest_Attribute_Base</globalPicklist>
+        <inlineHelpText>Guest Attribute Base</inlineHelpText>
+        <label>Guest Attribute Base</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Label__c</fullName>
+        <externalId>false</externalId>
+        <formula>If (Default__c, &apos;DEFAULT&apos;, 
+
+IF( ISBLANK( Text(Function__c)  ) , ( &apos; &apos; + TEXT(Guest_Attribute_Base__c)  + &apos; &apos; +  TEXT(Operator__c) + &apos; &apos; + Condition__c ), ( &apos; &apos; +  TEXT(Factor__c)  + &apos; &apos; +  Text(Function__c)  + &apos; &apos; +  TEXT(Guest_Attribute_Base__c)  ))
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Label</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Max Value</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Min_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Min Value</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Offer_Incentive__c</fullName>
+        <description>Offer Incentive</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Offer Incentive</inlineHelpText>
+        <label>Offer Incentive</label>
+        <referenceTo>Offer_Incentive__c</referenceTo>
+        <relationshipLabel>Offer Incentive Dynamic Configuration</relationshipLabel>
+        <relationshipName>Offer_Incentive_Dynamic_Configuration</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Operator__c</fullName>
+        <description>Operator used for dynamic configuration</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Operator used for dynamic configuration</inlineHelpText>
+        <label>Operator</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Greater Than</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greater</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Equal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Smaller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Smaller Than</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Between</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <description>Higher the number, the higher priority on this rule</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Higher the number, the higher priority on this rule</inlineHelpText>
+        <label>Priority</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Testing__c</fullName>
+        <externalId>false</externalId>
+        <label>Testing</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Value_Rule_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Value Rule Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Variable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Value_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Value Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Percentage Off</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Value</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Viewable_Channel__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Viewable_Channel</globalPicklist>
+        <label>Viewable Channel</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <label>Offer Incentive Dynamic Configuration</label>
+    <nameField>
+        <displayFormat>OID-{0000000000}</displayFormat>
+        <label>Configuration ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Offer Incentive Dynamic Configuration</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Qualification_Rule</fullName>
+        <active>true</active>
+        <description>Optional rules to qualify if the customer is qualified for the incentive</description>
+        <label>2. Qualification Rule</label>
+        <picklistValues>
+            <picklist>Configuration_Category__c</picklist>
+            <values>
+                <fullName>Qualification Rule</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Configuration_Subcategory__c</picklist>
+            <values>
+                <fullName>Blackout Dates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Booking Channel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Booking Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Channel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Redemption Channel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viewable Channel</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Function__c</picklist>
+            <values>
+                <fullName>%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%2F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Guest_Attribute_Base</picklist>
+            <values>
+                <fullName>ADW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>%3C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3C%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Between</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A %26 B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Rule_Type__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Variable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Type__c</picklist>
+            <values>
+                <fullName>Percentage Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Viewable_Channel</picklist>
+            <values>
+                <fullName>2 Line Reader %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM Display %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28Text Messaging%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Treatment_Rule_Blackout_Date</fullName>
+        <active>true</active>
+        <description>Optional Treatment Rule - Blackout Date</description>
+        <label>3. Treatment Rule - Blackout Date</label>
+        <picklistValues>
+            <picklist>Configuration_Category__c</picklist>
+            <values>
+                <fullName>Treatment Rule</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Configuration_Subcategory__c</picklist>
+            <values>
+                <fullName>Blackout Dates</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Function__c</picklist>
+            <values>
+                <fullName>%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%2F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Guest_Attribute_Base</picklist>
+            <values>
+                <fullName>ADW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>%3C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3C%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Between</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A %26 B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Rule_Type__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Variable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Type__c</picklist>
+            <values>
+                <fullName>Percentage Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Viewable_Channel</picklist>
+            <values>
+                <fullName>2 Line Reader %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM Display %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28Text Messaging%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Treatment_Rule_Booking_Phone</fullName>
+        <active>true</active>
+        <description>Optional Treatment Rule - Booking Phone</description>
+        <label>3. Treatment Rule - Booking Phone</label>
+        <picklistValues>
+            <picklist>Configuration_Category__c</picklist>
+            <values>
+                <fullName>Treatment Rule</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Configuration_Subcategory__c</picklist>
+            <values>
+                <fullName>Booking Phone</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Function__c</picklist>
+            <values>
+                <fullName>%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%2F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Guest_Attribute_Base</picklist>
+            <values>
+                <fullName>ADW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>%3C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3C%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Between</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A %26 B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Rule_Type__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Variable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Type__c</picklist>
+            <values>
+                <fullName>Percentage Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Viewable_Channel</picklist>
+            <values>
+                <fullName>2 Line Reader %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM Display %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28Text Messaging%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Treatment_Rule_Booking_channel</fullName>
+        <active>true</active>
+        <description>Optional Treatment Rule - Booking channel</description>
+        <label>3. Treatment Rule - Booking channel</label>
+        <picklistValues>
+            <picklist>Configuration_Category__c</picklist>
+            <values>
+                <fullName>Treatment Rule</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Configuration_Subcategory__c</picklist>
+            <values>
+                <fullName>Booking Channel</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Function__c</picklist>
+            <values>
+                <fullName>%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%2F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Guest_Attribute_Base</picklist>
+            <values>
+                <fullName>ADW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>%3C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3C%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Between</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A %26 B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Rule_Type__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Variable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Type__c</picklist>
+            <values>
+                <fullName>Percentage Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Viewable_Channel</picklist>
+            <values>
+                <fullName>2 Line Reader %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM Display %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28Text Messaging%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Treatment_Rule_Communication_channel</fullName>
+        <active>true</active>
+        <description>Optional Treatment Rule - Communication channel</description>
+        <label>3. Treatment Rule - Communication channel</label>
+        <picklistValues>
+            <picklist>Configuration_Category__c</picklist>
+            <values>
+                <fullName>Treatment Rule</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Configuration_Subcategory__c</picklist>
+            <values>
+                <fullName>Delivery Channel</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Function__c</picklist>
+            <values>
+                <fullName>%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%2F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Guest_Attribute_Base</picklist>
+            <values>
+                <fullName>ADW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>%3C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3C%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Between</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A %26 B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Rule_Type__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Variable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Type__c</picklist>
+            <values>
+                <fullName>Percentage Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Viewable_Channel</picklist>
+            <values>
+                <fullName>2 Line Reader %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM Display %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28Text Messaging%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Treatment_Rule_Redemption_channel</fullName>
+        <active>true</active>
+        <description>Optional Treatment Rule - Redemption channel</description>
+        <label>3. Treatment Rule - Redemption channel</label>
+        <picklistValues>
+            <picklist>Configuration_Category__c</picklist>
+            <values>
+                <fullName>Treatment Rule</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Configuration_Subcategory__c</picklist>
+            <values>
+                <fullName>Redemption Channel</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Function__c</picklist>
+            <values>
+                <fullName>%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%2F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Guest_Attribute_Base</picklist>
+            <values>
+                <fullName>ADW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>%3C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3C%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Between</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A %26 B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Rule_Type__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Variable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Type__c</picklist>
+            <values>
+                <fullName>Percentage Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Viewable_Channel</picklist>
+            <values>
+                <fullName>2 Line Reader %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM Display %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28Text Messaging%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Treatment_Rule_Viewable_channel</fullName>
+        <active>true</active>
+        <description>Treatment Rule - Viewable channel</description>
+        <label>3. Treatment Rule - Viewable channel</label>
+        <picklistValues>
+            <picklist>Configuration_Category__c</picklist>
+            <values>
+                <fullName>Treatment Rule</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Configuration_Subcategory__c</picklist>
+            <values>
+                <fullName>Viewable Channel</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Function__c</picklist>
+            <values>
+                <fullName>%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%2F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Guest_Attribute_Base</picklist>
+            <values>
+                <fullName>ADW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>%3C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3C%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Between</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A %26 B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Rule_Type__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Variable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Type__c</picklist>
+            <values>
+                <fullName>Percentage Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Viewable_Channel</picklist>
+            <values>
+                <fullName>2 Line Reader %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM Display %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28Text Messaging%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Value_Rule</fullName>
+        <active>true</active>
+        <description>Required rules to identify the value of this incentive</description>
+        <label>1. Value Rule</label>
+        <picklistValues>
+            <picklist>Configuration_Category__c</picklist>
+            <values>
+                <fullName>Value Rule</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Configuration_Subcategory__c</picklist>
+            <values>
+                <fullName>Blackout Dates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Booking Channel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Booking Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivery Channel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Redemption Channel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viewable Channel</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Function__c</picklist>
+            <values>
+                <fullName>%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%2F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>-</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Guest_Attribute_Base</picklist>
+            <values>
+                <fullName>ADW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>%3C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3C%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Between</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Testing__c</picklist>
+            <values>
+                <fullName>A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A %26 B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Rule_Type__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Variable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Value_Type__c</picklist>
+            <values>
+                <fullName>Percentage Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Viewable_Channel</picklist>
+            <values>
+                <fullName>2 Line Reader %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatbot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Table</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM Display %28Slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28Text Messaging%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Social</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TotalRewards%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yelp</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>
