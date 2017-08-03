@@ -46,7 +46,12 @@ public with sharing class GuestTableRatingDetail extends ExternalObjectResponse 
         public final Date d_trans_date {get; set;}
         public final Integer i_trans_hyd {get; set;}
         public final Integer i_cms_dmid {get; set;}
-        
+        public final String d_trans_time {get; set;}
+        public final String d_rating_start_time {get; set;}
+        public final String d_seq_rating_start_time {get; set;}
+        public final String d_rating_end_time {get; set;}
+
+
     }
 
     public List<Map<String, Object>> populateData(List<Map<String, Object>> rows) {
@@ -89,6 +94,10 @@ public with sharing class GuestTableRatingDetail extends ExternalObjectResponse 
             row.put('d_trans_date', wrapper.d_trans_date);
             row.put('i_trans_hyd', wrapper.i_trans_hyd);
             row.put('i_cms_dmid', wrapper.i_cms_dmid);
+            row.put('d_trans_time', wrapper.d_trans_time);
+            row.put('d_rating_start_time', wrapper.d_rating_start_time);
+            row.put('d_seq_rating_start_time', wrapper.d_seq_rating_start_time);
+            row.put('d_rating_end_time', wrapper.d_rating_end_time);
             rows.add(row);
         }
         return rows;

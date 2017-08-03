@@ -23,8 +23,10 @@ public class CustomerInfo {
         public String c_quality_cd {get;set;}
 
         //Alias
-        public String c_first_name {get;set;}
         public String c_last_name {get;set;}
+        public String c_first_name {get;set;}
+        public String c_phonetic_last {get;set;}
+        public String c_phonetic_first {get;set;}
 
         //Address
         public String c_addr_type {get;set;}
@@ -48,6 +50,7 @@ public class CustomerInfo {
         public String d_date {get;set;}
         public String c_dpbc {get;set;}
         public String c_adi {get;set;}
+        public String c_route_cd {get;set;}
 
         // Acquisitions
         public String c_acquisition_cd {get;set;}
@@ -55,16 +58,16 @@ public class CustomerInfo {
 
         // Casino
         public String c_rep_id {get;set;}
-        public String d_update_dt  {get;set;}
-        public String i_casino_id  {get;set;}
-        public String d_create_date  {get;set;}
-        public String d_purge_react  {get;set;}
-        public String c_cred_appr_by  {get;set;}
-        public String c_prop_mail_cd  {get;set;}
-        public Decimal f_avail_credit  {get;set;}
-        public Decimal f_credit_limit  {get;set;}
-        public String c_credit_status  {get;set;}
-        public Decimal f_outstand_credit  {get;set;}
+        public String d_update_dt {get;set;}
+        public Integer i_casino_id {get;set;}
+        public String d_create_date {get;set;}
+        public String d_purge_react {get;set;}
+        public String c_cred_appr_by {get;set;}
+        public String c_prop_mail_cd {get;set;}
+        public Decimal f_avail_credit {get;set;}
+        public Decimal f_credit_limit {get;set;}
+        public String c_credit_status {get;set;}
+        public Decimal f_outstand_credit {get;set;}
 
         // Repcode assignments
         public String c_rep_cd {get;set;}
@@ -88,10 +91,11 @@ public class CustomerInfo {
         public Integer i_last_rep_cd_date {get;set;}
 
         //Associations
+        public String i_primary_dmid {get;set;}
         public String i_secondary_dmid {get;set;}
         public String c_assn_reason {get;set;}
         public String c_req_prop_cd {get;set;}
-        public Integer i_req_dmid {get;set;}
+        public String i_req_dmid {get;set;}
         public String c_req_employee {get;set;}
         public String d_create_dt {get;set;}
 
@@ -292,7 +296,7 @@ public class CustomerInfo {
         public String c_rel_type_cd {get;set;}
         public String c_relationship {get;set;}
         public String c_rel_status_cd {get;set;}
-        public Integer i_plays_with_dmid {get;set;}
+        public String i_plays_with_dmid {get;set;}
 
         //NxtgenToDo
         public Decimal f_worth {get;set;}

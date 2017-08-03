@@ -31,7 +31,7 @@ public with sharing class EthnicityAppendCustomerInfo implements CustomerInfoInt
 		row.put('ethnic_group1', wrapper.data.c_ethnic_group1);
 		row.put('ethnic_group2', wrapper.data.c_ethnic_group2);
 		row.put('pref_language', wrapper.data.c_pref_language);
-		row.put('last_update_date', wrapper.data.d_last_update_dt);
+		row.put('last_update_dt', wrapper.data.d_last_update_dt);
 		row.put('sub_ethnic_type', wrapper.data.c_sub_ethnic_type);
 		row.put('main_ethnic_type', wrapper.data.c_main_ethnic_type);
 		return row;
