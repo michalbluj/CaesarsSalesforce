@@ -290,10 +290,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_end_dt</label>
+        <length>40</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-        <length>40</length>
     </fields>
     <fields>
         <fullName>d_rpt_per__c</fullName>
@@ -304,10 +304,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_rpt_per</label>
+        <length>40</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-        <length>40</length>
     </fields>
     <fields>
         <fullName>d_start_dt__c</fullName>
@@ -318,10 +318,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_start_dt</label>
+        <length>40</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-        <length>40</length>
     </fields>
     <fields>
         <fullName>d_timestamp__c</fullName>
@@ -332,10 +332,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_timestamp</label>
+        <length>40</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-        <length>40</length>
     </fields>
     <fields>
         <fullName>f_actual_all__c</fullName>

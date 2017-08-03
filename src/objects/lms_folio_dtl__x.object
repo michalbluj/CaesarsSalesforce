@@ -13,6 +13,10 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -558,10 +562,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_create_ts</label>
+        <length>40</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-        <length>40</length>
     </fields>
     <fields>
         <fullName>d_timestamp__c</fullName>
@@ -572,10 +576,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_timestamp</label>
+        <length>40</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-        <length>40</length>
     </fields>
     <fields>
         <fullName>d_trans_dt__c</fullName>
@@ -586,10 +590,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_trans_dt</label>
+        <length>40</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-        <length>40</length>
     </fields>
     <fields>
         <fullName>f_folio_id__c</fullName>

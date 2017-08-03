@@ -66,10 +66,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_timestamp</label>
+        <length>40</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-        <length>40</length>
     </fields>
     <fields>
         <fullName>i_dmid__c</fullName>

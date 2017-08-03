@@ -121,10 +121,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>time</label>
+        <length>40</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-        <length>40</length>
     </fields>
     <label>applogs</label>
     <pluralLabel>applogs</pluralLabel>

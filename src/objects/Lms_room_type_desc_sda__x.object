@@ -320,10 +320,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_last_update_date</label>
+        <length>40</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-        <length>40</length>
     </fields>
     <fields>
         <fullName>f_user_amt1__c</fullName>

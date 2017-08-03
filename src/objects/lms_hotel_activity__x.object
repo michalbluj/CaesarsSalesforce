@@ -160,9 +160,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>c_address_2</label>
-        <length>32000</length>
-        <type>LongTextArea</type>
-        <visibleLines>10</visibleLines>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>c_cancel_agent_id__c</fullName>
@@ -215,9 +216,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>c_checkin_location</label>
-        <length>32000</length>
-        <type>LongTextArea</type>
-        <visibleLines>10</visibleLines>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>c_checkout_agent_id__c</fullName>
@@ -256,9 +258,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>c_city</label>
-        <length>32000</length>
-        <type>LongTextArea</type>
-        <visibleLines>10</visibleLines>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>c_confirm_email__c</fullName>
@@ -269,9 +272,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>c_confirm_email</label>
-        <length>32000</length>
-        <type>LongTextArea</type>
-        <visibleLines>10</visibleLines>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>c_confirm_id__c</fullName>
@@ -352,9 +356,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>c_first_name</label>
-        <length>32000</length>
-        <type>LongTextArea</type>
-        <visibleLines>10</visibleLines>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>c_group_cd__c</fullName>
@@ -379,9 +384,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>c_group_type</label>
-        <length>32000</length>
-        <type>LongTextArea</type>
-        <visibleLines>10</visibleLines>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>c_last_name__c</fullName>
@@ -392,9 +398,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>c_last_name</label>
-        <length>32000</length>
-        <type>LongTextArea</type>
-        <visibleLines>10</visibleLines>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>c_occupant_type__c</fullName>
@@ -405,9 +412,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>c_occupant_type</label>
-        <length>32000</length>
-        <type>LongTextArea</type>
-        <visibleLines>10</visibleLines>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>c_offer_id__c</fullName>
@@ -721,18 +729,19 @@
     </fields>
     <fields>
         <fullName>customer_control_segments_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>customer_control_segments_fk</description>
         <externalDeveloperName>customer_control_segments_fk</externalDeveloperName>
         <externalId>false</externalId>
         <isFilteringDisabled>false</isFilteringDisabled>
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
-        <label>customer control segment</label>
-        <length>18</length>
-        <referenceTo>Customer_Control_Segments__x</referenceTo>
+        <label>Customer control segment</label>
+        <referenceTo>CustomerControlSegments__c</referenceTo>
         <relationshipLabel>LMS Hotel Activities</relationshipLabel>
         <relationshipName>LMS_Hotel_Activities</relationshipName>
-        <type>ExternalLookup</type>
+        <required>false</required>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>d_arrival_dt__c</fullName>
@@ -1156,33 +1165,35 @@
     </fields>
     <fields>
         <fullName>lms_room_type_desc_sda_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>lms_room_type_desc_sda_fk</description>
         <externalDeveloperName>lms_room_type_desc_sda_fk</externalDeveloperName>
         <externalId>false</externalId>
         <isFilteringDisabled>false</isFilteringDisabled>
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
-        <label>lms_room_type_desc_sda_fk</label>
-        <precision>18</precision>
+        <label>Lms Room Type Description</label>
+        <referenceTo>LmsRoomTypeDescSda__c</referenceTo>
+        <relationshipLabel>LMS Hotel Activities</relationshipLabel>
+        <relationshipName>LMS_Hotel_Activities</relationshipName>
         <required>false</required>
-        <scale>0</scale>
-        <type>Number</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>source_code_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>source_code_fk</description>
         <externalDeveloperName>source_code_fk</externalDeveloperName>
         <externalId>false</externalId>
         <isFilteringDisabled>false</isFilteringDisabled>
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
-        <label>source_code_fk</label>
-        <precision>18</precision>
+        <label>Source code</label>
+        <referenceTo>SourceCode__c</referenceTo>
+        <relationshipLabel>LMS Hotel Activities</relationshipLabel>
+        <relationshipName>LMS_Hotel_Activities</relationshipName>
         <required>false</required>
-        <scale>0</scale>
-        <type>Number</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
     <label>LMS Hotel Activity</label>
     <pluralLabel>LMS Hotel Activities</pluralLabel>
