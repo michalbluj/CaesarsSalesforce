@@ -321,7 +321,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_last_update_date</label>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>f_user_amt1__c</fullName>

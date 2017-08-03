@@ -110,7 +110,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_end_dt</label>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>d_start_dt__c</fullName>
@@ -122,7 +124,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_start_dt</label>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>d_timestamp__c</fullName>
@@ -134,7 +138,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_timestamp</label>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>f_comp_rev__c</fullName>

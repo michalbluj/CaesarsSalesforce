@@ -13,10 +13,6 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Follow</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -138,7 +134,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>Offer ststus date</label>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>d_purge_date__c</fullName>
@@ -150,7 +148,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>Purge date</label>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>d_rpt_period__c</fullName>
@@ -162,7 +162,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>Rpt period</label>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>d_send_date__c</fullName>
@@ -174,7 +176,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>Send date</label>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>d_timestamp__c</fullName>
@@ -186,7 +190,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>Timestamp</label>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>i_dmid__c</fullName>

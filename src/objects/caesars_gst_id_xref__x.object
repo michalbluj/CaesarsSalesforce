@@ -81,7 +81,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_timestamp</label>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>i_dmid__c</fullName>

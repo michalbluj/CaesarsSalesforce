@@ -164,7 +164,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_pos_trans_dt</label>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>d_pos_trans_end_time__c</fullName>
@@ -176,7 +178,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_pos_trans_end_time</label>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>d_pos_trans_start_time__c</fullName>
@@ -188,7 +192,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_pos_trans_start_time</label>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>d_timestamp__c</fullName>
@@ -200,7 +206,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_timestamp</label>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>f_item_amt__c</fullName>

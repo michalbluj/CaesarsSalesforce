@@ -122,7 +122,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>time</label>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <label>applogs</label>
     <pluralLabel>applogs</pluralLabel>

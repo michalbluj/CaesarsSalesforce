@@ -13,10 +13,6 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Follow</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -563,7 +559,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_create_ts</label>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>d_timestamp__c</fullName>
@@ -575,7 +573,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_timestamp</label>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>d_trans_dt__c</fullName>
@@ -587,7 +587,9 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_trans_dt</label>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
+        <length>40</length>
     </fields>
     <fields>
         <fullName>f_folio_id__c</fullName>
