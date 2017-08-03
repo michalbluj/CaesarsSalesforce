@@ -3327,12 +3327,12 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <label>marketing_campaigns</label>
+    <label>Marketing Campaign</label>
     <listViews>
         <fullName>All</fullName>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
-    <pluralLabel>marketing_campaigns</pluralLabel>
+    <pluralLabel>Marketing Campaign</pluralLabel>
     <searchLayouts/>
 </CustomObject>
