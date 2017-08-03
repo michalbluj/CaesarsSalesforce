@@ -247,7 +247,7 @@
             <isRequired>false</isRequired>
         </displayedFields>
         <displayedFields>
-            <field>address_2__c</field>
+            <field>addr_2__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
@@ -2757,41 +2757,18 @@
     </fields>
     <fields>
         <fullName>acquisition_cd__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalDeveloperName>acquisition_cd</externalDeveloperName>
         <externalId>false</externalId>
         <isFilteringDisabled>false</isFilteringDisabled>
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>Acquisition code</label>
-        <length>255</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>acquisition_code__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalDeveloperName>acquisition_code</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Acquisition code</label>
         <referenceTo>Acquisition_Code__c</referenceTo>
-        <relationshipName>Customer_Info_External_c</relationshipName>
+        <relationshipLabel>Customer Infos (Acquisition code)</relationshipLabel>
+        <relationshipName>Customer_Infos</relationshipName>
         <required>false</required>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>acquisition_date__c</fullName>
-        <externalDeveloperName>acquisition_date</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Acquisition date</label>
-        <required>false</required>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>addr_1__c</fullName>
@@ -2898,59 +2875,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>address_2__c</fullName>
-        <externalDeveloperName>address_2</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Address 2</label>
-        <length>255</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>address__c</fullName>
-        <externalDeveloperName>address</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Address</label>
-        <length>255</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>address_preferences__c</fullName>
-        <description>address_preferences</description>
-        <externalDeveloperName>address_preferences</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>address_preferences</label>
-        <length>1</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>address_type__c</fullName>
-        <externalDeveloperName>address_type</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Address type</label>
-        <length>2</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>adi__c</fullName>
         <externalDeveloperName>adi</externalDeveloperName>
         <externalId>false</externalId>
@@ -3012,19 +2936,6 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>Annivers date</label>
         <length>255</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>apartment_number__c</fullName>
-        <externalDeveloperName>apartment_number</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Apartment number</label>
-        <length>10</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
@@ -3136,19 +3047,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>available_credit__c</fullName>
-        <externalDeveloperName>available_credit</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Available credit</label>
-        <length>30</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>bed_type__c</fullName>
         <externalDeveloperName>bed_type</externalDeveloperName>
         <externalId>false</externalId>
@@ -3186,20 +3084,6 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>c_assn_reason__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalDeveloperName>c_assn_reason</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Association Reason</label>
-        <referenceTo>Association_Reason__c</referenceTo>
-        <relationshipName>Customer_Info</relationshipName>
-        <required>false</required>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>c_xref_type__c</fullName>
@@ -3507,19 +3391,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>country_code__c</fullName>
-        <externalDeveloperName>country_code</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Country code</label>
-        <length>3</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>country_tele_cd__c</fullName>
         <externalDeveloperName>country_tele_cd</externalDeveloperName>
         <externalId>false</externalId>
@@ -3528,19 +3399,6 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>Country tele code</label>
         <length>255</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>country_tele_code__c</fullName>
-        <externalDeveloperName>country_tele_code</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Country tele code</label>
-        <length>10</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
@@ -3637,19 +3495,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>credit_approved_by__c</fullName>
-        <externalDeveloperName>credit_approved_by</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Credit approved by</label>
-        <length>40</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>credit_limit__c</fullName>
         <externalDeveloperName>credit_limit</externalDeveloperName>
         <externalId>false</externalId>
@@ -3701,30 +3546,6 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>current_code__c</fullName>
-        <externalDeveloperName>current_code</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Current code</label>
-        <length>20</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>d_as_of__c</fullName>
-        <externalDeveloperName>d_as_of</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>As of</label>
-        <required>false</required>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>d_posted_on__c</fullName>
@@ -3972,17 +3793,6 @@
         <scale>2</scale>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>effective_end_date__c</fullName>
-        <externalDeveloperName>effective_end_date</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Effective end date</label>
-        <required>false</required>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>effective_start_date__c</fullName>
@@ -4310,34 +4120,6 @@
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>f_adjust_base__c</fullName>
-        <externalDeveloperName>f_adjust_base</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Adjust base</label>
-        <precision>12</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>f_earned_base__c</fullName>
-        <externalDeveloperName>f_earned_base</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Earned base</label>
-        <precision>12</precision>
-        <required>false</required>
-        <scale>2</scale>
         <type>Number</type>
         <unique>false</unique>
     </fields>
@@ -7166,19 +6948,6 @@
         <isSortingDisabled>false</isSortingDisabled>
         <label>Zip 7</label>
         <length>255</length>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>zip__c</fullName>
-        <externalDeveloperName>zip</externalDeveloperName>
-        <externalId>false</externalId>
-        <isFilteringDisabled>false</isFilteringDisabled>
-        <isNameField>false</isNameField>
-        <isSortingDisabled>false</isSortingDisabled>
-        <label>Zip</label>
-        <length>7</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>

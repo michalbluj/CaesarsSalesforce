@@ -1512,16 +1512,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Customer_Info_External_c__x.acquisition_code__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.acquisition_date__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Customer_Info_External_c__x.addr_1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1562,26 +1552,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Customer_Info_External_c__x.address_2__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.address__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.address_preferences__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.address_type__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Customer_Info_External_c__x.adi__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1603,11 +1573,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Customer_Info_External_c__x.annivers_dt__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.apartment_number__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1652,11 +1617,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Customer_Info_External_c__x.available_credit__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Customer_Info_External_c__x.bed_type__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1668,11 +1628,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Customer_Info_External_c__x.bounce_timestamp__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.c_assn_reason__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1792,17 +1747,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Customer_Info_External_c__x.country_code__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Customer_Info_External_c__x.country_tele_cd__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.country_tele_code__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1842,11 +1787,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Customer_Info_External_c__x.credit_approved_by__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Customer_Info_External_c__x.credit_limit__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1863,16 +1803,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Customer_Info_External_c__x.current_cd__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.current_code__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.d_as_of__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1968,11 +1898,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Customer_Info_External_c__x.earned_base__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.effective_end_date__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2098,16 +2023,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Customer_Info_External_c__x.event_id__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.f_adjust_base__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.f_earned_base__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3178,11 +3093,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Customer_Info_External_c__x.zip_7__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Customer_Info_External_c__x.zip__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
