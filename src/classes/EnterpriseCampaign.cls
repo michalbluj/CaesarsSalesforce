@@ -21,6 +21,7 @@ public with sharing class EnterpriseCampaign extends ExternalObjectResponse impl
         public final Integer i_pdb_rated_trips_all_mkts {get;set;}
         public final Integer i_pdb_trips_all_mkts {get;set;}
         public final Integer i_rated_days_all_mkts {get;set;}
+        public final String i_dmid {get; set;}
     }
 
     public List<Map<String, Object>> populateData(List<Map<String, Object>> rows){
@@ -41,6 +42,7 @@ public with sharing class EnterpriseCampaign extends ExternalObjectResponse impl
             row.put('i_pdb_rated_trips_all_mkts',wrapper.i_pdb_rated_trips_all_mkts);
             row.put('i_pdb_trips_all_mkts',wrapper.i_pdb_trips_all_mkts);
             row.put('i_rated_days_all_mkts',wrapper.i_rated_days_all_mkts);
+            row.put('i_dmid', wrapper.i_dmid);
             rows.add(row);
         }
         return rows;

@@ -31,6 +31,8 @@ public with sharing class GuestSlotRatingDetail extends ExternalObjectResponse i
         public final Date d_trans_date {get; set;}
         public final Integer i_cms_dmid {get; set;}
         public final Decimal f_winloss {get; set;}
+        public final String d_start_time {get; set;}
+        public final String d_end_time {get; set;}
     }
 
     public List<Map<String, Object>> populateData(List<Map<String, Object>> rows) {
@@ -58,6 +60,8 @@ public with sharing class GuestSlotRatingDetail extends ExternalObjectResponse i
             row.put('d_trans_date', wrapper.d_trans_date);
             row.put('i_cms_dmid', wrapper.i_cms_dmid);
             row.put('f_winloss', wrapper.f_winloss);
+            row.put('d_start_time', wrapper.d_start_time);
+            row.put('d_end_time', wrapper.d_end_time);
 
             rows.add(row);
         }
