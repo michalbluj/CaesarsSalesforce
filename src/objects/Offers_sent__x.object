@@ -137,8 +137,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>Offer ststus date</label>
+        <length>40</length>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_purge_date__c</fullName>
@@ -149,8 +151,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>Purge date</label>
+        <length>40</length>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_rpt_period__c</fullName>
@@ -161,8 +165,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>Rpt period</label>
+        <length>40</length>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_send_date__c</fullName>
@@ -173,8 +179,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>Send date</label>
+        <length>40</length>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_timestamp__c</fullName>
@@ -185,8 +193,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>Timestamp</label>
+        <length>40</length>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>i_dmid__c</fullName>

@@ -248,8 +248,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_end_dt</label>
+        <length>40</length>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_rpt_per__c</fullName>
@@ -260,8 +262,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_rpt_per</label>
+        <length>40</length>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_start_dt__c</fullName>
@@ -272,8 +276,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_start_dt</label>
+        <length>40</length>
         <required>false</required>
-        <type>Date</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_timestamp__c</fullName>
@@ -284,8 +290,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_timestamp</label>
+        <length>40</length>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>i_ap_pdb_trip_id__c</fullName>

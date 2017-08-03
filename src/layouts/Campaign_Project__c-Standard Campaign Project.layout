@@ -58,6 +58,10 @@
                 <behavior>Edit</behavior>
                 <field>Property_Marketer_Approval_Required__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Redemption_Channel__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

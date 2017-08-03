@@ -815,6 +815,18 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Redemption_Channel__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Redemption_Channel</globalPicklist>
+        <label>Redemption Channel</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>Reference_Previous_Project_Name__c</fullName>
         <description>Reference Previous Project Name</description>
         <externalId>false</externalId>
@@ -1687,6 +1699,41 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Redemption_Channel</picklist>
+            <values>
+                <fullName>COV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COVPOS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - games</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PlaybyTR-Mobile messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Table Voucher</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Status__c</picklist>
             <values>
                 <fullName>Approved</fullName>
@@ -2171,6 +2218,41 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
             </values>
             <values>
                 <fullName>45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Redemption_Channel</picklist>
+            <values>
+                <fullName>COV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COVPOS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - APS Promo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk - games</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PlaybyTR-Mobile messaging</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Table Voucher</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
