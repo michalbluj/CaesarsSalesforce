@@ -699,33 +699,33 @@
     </fields>
     <fields>
         <fullName>contact1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalDeveloperName>contact_pri_fk</externalDeveloperName>
         <externalId>false</externalId>
         <isFilteringDisabled>false</isFilteringDisabled>
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>Contact</label>
-        <length>18</length>
-        <referenceTargetField>Contact.ContactId__c</referenceTargetField>
         <referenceTo>Contact</referenceTo>
-        <relationshipLabel>Primary LMS Hotel Activities</relationshipLabel>
+        <relationshipLabel>LMS Hotel Activities (Contact)</relationshipLabel>
         <relationshipName>lms_hotel_activity</relationshipName>
-        <type>IndirectLookup</type>
+        <required>false</required>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>contact2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalDeveloperName>contact_sec_fk</externalDeveloperName>
         <externalId>false</externalId>
         <isFilteringDisabled>false</isFilteringDisabled>
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>Contact</label>
-        <length>18</length>
-        <referenceTargetField>Contact.ContactId__c</referenceTargetField>
         <referenceTo>Contact</referenceTo>
-        <relationshipLabel>Secondary LMS Hotel Activities</relationshipLabel>
+        <relationshipLabel>LMS Hotel Activities</relationshipLabel>
         <relationshipName>lms_hotel_activity1</relationshipName>
-        <type>IndirectLookup</type>
+        <required>false</required>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>customer_control_segments_fk__c</fullName>

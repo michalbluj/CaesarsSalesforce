@@ -302,6 +302,10 @@
         <fields>Average_Daily_Worth__c</fields>
         <relatedList>Proforma__c.Campaign_Project__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Campaign_Project_Studio__c.Campaign_Project__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

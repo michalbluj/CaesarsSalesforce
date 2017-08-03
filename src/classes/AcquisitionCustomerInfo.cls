@@ -13,8 +13,10 @@ public with sharing class AcquisitionCustomerInfo implements CustomerInfoInterfa
     * @return row representation
     */
     public Map<String, Object> populateData(Map<String, Object> row,CustomerInfo wrapper){
-        row.put('acquisition_code', MapHandler.getAcquisitionCodeMap().get(wrapper.data.c_acquisition_cd));
-        row.put('acquisition_date', wrapper.data.d_acq_date);
+        row.put('prop_cd', wrapper.data.c_prop_cd);
+        row.put('acq_date', wrapper.data.d_acq_date);
+        row.put('quality_cd', wrapper.data.c_quality_cd);
+        row.put('acquisition_cd', MapHandler.getAcquisitionCodeMap().get(wrapper.data.c_acquisition_cd));
         return row;
     }
 

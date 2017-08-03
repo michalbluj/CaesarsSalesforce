@@ -13,8 +13,13 @@ public with sharing class AliasCustomerInfo implements CustomerInfoInterface {
     * @return row representation
     */
     public Map<String, Object> populateData(Map<String, Object> row,CustomerInfo wrapper){
-        row.put('first_name', wrapper.data.c_first_name);
+        row.put('prop_cd', wrapper.data.c_prop_cd);
         row.put('last_name', wrapper.data.c_last_name);
+        //row.put('timestamp', wrapper.data.d_timestamp);
+        row.put('first_name', wrapper.data.c_first_name);
+        row.put('quality_cd', wrapper.data.c_quality_cd);
+        row.put('phonetic_last', wrapper.data.c_phonetic_last);
+        row.put('phonetic_first', wrapper.data.c_phonetic_first);
         return row;
     }
 
