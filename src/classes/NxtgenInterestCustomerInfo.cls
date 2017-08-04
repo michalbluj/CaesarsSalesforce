@@ -12,9 +12,9 @@ public with sharing class NxtgenInterestCustomerInfo implements CustomerInfoInte
     * @return row representation
     */
 	public Map<String, Object> populateData(Map<String, Object> row,CustomerInfo wrapper){
-		row.put('app_code', wrapper.data.c_app_cd);
+		row.put('app_cd', wrapper.data.c_app_cd);
 		row.put('interest', wrapper.data.c_interest);
-		row.put('create_date', wrapper.data.d_create_dt);
+		row.put('create_dt', wrapper.data.d_create_dt);
 		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('interest_id', wrapper.data.i_interest_id);
 		row.put('creator_login', wrapper.data.c_creator_login);

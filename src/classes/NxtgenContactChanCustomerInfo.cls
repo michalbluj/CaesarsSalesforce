@@ -12,8 +12,8 @@ public with sharing class NxtgenContactChanCustomerInfo implements CustomerInfoI
     * @return row representation
     */
 	public Map<String, Object> populateData(Map<String, Object> row,CustomerInfo wrapper){
-		row.put('app_code', wrapper.data.c_app_cd);
-		row.put('create_date', wrapper.data.d_create_dt);
+		row.put('app_cd', wrapper.data.c_app_cd);
+		row.put('create_dt', wrapper.data.d_create_dt);
 		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('creator_login', wrapper.data.c_creator_login);
 		row.put('modifier_login', wrapper.data.c_modifier_login);

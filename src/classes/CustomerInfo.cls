@@ -13,7 +13,7 @@ public class CustomerInfo {
     public String id {get;set;}
     public String recordType {get;set;}
     public String contact {get;set;}
-    public Integer i_dmid {get;set;}
+    public String i_dmid {get;set;}
     public CustomerInfoData data {get;set;}
 
     public class CustomerInfoData {
@@ -23,8 +23,10 @@ public class CustomerInfo {
         public String c_quality_cd {get;set;}
 
         //Alias
-        public String c_first_name {get;set;}
         public String c_last_name {get;set;}
+        public String c_first_name {get;set;}
+        public String c_phonetic_last {get;set;}
+        public String c_phonetic_first {get;set;}
 
         //Address
         public String c_addr_type {get;set;}
@@ -48,6 +50,7 @@ public class CustomerInfo {
         public String d_date {get;set;}
         public String c_dpbc {get;set;}
         public String c_adi {get;set;}
+        public String c_route_cd {get;set;}
 
         // Acquisitions
         public String c_acquisition_cd {get;set;}
@@ -55,16 +58,16 @@ public class CustomerInfo {
 
         // Casino
         public String c_rep_id {get;set;}
-        public String d_update_dt  {get;set;}
-        public String i_casino_id  {get;set;}
-        public String d_create_date  {get;set;}
-        public String d_purge_react  {get;set;}
-        public String c_cred_appr_by  {get;set;}
-        public String c_prop_mail_cd  {get;set;}
-        public Decimal f_avail_credit  {get;set;}
-        public Decimal f_credit_limit  {get;set;}
-        public String c_credit_status  {get;set;}
-        public Decimal f_outstand_credit  {get;set;}
+        public String d_update_dt {get;set;}
+        public Integer i_casino_id {get;set;}
+        public String d_create_date {get;set;}
+        public String d_purge_react {get;set;}
+        public String c_cred_appr_by {get;set;}
+        public String c_prop_mail_cd {get;set;}
+        public Decimal f_avail_credit {get;set;}
+        public Decimal f_credit_limit {get;set;}
+        public String c_credit_status {get;set;}
+        public Decimal f_outstand_credit {get;set;}
 
         // Repcode assignments
         public String c_rep_cd {get;set;}
@@ -73,13 +76,13 @@ public class CustomerInfo {
         public Integer i_efft_yr {get;set;}
         public String c_rep_type {get;set;}
         public Integer i_rep_rank {get;set;}
-        public Integer i_patron_id {get;set;}
+        public String i_patron_id {get;set;}
         public String c_current_cd {get;set;}
         public String c_entered_by {get;set;}
         public Integer d_trans_time {get;set;}
         public String d_efft_end_dt {get;set;}
-        public String d_trans_100_yr {get;set;}
-        public String d_trans_cal_dt {get;set;}
+        public Integer d_trans_100_yr {get;set;}
+        public Integer d_trans_cal_dt {get;set;}
         public Integer i_rep_trip_nbr {get;set;}
         public String d_efft_start_dt {get;set;}
         public String c_patron_rep_appv {get;set;}
@@ -88,15 +91,16 @@ public class CustomerInfo {
         public Integer i_last_rep_cd_date {get;set;}
 
         //Associations
+        public String i_primary_dmid {get;set;}
         public String i_secondary_dmid {get;set;}
         public String c_assn_reason {get;set;}
         public String c_req_prop_cd {get;set;}
-        public Integer i_req_dmid {get;set;}
+        public String i_req_dmid {get;set;}
         public String c_req_employee {get;set;}
         public String d_create_dt {get;set;}
 
         //TierScore
-        public String i_year {get;set;}
+        public Integer i_year {get;set;}
         public String d_as_of {get;set;}
         public String d_posted_on {get;set;}
         public Decimal f_promo_base {get;set;}
@@ -107,11 +111,11 @@ public class CustomerInfo {
 
         //Event, PrefInterests, PrefPartner, PrefProgram, PrefSpecialty, PrefTemp, PrefHotel
         public String c_modifier {get;set;}
-        public String i_response {get;set;}
+        public Integer i_response {get;set;}
         public String c_pref_flag {get;set;}
-        public String i_category_id {get;set;}
+        public Integer i_category_id {get;set;}
         public String c_derived_flag {get;set;}
-        public String i_preference_id {get;set;}
+        public Integer i_preference_id {get;set;}
         public String c_data_source_cd {get;set;}
         public String c_pref_type_name {get;set;}
         public String c_modifier_location {get;set;}
@@ -292,7 +296,7 @@ public class CustomerInfo {
         public String c_rel_type_cd {get;set;}
         public String c_relationship {get;set;}
         public String c_rel_status_cd {get;set;}
-        public Integer i_plays_with_dmid {get;set;}
+        public String i_plays_with_dmid {get;set;}
 
         //NxtgenToDo
         public Decimal f_worth {get;set;}
@@ -322,12 +326,12 @@ public class CustomerInfo {
 
         //PatronPref
         public Integer i_file_id {get;set;}
-        public Integer i_ins_run_id {get;set;}
+        public String i_ins_run_id {get;set;}
         public Integer i_rank_value {get;set;}
         public Integer i_upd_run_id {get;set;}
         public String c_ok2ask_flag {get;set;}
         public String d_create_update {get;set;}
-        public Integer i_original_dmid {get;set;}
+        public String i_original_dmid {get;set;}
         public String c_freeform_value {get;set;}
         public String c_it_qry_category {get;set;}
 

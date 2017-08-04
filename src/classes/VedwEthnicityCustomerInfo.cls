@@ -30,11 +30,11 @@ public with sharing class VedwEthnicityCustomerInfo implements CustomerInfoInter
 		row.put('user_score_2', wrapper.data.i_user_score_2);
 		row.put('user_score_3', wrapper.data.i_user_score_3);
 		row.put('user_score_4', wrapper.data.i_user_score_4);
-		row.put('ethdom_relg_code', wrapper.data.c_ethdom_relg_cd);
+		row.put('ethdom_relg_cd', wrapper.data.c_ethdom_relg_cd);
 		row.put('est_names_12mn', wrapper.data.i_est_names_12mn);
-		row.put('group_code_description', wrapper.data.c_group_code_desc);
-		row.put('ethnic_code_description', wrapper.data.c_ethnic_code_desc);
-		row.put('ethdom_relg_code_description', wrapper.data.c_ethdom_relg_cd_desc);
+		row.put('group_code_desc', wrapper.data.c_group_code_desc);
+		row.put('ethnic_code_desc', wrapper.data.c_ethnic_code_desc);
+		row.put('ethdom_relg_cd_desc', wrapper.data.c_ethdom_relg_cd_desc);
 		return row;
 	}
 }
