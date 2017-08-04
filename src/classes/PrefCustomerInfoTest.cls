@@ -1,44 +1,44 @@
-/**
-* @author Jakub Kołacz
+/* @author Patryk Lompart
 * @date 2017
 * @group UnitTest
 * @description Unit test class for PrefCustomerInfo class
 **/
-
-@isTest
+@IsTest
 private class PrefCustomerInfoTest {
-	@isTest
-	static void populateDataTest() {
-		Test.startTest();
-		Map<String, Object> row = new Map<String, Object>();
-		CustomerInfo customerInfo = new CustomerInfo();
-		customerInfo.data=new CustomerInfo.CustomerInfoData();
-		customerInfo.data.c_modifier = 'Modifier';
-		customerInfo.data.i_response = 'Response';
-		customerInfo.data.c_pref_flag = 'PrefFlag';
-		customerInfo.data.i_category_id = 'CategoryId';
-		customerInfo.data.c_derived_flag = 'DerivedFlag';
-		customerInfo.data.i_preference_id = 'PreferenceId';
-		customerInfo.data.c_data_source_cd = 'DataSourceCd';
-		customerInfo.data.c_pref_type_name = 'TypeName';
-		customerInfo.data.c_modifier_location = 'ModifierLocation';
-		customerInfo.data.c_pref_category_name = 'PrefCategoryName';
-		customerInfo.data.c_modifier_workstation = 'ModifierWorkstation';
 
-		PrefCustomerInfo prefCustomerInfo=new PrefCustomerInfo();
-		row=prefCustomerInfo.populateData(row,customerInfo);
+	static testMethod void populateDataTest() {
+		PrefCustomerInfo info = new PrefCustomerInfo();
+
+		CustomerInfo.CustomerInfoData dataRecord = new CustomerInfo.CustomerInfoData();
+		dataRecord.c_modifier 				= '';
+		dataRecord.c_pref_flag 				= 'N';
+		dataRecord.c_quality_cd 			= ' ';
+		dataRecord.i_category_id 			= 10650;
+		dataRecord.c_derived_flag 			= 'ST';
+		dataRecord.i_preference_id 			= 10650;
+		dataRecord.c_data_source_cd 		= '   ';
+		dataRecord.c_pref_type_name 		= 'Hispanic Cultural Events';
+		dataRecord.c_modifier_location 		= '';
+		dataRecord.c_pref_category_name 	= 'Events';
+		dataRecord.c_modifier_workstation 	= '';
+
+		CustomerInfo wrapper = new CustomerInfo();
+		wrapper.data = dataRecord;
+
+		Test.startTest();
+		Map<String,Object> row = info.populateData(new Map<String, Object>(),wrapper);
 		Test.stopTest();
-		
-		System.assertEquals('Modifier',row.get('c_modifier'));
-		System.assertEquals('Response',row.get('i_response'));
-		System.assertEquals('PrefFlag',row.get('c_pref_flag'));
-		System.assertEquals('CategoryId',row.get('i_category_id'));
-		System.assertEquals('DerivedFlag',row.get('c_derived_flag'));
-		System.assertEquals('PreferenceId',row.get('i_preference_id'));
-		System.assertEquals('DataSourceCd',row.get('c_data_source_cd'));
-		System.assertEquals('TypeName',row.get('c_pref_type_name'));
-		System.assertEquals('ModifierLocation',row.get('c_modifier_location'));
-		System.assertEquals('PrefCategoryName',row.get('c_pref_category_name'));
-		System.assertEquals('ModifierWorkstation',row.get('c_modifier_workstation'));
+
+		System.assertEquals((String)row.get('modifier'),'');
+		System.assertEquals((String)row.get('pref_flag'),'N');
+		System.assertEquals((String)row.get('quality_cd'),' ');
+		System.assertEquals((Integer)row.get('category_id'),10650);
+		System.assertEquals((String)row.get('derived_flag'),'ST');
+		System.assertEquals((Integer)row.get('preference_id'),10650);
+		System.assertEquals((String)row.get('data_source_cd'),'   ');
+		System.assertEquals((String)row.get('pref_type_name'),'Hispanic Cultural Events');
+		System.assertEquals((String)row.get('modifier_location'),'');
+		System.assertEquals((String)row.get('pref_category_name'),'Events');
+		System.assertEquals((String)row.get('modifier_workstation'),'');
 	}
 }

@@ -16,13 +16,13 @@ public with sharing class VedwRelationshipCustomerInfo implements CustomerInfoIn
 		row.put('rel_dob', wrapper.data.d_rel_dob);
 		row.put('rel_name', wrapper.data.c_rel_name);
 		row.put('rel_notes', wrapper.data.c_rel_notes);
-		row.put('create_date', wrapper.data.d_create_dt);
+		row.put('create_dt', wrapper.data.d_create_dt);
 		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('gst_rel_id', wrapper.data.i_gst_rel_id);
-		row.put('rel_type_code', wrapper.data.c_rel_type_cd);
+		row.put('rel_type_cd', wrapper.data.c_rel_type_cd);
 		row.put('relationship', wrapper.data.c_relationship);
 		row.put('creator_login', wrapper.data.c_creator_login);
-		row.put('rel_status_code', wrapper.data.c_rel_status_cd);
+		row.put('rel_status_cd', wrapper.data.c_rel_status_cd);
 		row.put('modifier_login', wrapper.data.c_modifier_login);
 		row.put('plays_with_dmid', wrapper.data.i_plays_with_dmid);
 		return row;

@@ -76,13 +76,13 @@ public class CustomerInfo {
         public Integer i_efft_yr {get;set;}
         public String c_rep_type {get;set;}
         public Integer i_rep_rank {get;set;}
-        public Integer i_patron_id {get;set;}
+        public String i_patron_id {get;set;}
         public String c_current_cd {get;set;}
         public String c_entered_by {get;set;}
         public Integer d_trans_time {get;set;}
         public String d_efft_end_dt {get;set;}
-        public String d_trans_100_yr {get;set;}
-        public String d_trans_cal_dt {get;set;}
+        public Integer d_trans_100_yr {get;set;}
+        public Integer d_trans_cal_dt {get;set;}
         public Integer i_rep_trip_nbr {get;set;}
         public String d_efft_start_dt {get;set;}
         public String c_patron_rep_appv {get;set;}
@@ -100,7 +100,7 @@ public class CustomerInfo {
         public String d_create_dt {get;set;}
 
         //TierScore
-        public String i_year {get;set;}
+        public Integer i_year {get;set;}
         public String d_as_of {get;set;}
         public String d_posted_on {get;set;}
         public Decimal f_promo_base {get;set;}
@@ -111,11 +111,11 @@ public class CustomerInfo {
 
         //Event, PrefInterests, PrefPartner, PrefProgram, PrefSpecialty, PrefTemp, PrefHotel
         public String c_modifier {get;set;}
-        public String i_response {get;set;}
+        public Integer i_response {get;set;}
         public String c_pref_flag {get;set;}
-        public String i_category_id {get;set;}
+        public Integer i_category_id {get;set;}
         public String c_derived_flag {get;set;}
-        public String i_preference_id {get;set;}
+        public Integer i_preference_id {get;set;}
         public String c_data_source_cd {get;set;}
         public String c_pref_type_name {get;set;}
         public String c_modifier_location {get;set;}
@@ -326,12 +326,12 @@ public class CustomerInfo {
 
         //PatronPref
         public Integer i_file_id {get;set;}
-        public Integer i_ins_run_id {get;set;}
+        public String i_ins_run_id {get;set;}
         public Integer i_rank_value {get;set;}
         public Integer i_upd_run_id {get;set;}
         public String c_ok2ask_flag {get;set;}
         public String d_create_update {get;set;}
-        public Integer i_original_dmid {get;set;}
+        public String i_original_dmid {get;set;}
         public String c_freeform_value {get;set;}
         public String c_it_qry_category {get;set;}
 

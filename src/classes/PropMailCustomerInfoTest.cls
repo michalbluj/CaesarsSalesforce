@@ -1,17 +1,17 @@
 /* @author Patryk Lompart
 * @date 2017
 * @group UnitTest
-* @description Unit test class for PrefSpecifiedCustomerInfo class
+* @description Unit test class for PropMailCustomerInfo class
 **/
 @IsTest
-private class PrefSpecifiedCustomerInfoTest {
+private class PropMailCustomerInfoTest {
 
 	static testMethod void populateDataTest() {
-		PrefSpecifiedCustomerInfo info = new PrefSpecifiedCustomerInfo();
+		PropMailCustomerInfo info = new PropMailCustomerInfo();
 
 		CustomerInfo.CustomerInfoData dataRecord = new CustomerInfo.CustomerInfoData();
-		dataRecord.c_quality_cd = '';
-		dataRecord.c_channel_pref = 'Email';
+		dataRecord.c_quality_cd 	= '';
+		dataRecord.c_prop_mail_cd 	= '100';
 
 		CustomerInfo wrapper = new CustomerInfo();
 		wrapper.data = dataRecord;
@@ -21,6 +21,6 @@ private class PrefSpecifiedCustomerInfoTest {
 		Test.stopTest();
 
 		System.assertEquals((String)row.get('quality_cd'),'');
-		System.assertEquals((String)row.get('channel_pref'),'Email');
+		System.assertEquals((String)row.get('prop_mail_cd'),'100');
 	}
 }
