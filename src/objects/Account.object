@@ -618,6 +618,18 @@
         <type>AutoNumber</type>
     </fields>
     <fields>
+        <fullName>Vendor_user_id__c</fullName>
+        <description>Vendor user id</description>
+        <externalId>false</externalId>
+        <inlineHelpText>this is the user id needed by FTPS side to put the file in the correct folder</inlineHelpText>
+        <label>Vendor user id</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -647,11 +659,20 @@
     <listViews>
         <fullName>All_Customers</fullName>
         <columns>ACCOUNT.NAME</columns>
-        <columns>ACCOUNT.SITE</columns>
-        <columns>ACCOUNT.ADDRESS1_STATE</columns>
-        <columns>ACCOUNT.PHONE1</columns>
         <columns>ACCOUNT.TYPE</columns>
         <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>winet_id__c</columns>
+        <columns>ACCOUNT.RECORDTYPE</columns>
+        <columns>External_ID__c</columns>
+        <columns>ACCOUNT.INDUSTRY</columns>
+        <columns>Market__c</columns>
+        <columns>Market_Description__c</columns>
+        <columns>Property_Active__c</columns>
+        <columns>Property_Code__c</columns>
+        <columns>RecordTypeName__c</columns>
+        <columns>Dominant__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>ACCOUNT.RECORDTYPE</field>
@@ -659,6 +680,18 @@
             <value>Account.UCP</value>
         </filters>
         <label>All Customers</label>
+    </listViews>
+    <listViews>
+        <fullName>DM_Vendor_List</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Primary_Email__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>RecordTypeName__c</field>
+            <operation>equals</operation>
+            <value>marketing delivery vendor</value>
+        </filters>
+        <label>DM Vendor List</label>
     </listViews>
     <listViews>
         <fullName>MyAccounts</fullName>
@@ -680,6 +713,22 @@
             <value>Property</value>
         </filters>
         <label>Properites</label>
+    </listViews>
+    <listViews>
+        <fullName>Studio_Vendors</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.SITE</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RecordTypeName__c</field>
+            <operation>equals</operation>
+            <value>marketing studio vendor</value>
+        </filters>
+        <label>Studio Vendors</label>
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypes>
