@@ -111,11 +111,11 @@ public class CustomerInfo {
 
         //Event, PrefInterests, PrefPartner, PrefProgram, PrefSpecialty, PrefTemp, PrefHotel
         public String c_modifier {get;set;}
-        public Integer i_response {get;set;}
+        public String i_response {get;set;}
         public String c_pref_flag {get;set;}
-        public Integer i_category_id {get;set;}
+        public String i_category_id {get;set;}
         public String c_derived_flag {get;set;}
-        public Integer i_preference_id {get;set;}
+        public String i_preference_id {get;set;}
         public String c_data_source_cd {get;set;}
         public String c_pref_type_name {get;set;}
         public String c_modifier_location {get;set;}

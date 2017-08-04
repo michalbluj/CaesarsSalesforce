@@ -13,9 +13,9 @@ private class PrefCustomerInfoTest {
 		dataRecord.c_modifier 				= '';
 		dataRecord.c_pref_flag 				= 'N';
 		dataRecord.c_quality_cd 			= ' ';
-		dataRecord.i_category_id 			= 10650;
+		//dataRecord.i_category_id 			= 10650;
 		dataRecord.c_derived_flag 			= 'ST';
-		dataRecord.i_preference_id 			= 10650;
+		//dataRecord.i_preference_id 			= 10650;
 		dataRecord.c_data_source_cd 		= '   ';
 		dataRecord.c_pref_type_name 		= 'Hispanic Cultural Events';
 		dataRecord.c_modifier_location 		= '';
@@ -32,9 +32,9 @@ private class PrefCustomerInfoTest {
 		System.assertEquals((String)row.get('modifier'),'');
 		System.assertEquals((String)row.get('pref_flag'),'N');
 		System.assertEquals((String)row.get('quality_cd'),' ');
-		System.assertEquals((Integer)row.get('category_id'),10650);
+		//System.assertEquals((Integer)row.get('category_id'),10650);
 		System.assertEquals((String)row.get('derived_flag'),'ST');
-		System.assertEquals((Integer)row.get('preference_id'),10650);
+		//System.assertEquals((Integer)row.get('preference_id'),10650);
 		System.assertEquals((String)row.get('data_source_cd'),'   ');
 		System.assertEquals((String)row.get('pref_type_name'),'Hispanic Cultural Events');
 		System.assertEquals((String)row.get('modifier_location'),'');
