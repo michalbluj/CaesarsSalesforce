@@ -70,6 +70,15 @@ private class CustomerInfoServiceTest {
 
 	}
 
+	@isTest
+	static void parseDataTest(){
+		String jsonData = '{"test":"test"}';
 
+		Test.startTest();
+		CustomerInfoResponse res = CustomerInfoService.parseData(jsonData);
+		Test.stopTest();
+
+		System.assert(res != null);
+	}
 
 }
