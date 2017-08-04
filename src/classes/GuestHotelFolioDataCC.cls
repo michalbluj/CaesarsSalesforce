@@ -845,10 +845,10 @@ global with sharing class  GuestHotelFolioDataCC extends GuestSubjectDataBaseCC 
 		@AuraEnabled global String c_prop_cd { get; set; } 
 		@AuraEnabled global String c_prop_cd_fk { get; set; } 
 		@AuraEnabled global String c_quality_cd { get; set; } 
-		@AuraEnabled global DateTime d_folio_create_timestamp { get; set; } 
-		@AuraEnabled global DateTime d_folio_effective_dt { get; set; } 
-		@AuraEnabled global DateTime d_folio_expire_dt { get; set; } 
-		@AuraEnabled global DateTime d_timestamp { get; set; } 
+		@AuraEnabled global String d_folio_create_timestamp { get; set; } 
+		@AuraEnabled global String d_folio_effective_dt { get; set; } 
+		@AuraEnabled global String d_folio_expire_dt { get; set; } 
+		@AuraEnabled global String d_timestamp { get; set; } 
 		@AuraEnabled global String f_folio_id { get; set; } 
 		@AuraEnabled global String f_reserve_id { get; set; } 
 		@AuraEnabled global Decimal i_folio_type_id { get; set; } 
@@ -913,9 +913,9 @@ global with sharing class  GuestHotelFolioDataCC extends GuestSubjectDataBaseCC 
 		@AuraEnabled global String c_settle_method_type { get; set; } 
 		@AuraEnabled global String c_split_ticket_flag { get; set; } 
 		@AuraEnabled global String c_ticket_type_cd { get; set; } 
-		@AuraEnabled global DateTime d_create_ts { get; set; } 
-		@AuraEnabled global DateTime d_timestamp { get; set; } 
-		@AuraEnabled global Date d_trans_dt { get; set; } 
+		@AuraEnabled global String d_create_ts { get; set; } 
+		@AuraEnabled global String d_timestamp { get; set; } 
+		@AuraEnabled global String d_trans_dt { get; set; } 
 		@AuraEnabled global String f_folio_id { get; set; } 
 		@AuraEnabled global Decimal f_tax_amt { get; set; } 
 		@AuraEnabled global Decimal f_ticket_amt { get; set; } 

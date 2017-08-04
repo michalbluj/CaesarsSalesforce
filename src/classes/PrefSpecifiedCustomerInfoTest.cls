@@ -1,24 +1,26 @@
-/**
-* @author Jakub Kołacz
+/* @author Patryk Lompart
 * @date 2017
 * @group UnitTest
 * @description Unit test class for PrefSpecifiedCustomerInfo class
 **/
-@isTest
-private class PrefSpecifiedCustomerInfoTest
-{
-	@isTest
-	static void populateDataTest()
-	{
+@IsTest
+private class PrefSpecifiedCustomerInfoTest {
+
+	static testMethod void populateDataTest() {
+		PrefSpecifiedCustomerInfo info = new PrefSpecifiedCustomerInfo();
+
+		CustomerInfo.CustomerInfoData dataRecord = new CustomerInfo.CustomerInfoData();
+		dataRecord.c_quality_cd = '';
+		dataRecord.c_channel_pref = 'Email';
+
+		CustomerInfo wrapper = new CustomerInfo();
+		wrapper.data = dataRecord;
+
 		Test.startTest();
-		Map<String, Object> row = new Map<String, Object>();
-		CustomerInfo customerInfo = new CustomerInfo();
-		customerInfo.data=new CustomerInfo.CustomerInfoData();
-		customerInfo.data.c_channel_pref='ChannelPref';
-		PrefSpecifiedCustomerInfo prefSpecifiedCustomerInfo=new PrefSpecifiedCustomerInfo();
-		row=prefSpecifiedCustomerInfo.populateData(row,customerInfo);
+		Map<String,Object> row = info.populateData(new Map<String, Object>(),wrapper);
 		Test.stopTest();
 
-		System.assertEquals('ChannelPref',row.get('c_channel_pref'));
+		System.assertEquals((String)row.get('quality_cd'),'');
+		System.assertEquals((String)row.get('channel_pref'),'Email');
 	}
 }

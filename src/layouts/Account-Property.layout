@@ -132,6 +132,10 @@
         <fields>DisplayUrl</fields>
         <relatedList>marketing_campaigns_weekly__x.c_prop_cd_2_fk__c</relatedList>
     </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Delivery_Scope__c.Vendor__c</relatedList>
+    </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

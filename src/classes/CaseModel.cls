@@ -55,76 +55,7 @@ public with sharing class CaseModel {
         return queueNameToQueueMap;
     }
     
-    /*******************************************************************************************************
-    * @description 
-    * @param Map<Id,Case> oldCaseMap, List<Case> newCases
-    * @return n/a
-    * @example
-    *
-    */
-    public static void AsscoaiteAnchoredTasks(Map<Id,Case> oldCaseMap, List<Case> newCases){
-        map<string,string> mapAchoredTasks = getAnchoredTasksMapping();
-        system.debug('mapAchoredTasks  is'+mapAchoredTasks.keyset());
-        set<string> projectIDs = new set<string>();
-        Id caseWorkflowInstance = Schema.SObjectType.Case.getRecordTypeInfosByName().get('Campaign Workflow Instance').getRecordTypeId();
-        //map<id,case> newcasesMap = new map<id,case>(newCases);
-        map<string, string> mapParentAnchoredTask = new map<string, string>();
-        set<string> setAnchoredSubject = new set<string>();
-        set<string> caseIds = new set<string>();
-        if(mapAchoredTasks.values().size()>0)
-        {
-            setAnchoredSubject.addall(mapAchoredTasks.values());
-        }
-        for(case c : newCases)
-        {
-            if(c.recordtypeid==caseWorkflowInstance && c.subject!=null && c.Controlling_Anchored_Case__c==null)
-             {
-                 if(mapAchoredTasks!=null && mapAchoredTasks.get(c.subject)!=null)
-                 {
-                     system.debug('projId'+projectIDs);
-                     projectIDs.add(c.Campaign_Project__c);
-                     caseIds.add(c.id);
-                 }
-             }
-        }
-       /* if(projectIDs.size()>0)
-        {
-            CasesFutureClass.FutureMethodToAssociateAnchoredCases(projectIDs,mapAchoredTasks,caseIds);
-        } */
-        set<id> AnchoredcaseIds = new set<id>();
-        set<id> AnchoredCaseprojectIDs = new set<id>();
-        
-        if(trigger.isupdate)
-        {
-            for(case c : newCases)
-            {
-                if(c.recordtypeid==caseWorkflowInstance && c.subject!=null)
-                 {
-                     if(setAnchoredSubject.contains(c.subject) &&oldCaseMap!=null && oldCaseMap.get(c.id)!=null && c.Target_Start_Date__c!=oldCaseMap.get(c.id).Target_Start_Date__c)
-                     { 
-                         AnchoredCaseprojectIDs.add(c.Campaign_Project__c);
-                         AnchoredcaseIds.add(c.id);
-                     }
-                 }
-            }  
-        }
-        if(CasesFutureClass.firstRun)
-        {
-            if(projectIDs.size()>0)
-            {
-                //associate anchored cases and manage target dates 
-                CasesFutureClass.FutureMethodToAssociateAnchoredCases(projectIDs,mapAchoredTasks,caseIds);
-            }
-            
-            if(AnchoredcaseIds.size()>0)
-            {
-                //update target dates
-                CasesFutureClass.UpdateCaseTargetEndDates(AnchoredcaseIds,AnchoredCaseprojectIDs);
-            }
-        }
-        
-        
-    }
+  
     /*******************************************************************************************************
     * @description create case milestone history
     * @param Map<Id,Case> oldCaseMap, List<Case> newCases

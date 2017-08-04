@@ -10,13 +10,13 @@ private class AssociationCustomerInfoTest {
         AssociationCustomerInfo info = new AssociationCustomerInfo();
 
         CustomerInfo.CustomerInfoData dataRecord = new CustomerInfo.CustomerInfoData();
-        dataRecord.i_req_dmid = '11402320994';
-        dataRecord.d_create_dt = '2007-09-14T15:14:00';
-        dataRecord.c_quality_cd = '';
-        dataRecord.c_assn_reason = 'CLN';
-        dataRecord.c_req_prop_cd = 'HLT';
-        dataRecord.c_req_employee = 'CONVERT';
-        dataRecord.i_primary_dmid = '11402320994';
+        dataRecord.i_req_dmid       = '11402320994';
+        dataRecord.d_create_dt      = '2007-09-14T15:14:00';
+        dataRecord.c_quality_cd     = '';
+        dataRecord.c_assn_reason    = 'CLN';
+        dataRecord.c_req_prop_cd    = 'HLT';
+        dataRecord.c_req_employee   = 'CONVERT';
+        dataRecord.i_primary_dmid   = '11402320994';
         dataRecord.i_secondary_dmid = '19904186047';
 
         CustomerInfo wrapper = new CustomerInfo();

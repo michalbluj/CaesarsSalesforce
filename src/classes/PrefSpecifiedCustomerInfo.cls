@@ -11,7 +11,8 @@ public with sharing class PrefSpecifiedCustomerInfo implements CustomerInfoInter
     * @return row representation
     */
     public Map<String, Object> populateData(Map<String, Object> row, CustomerInfo wrapper) {
-        row.put('c_channel_pref',wrapper.data.c_channel_pref);
+        row.put('channel_pref', wrapper.data.c_channel_pref);
+        row.put('quality_cd', wrapper.data.c_quality_cd);
         return row;
     }
 }
