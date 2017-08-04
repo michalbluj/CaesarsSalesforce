@@ -16,7 +16,6 @@ public with sharing class ExternalDataSourceUtil {
         return new Map<String, ExternalDataSourceTable> {
             'Customer_Info_External__c' => new ExternalDataSourceTable(),
             'Offers_sent' => new ExternalDataSourceTable(),
-            'Offers_redeemed' => new ExternalDataSourceTable(),
             'IOTAction' => new ExternalDataSourceTable(),
             'marketing_campaigns' => new ExternalDataSourceTable(),
             'marketing_campaigns_properties' => new ExternalDataSourceTable(),
@@ -59,7 +58,6 @@ public with sharing class ExternalDataSourceUtil {
     public static List<String> retrieveSupportedTables() {
         return new List<String> {'Customer_Info_External__c',
                                  'Offers_sent',
-                                 'Offers_redeemed',
                                  'IOTAction',
                                  'marketing_campaigns',
                                  'marketing_campaigns_properties',

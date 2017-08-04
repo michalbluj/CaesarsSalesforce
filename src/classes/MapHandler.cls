@@ -6,9 +6,8 @@
 **/
 public with sharing class MapHandler {
 
-    public static final Map<String, String> externalObjectToTableMap = new Map<String, String> {
+    public static final Map<String, String> EXTERNAL_OBJECT_TO_TABLE_MAP = new Map<String, String> {
         'caesars$offers_sent' => 'offers_sent',
-        'caesars$offers_redeemed' => 'offers_redeemed',
         'caesars$iot_action' => 'iot_action',
         'caesars$marketing_campaigns' => 'marketing_campaigns',
         'caesars$marketing_campaigns_properties' => 'marketing_campaigns_properties',
@@ -74,7 +73,6 @@ public with sharing class MapHandler {
         'caesars$gst_id_xref' => 'GstIdXref',
         'caesars$pdb_trip' => 'PdbTrip',
         'caesars$pdb_trip_info' => 'PdbTripInfo',
-        'caesars$offers_redeemed' => 'OffersRedeemed',
         'caesars$comp_detail' => 'CompDetail',
         'caesars$hotel_event' => 'HotelEvent'
     };
