@@ -13,12 +13,15 @@ public with sharing class AssociationCustomerInfo implements CustomerInfoInterfa
     * @return row representation
     */
     public Map<String, Object> populateData(Map<String, Object> row,CustomerInfo wrapper){
-        row.put('i_secondary_dmid', wrapper.data.i_secondary_dmid);
-        row.put('c_assn_reason', MapHandler.getAssociationReasonMap().get(wrapper.data.c_assn_reason));
-        row.put('c_req_prop_cd', wrapper.data.c_req_prop_cd);
-        row.put('i_req_dmid', wrapper.data.i_req_dmid);
-        row.put('c_req_employee', wrapper.data.c_req_employee);
-        row.put('d_create_dt', wrapper.data.d_create_dt);
+        row.put('req_dmid', wrapper.data.i_req_dmid);
+        row.put('create_dt', wrapper.data.d_create_dt);
+        //row.put('timestamp', wrapper.data.d_timestamp);
+        row.put('quality_cd', wrapper.data.c_quality_cd);
+        row.put('assn_reason', wrapper.data.c_assn_reason);
+        row.put('req_prop_cd', wrapper.data.c_req_prop_cd);
+        row.put('req_employee', wrapper.data.c_req_employee);
+        row.put('primary_dmid', wrapper.data.i_primary_dmid);
+        row.put('secondary_dmid', wrapper.data.i_secondary_dmid);
         return row;
     }
 

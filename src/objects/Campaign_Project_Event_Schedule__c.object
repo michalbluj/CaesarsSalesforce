@@ -57,11 +57,11 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>Campaign_Project__c</fullName>
+        <fullName>Campaign_Project_Event_Announcement__c</fullName>
         <externalId>false</externalId>
-        <label>Campaign Project</label>
-        <referenceTo>Campaign_Project__c</referenceTo>
-        <relationshipLabel>Campaign Project Event Schedule</relationshipLabel>
+        <label>Campaign Project Event Announcement</label>
+        <referenceTo>Campaign_Project_Event__c</referenceTo>
+        <relationshipLabel>Schedule of Events</relationshipLabel>
         <relationshipName>Campaign_Project_Event_Schedule</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <reparentableMasterDetail>false</reparentableMasterDetail>
@@ -70,23 +70,21 @@
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
-        <fullName>Event_Date__c</fullName>
-        <description>Event Date</description>
+        <fullName>Event_Action__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>Event Date</inlineHelpText>
-        <label>Event Date</label>
-        <required>false</required>
+        <label>Event Action</label>
+        <length>5000</length>
         <trackTrending>false</trackTrending>
-        <type>Date</type>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
-        <fullName>Event_End_Hour__c</fullName>
+        <fullName>Event_Date_and_Time__c</fullName>
         <externalId>false</externalId>
-        <globalPicklist>Hour</globalPicklist>
-        <label>Event End Hour</label>
+        <label>Event Date and Time</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
+        <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Event_Name__c</fullName>
@@ -99,23 +97,74 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Event_Start_Hour__c</fullName>
+        <fullName>Event_Valid_End_Date__c</fullName>
         <externalId>false</externalId>
-        <globalPicklist>Hour</globalPicklist>
-        <label>Event Start Hour</label>
+        <label>Event Valid End Date</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_Valid_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Valid Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hotel_Valid_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Hotel Valid End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hotel_Valid_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Hotel Valid Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>Location__c</fullName>
         <externalId>false</externalId>
         <label>Location</label>
-        <length>255</length>
+        <picklist>
+            <picklistValues>
+                <fullName>Caesar&apos;s Palace</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Harrah&apos;s</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flamingo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bally&apos;s</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Registration__c</fullName>

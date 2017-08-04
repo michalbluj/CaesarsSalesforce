@@ -15,6 +15,10 @@
                 <behavior>Readonly</behavior>
                 <field>Label__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Redemption_Channel__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

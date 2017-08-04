@@ -181,6 +181,30 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Campaign_Project_Event_Announcement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign Project Event Announcement</label>
+        <referenceTo>Campaign_Project_Event__c</referenceTo>
+        <relationshipLabel>Event Contact</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Project_Studio_Scope__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign Project Studio Scope</label>
+        <referenceTo>Campaign_Project_Studio__c</referenceTo>
+        <relationshipLabel>MediaLocate Contact</relationshipLabel>
+        <relationshipName>MediaLocate_Contact</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>ContactId__c</fullName>
         <caseSensitive>false</caseSensitive>
         <externalId>true</externalId>

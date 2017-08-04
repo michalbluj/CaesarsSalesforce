@@ -1432,6 +1432,11 @@
         <type>Lookup</type>
     </fields>
     <label>Guest Hotel Activity Vedv</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <pluralLabel>Guest Hotel Activity Vedvs</pluralLabel>
     <searchLayouts/>
 </CustomObject>

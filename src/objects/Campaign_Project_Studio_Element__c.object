@@ -57,28 +57,29 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>Campaign_Project__c</fullName>
+        <fullName>Campaign_Project_Studio_Scope__c</fullName>
         <externalId>false</externalId>
-        <label>Campaign Project</label>
-        <referenceTo>Campaign_Project__c</referenceTo>
+        <label>Campaign Project Studio Scope</label>
+        <referenceTo>Campaign_Project_Studio__c</referenceTo>
         <relationshipLabel>Campaign Project Studio Element</relationshipLabel>
         <relationshipName>Campaign_Project_Studio_Element</relationshipName>
         <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
-        <fullName>Element_Details__c</fullName>
-        <description>Element Details</description>
+        <fullName>Element_Detail__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <inlineHelpText>Element Details</inlineHelpText>
-        <label>Element Details</label>
-        <length>1000</length>
+        <label>Element Detail</label>
+        <referenceTo>Element_Detail__c</referenceTo>
+        <relationshipLabel>Campaign Project Studio Element</relationshipLabel>
+        <relationshipName>Campaign_Project_Studio_Element</relationshipName>
+        <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>5</visibleLines>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Element_Name__c</fullName>
@@ -92,19 +93,15 @@
     </fields>
     <fields>
         <fullName>Element_Product_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
         <label>Element Product Type</label>
-        <picklist>
-            <picklistValues>
-                <fullName>TBD</fullName>
-                <default>false</default>
-            </picklistValues>
-            <restrictedPicklist>true</restrictedPicklist>
-            <sorted>false</sorted>
-        </picklist>
+        <referenceTo>Element_Product_Type__c</referenceTo>
+        <relationshipLabel>Campaign Project Studio Element</relationshipLabel>
+        <relationshipName>Campaign_Project_Studio_Element</relationshipName>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Element_Vendor__c</fullName>
@@ -133,9 +130,10 @@
         <externalId>false</externalId>
         <inlineHelpText>Non-Standard Element Details</inlineHelpText>
         <label>Non-Standard Element Details</label>
-        <required>false</required>
+        <length>1500</length>
         <trackTrending>false</trackTrending>
-        <type>TextArea</type>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Non_Standard_Element__c</fullName>

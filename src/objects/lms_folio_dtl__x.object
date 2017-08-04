@@ -757,6 +757,11 @@
         <type>ExternalLookup</type>
     </fields>
     <label>LMS Folio Dtl</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <pluralLabel>LMS Folio Dtl</pluralLabel>
     <searchLayouts/>
 </CustomObject>

@@ -149,95 +149,8 @@ TEXT( Market__r.Market_Code__c ) +
     <fields>
         <fullName>Campaign_Redemption_Channel__c</fullName>
         <externalId>false</externalId>
+        <globalPicklist>Campaign_Redemption_Channel</globalPicklist>
         <label>Campaign Redemption Channel</label>
-        <picklist>
-            <picklistValues>
-                <fullName>PlaybyTR-Mobile messaging</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Hotel System</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Table Voucher</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Digital RSVP</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Total Rewards.com</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Social Media</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Play by TR - Mobile</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Telemarketing (Host)-Outbound</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Call Center - Inbound</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>2 line reader (slot Machine)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>PRISM display (slot Machine)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Kiosks APS Promo</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Kiosks TR Enhanced</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>TotalRewards.com</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Facebook</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Twitter</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Instagram</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Snapchat</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Groupon</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Yelp</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Open Table</fullName>
-                <default>false</default>
-            </picklistValues>
-            <restrictedPicklist>true</restrictedPicklist>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -366,7 +279,7 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <fullName>Delivery_Channel__c</fullName>
         <externalId>false</externalId>
         <globalPicklist>Delivery_Channel</globalPicklist>
-        <label>Campaign Delivery Channel</label>
+        <label>Campaign Communication Channel</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -607,95 +520,8 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
     <fields>
         <fullName>Guest_Viewable_Channel__c</fullName>
         <externalId>false</externalId>
+        <globalPicklist>Guest_Viewable_Channel</globalPicklist>
         <label>Guest Viewable Channel</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Chatbot</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Digital RSVP</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Direct Mail</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Email</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Facebook</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Groupon</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Instagram</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Kiosks APS Promo</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Kiosks TR Enhanced</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Mobile Application</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Open Table</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Play by TR Mobile</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Play by TR Mobile Push Messages</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Play by TR Offers</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>PRISM display (slot Machine)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>SMS (text messaging)</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Snapchat</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Social</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>TotalRewards.com</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Twitter</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Yelp</fullName>
-                <default>false</default>
-            </picklistValues>
-            <restrictedPicklist>true</restrictedPicklist>
-            <sorted>false</sorted>
-        </picklist>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -1252,7 +1078,32 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
     <listViews>
         <fullName>Marketing_Calendar_2017_Atlantic_Cit</fullName>
         <columns>NAME</columns>
+        <columns>Valid_End_Date__c</columns>
+        <columns>Valid_Start_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>POD_Text__c</columns>
+        <columns>DMC_Text__c</columns>
         <filterScope>Mine</filterScope>
+        <filters>
+            <field>Valid_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>1/1/2017</value>
+        </filters>
+        <filters>
+            <field>Valid_End_Date__c</field>
+            <operation>lessThan</operation>
+            <value>1/1/2018</value>
+        </filters>
+        <filters>
+            <field>POD_Text__c</field>
+            <operation>equals</operation>
+            <value>Atlantic City POD</value>
+        </filters>
+        <filters>
+            <field>DMC_Text__c</field>
+            <operation>equals</operation>
+            <value>Atlantic City</value>
+        </filters>
         <label>Marketing Calendar - 2017 - AC</label>
     </listViews>
     <nameField>
@@ -1283,7 +1134,7 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Campaign_Redemption_Channel__c</picklist>
+            <picklist>Campaign_Redemption_Channel</picklist>
             <values>
                 <fullName>2 line reader %28slot Machine%29</fullName>
                 <default>false</default>
@@ -1490,7 +1341,7 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Guest_Viewable_Channel__c</picklist>
+            <picklist>Guest_Viewable_Channel</picklist>
             <values>
                 <fullName>Chatbot</fullName>
                 <default>false</default>
@@ -1806,7 +1657,7 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Campaign_Redemption_Channel__c</picklist>
+            <picklist>Campaign_Redemption_Channel</picklist>
             <values>
                 <fullName>2 line reader %28slot Machine%29</fullName>
                 <default>false</default>
@@ -2013,7 +1864,7 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Guest_Viewable_Channel__c</picklist>
+            <picklist>Guest_Viewable_Channel</picklist>
             <values>
                 <fullName>Chatbot</fullName>
                 <default>false</default>

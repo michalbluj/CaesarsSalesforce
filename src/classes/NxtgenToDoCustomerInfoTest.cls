@@ -61,7 +61,7 @@ private class NxtgenToDoCustomerInfoTest {
 		System.assertEquals((String)row.get('create_dt'),'2015-03-01');
 		System.assertEquals((String)row.get('first_name'),'MICKEY');
 		System.assertEquals((String)row.get('to_do_type'),'Adhoc');
-		System.assertEquals((Integer)row.get('market_adw'),141);
+		System.assertEquals((Decimal)row.get('market_adw'),141);
 		System.assertEquals((String)row.get('middle_init'),'');
 		System.assertEquals((String)row.get('to_do_notes'),'DUMMIED OUT TO SHORTEN CONTENT');
 		System.assertEquals((String)row.get('to_do_status'),'C');

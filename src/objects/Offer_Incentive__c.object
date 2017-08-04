@@ -1096,53 +1096,6 @@ E.g. You can have 5% off.</inlineHelpText>
         <type>Percent</type>
     </fields>
     <fields>
-        <fullName>Redemption_Channel__c</fullName>
-        <externalId>false</externalId>
-        <label>Redemption Channel</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Kiosk - APS Promo</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Kiosk - TR Enhanced</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Kiosk - games</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>PlaybyTR-Mobile messaging</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Hotel System</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Table Voucher</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>COV</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>COVPOS</fullName>
-                <default>false</default>
-            </picklistValues>
-            <restrictedPicklist>true</restrictedPicklist>
-            <sorted>false</sorted>
-        </picklist>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>MultiselectPicklist</type>
-        <visibleLines>4</visibleLines>
-    </fields>
-    <fields>
         <fullName>Reservation_Phone_Number__c</fullName>
         <description>Reservation Contact Number</description>
         <externalId>false</externalId>

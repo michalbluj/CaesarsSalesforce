@@ -168,8 +168,13 @@ public without sharing class CampaignProjectModel {
                 newCase.Escalation_Assignment__c = (modifiedCampProjectsMap.get(campProjId).Market_Text__c != null && caseIdToWTCMap.get(caseId).Member_Escalation_Assignment__c != null) ? modifiedCampProjectsMap.get(campProjId).Market_Text__c + ' - ' +
                                                    caseIdToWTCMap.get(caseId).Member_Escalation_Assignment__c : '';
                 newCase.EntitlementId            = (String.isNotBlank(caseIdToWTCMap.get(caseId).Entitlement__c)) ? caseIdToWTCMap.get(caseId).Entitlement__c : null;
-                newCase.Member_Role__c           = (modifiedCampProjectsMap.get(campProjId).Market_Text__c != null && casesToClone.get(caseId).Member_Role__c != null) ? modifiedCampProjectsMap.get(campProjId).Market_Text__c + ' - ' + 
-                                                    casesToClone.get(caseId).Member_Role__c : '';
+                //newCase.Member_Role__c           = (modifiedCampProjectsMap.get(campProjId).Market_Text__c != null && casesToClone.get(caseId).Member_Role__c != null) ? modifiedCampProjectsMap.get(campProjId).Market_Text__c + ' - ' + 
+                //                                    casesToClone.get(caseId).Member_Role__c : '';
+                newCase.Member_Role__c           = (casesToClone.get(caseId).Member_Role_Queue_Derivation__c == 'Market' && modifiedCampProjectsMap.get(campProjId).Market_Text__c != null && casesToClone.get(caseId).Member_Role__c != null) ?  
+                                                   modifiedCampProjectsMap.get(campProjId).Market_Text__c + ' - ' + casesToClone.get(caseId).Member_Role__c : 
+                                                   (casesToClone.get(caseId).Member_Role_Queue_Derivation__c == 'DMC' && modifiedCampProjectsMap.get(campProjId).DMC_Text__c != null && casesToClone.get(caseId).Member_Role__c != null) ?
+                                                   modifiedCampProjectsMap.get(campProjId).DMC_Text__c + ' - ' + casesToClone.get(caseId).Member_Role__c : 
+                                                   (casesToClone.get(caseId).Member_Role_Queue_Derivation__c == 'Generic' && casesToClone.get(caseId).Member_Role__c != null) ? casesToClone.get(caseId).Member_Role__c : '';
                 newCase.Milestone__c             = (caseIdToWTCMap.get(caseId).Milestone_Type__c != null) ? caseIdToWTCMap.get(caseId).Milestone_Type__c : ''; 
                 newCase.OwnerId                  = (queueNameToQueueMap.get(newCase.Member_Role__c) != null) ? 
                                                     queueNameToQueueMap.get(newCase.Member_Role__c) : UserInfo.getUserId();

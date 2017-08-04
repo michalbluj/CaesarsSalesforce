@@ -16,12 +16,16 @@
                 <field>Element_Vendor__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Element_Product_Type__c</field>
+                <behavior>Required</behavior>
+                <field>Campaign_Project_Studio_Scope__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Element_Details__c</field>
+                <field>Element_Detail__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Element_Product_Type__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -55,10 +59,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>LastModifiedById</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>Campaign_Project__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
