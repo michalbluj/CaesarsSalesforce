@@ -27,10 +27,6 @@
                 <behavior>Readonly</behavior>
                 <field>Market_Time_Zone__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Redemption_Channel__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -396,6 +392,10 @@
         <fields>Configuration_Type__c</fields>
         <fields>Label__c</fields>
         <relatedList>Offer_Incentive_Dynamic_Configuration__c.Offer_Incentive__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>IOT_Trigger_Profile__c.Offer_Incentive__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

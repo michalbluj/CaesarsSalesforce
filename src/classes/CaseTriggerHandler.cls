@@ -18,7 +18,7 @@ public with sharing class CaseTriggerHandler extends TriggerHandler{
     }
 
     public override void afterInsert() {
-        CaseModel.AsscoaiteAnchoredTasks(null,Trigger.new);
+      //  CaseModel.AsscoaiteAnchoredTasks(null,Trigger.new);
         CaseModel.updateParentMilestone(null, Trigger.new);
        
     }
@@ -29,7 +29,7 @@ public with sharing class CaseTriggerHandler extends TriggerHandler{
         CaseModel.createCaseMilestoneHistory((Map<Id,Case>)Trigger.oldMap, Trigger.new);
         CaseModel.processOwnershipChange((Map<Id,Case>)Trigger.oldMap, Trigger.new);
         CaseModel.updateParentMilestone((Map<Id,Case>)Trigger.oldMap, Trigger.new);
-         CaseModel.AsscoaiteAnchoredTasks((Map<Id,Case>)Trigger.oldMap, Trigger.new);
+      //   CaseModel.AsscoaiteAnchoredTasks((Map<Id,Case>)Trigger.oldMap, Trigger.new);
         //CampaignProjectModel.setRecordType((Map<Id,Campaign_Project__c>)Trigger.oldMap, Trigger.new);
     }
 }

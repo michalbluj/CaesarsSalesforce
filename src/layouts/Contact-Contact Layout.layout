@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>DisableCustomerPortal</excludeButtons>
     <excludeButtons>DisablePartnerPortal</excludeButtons>
     <excludeButtons>DisablePrmSuperUser</excludeButtons>
     <excludeButtons>EnablePrmSuperUser</excludeButtons>
+    <excludeButtons>RequestUseSfdc</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -492,16 +494,6 @@
         <fields>ExternalId</fields>
         <fields>DisplayUrl</fields>
         <relatedList>marketing_campaigns__x.contact__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>ExternalId</fields>
-        <fields>Ucp_guest_id__c</fields>
-        <fields>Offer_Id__c</fields>
-        <fields>b_suppressed__c</fields>
-        <fields>c_suppressed_by_cd__c</fields>
-        <fields>c_suppression_comment__c</fields>
-        <fields>Delivery_mechanism__c</fields>
-        <relatedList>IOTAction__x.Contact__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>ExternalId</fields>

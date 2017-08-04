@@ -515,15 +515,6 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>Event_Name__c</fields>
-        <fields>Event_Date__c</fields>
-        <fields>Event_Start_Hour__c</fields>
-        <fields>Event_End_Hour__c</fields>
-        <fields>Location__c</fields>
-        <relatedList>Campaign_Project_Event_Schedule__c.Campaign_Project__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
         <fields>Blackout_Date__c</fields>
         <fields>Blackout_Start_Hour__c</fields>
         <fields>Blackout_End_Hour__c</fields>
@@ -547,6 +538,10 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Campaign_Project_Studio__c.Campaign_Project__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Campaign_Project_Event__c.Campaign_Project__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

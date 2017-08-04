@@ -1078,7 +1078,32 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
     <listViews>
         <fullName>Marketing_Calendar_2017_Atlantic_Cit</fullName>
         <columns>NAME</columns>
+        <columns>Valid_End_Date__c</columns>
+        <columns>Valid_Start_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>POD_Text__c</columns>
+        <columns>DMC_Text__c</columns>
         <filterScope>Mine</filterScope>
+        <filters>
+            <field>Valid_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>1/1/2017</value>
+        </filters>
+        <filters>
+            <field>Valid_End_Date__c</field>
+            <operation>lessThan</operation>
+            <value>1/1/2018</value>
+        </filters>
+        <filters>
+            <field>POD_Text__c</field>
+            <operation>equals</operation>
+            <value>Atlantic City POD</value>
+        </filters>
+        <filters>
+            <field>DMC_Text__c</field>
+            <operation>equals</operation>
+            <value>Atlantic City</value>
+        </filters>
         <label>Marketing Calendar - 2017 - AC</label>
     </listViews>
     <nameField>
