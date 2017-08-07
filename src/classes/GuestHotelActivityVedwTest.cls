@@ -17,9 +17,8 @@ private class GuestHotelActivityVedwTest {
         Test.stopTest();
 
         for(Map<String, Object> row : rows) {
-            System.assertEquals((String) row.get('id'), '1234');
-            System.assertEquals((String) row.get('ExternalId'), '1234');
-            System.assertEquals((String) row.get('DisplayUrl'), '1234');
+            System.assertEquals('1234', (String) row.get('ExternalId'));
+            System.assertEquals('1234', (String) row.get('DisplayUrl'));
         }
     }
 }

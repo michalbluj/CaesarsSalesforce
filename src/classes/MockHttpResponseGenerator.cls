@@ -1,6 +1,7 @@
 /**
- * Created by ceezar on 04.08.2017.
- */
+ * @author Cezary Zeleznicki
+ * @date 04.08.2017
+ **/
 @isTest
 global class MockHttpResponseGenerator implements HttpCalloutMock {
     private Integer statusCode;
