@@ -275,9 +275,9 @@
         <fields>Dependencies__c</fields>
         <fields>Anchored__c</fields>
         <fields>Target_Start_Date__c</fields>
-        <fields>Target_End_Date__c</fields>
         <fields>Member_Role__c</fields>
         <fields>Escalation_Assignment__c</fields>
+        <fields>OWNER_NAME</fields>
         <relatedList>Case.Campaign_Project__c</relatedList>
     </relatedLists>
     <relatedLists>

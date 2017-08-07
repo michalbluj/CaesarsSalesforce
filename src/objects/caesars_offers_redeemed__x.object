@@ -36,7 +36,7 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deploymentStatus>Deployed</deploymentStatus>
     <description>caesars$offers_redeemed</description>
     <enableFeeds>false</enableFeeds>
     <enableReports>false</enableReports>

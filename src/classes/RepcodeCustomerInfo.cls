@@ -20,7 +20,6 @@ public with sharing class RepcodeCustomerInfo implements CustomerInfoInterface {
         row.put('efft_yr', wrapper.data.i_efft_yr);
         row.put('rep_type', wrapper.data.c_rep_type);
         row.put('rep_rank', wrapper.data.i_rep_rank);
-        //row.put('timestamp', wrapper.data.d_timestamp);
         row.put('patron_id', wrapper.data.i_patron_id);
         row.put('current_cd', wrapper.data.c_current_cd);
         row.put('entered_by', wrapper.data.c_entered_by);

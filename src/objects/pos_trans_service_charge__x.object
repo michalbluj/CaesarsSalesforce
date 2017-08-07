@@ -36,7 +36,7 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deploymentStatus>Deployed</deploymentStatus>
     <description>caesars$pos_trans_service_charge</description>
     <enableFeeds>false</enableFeeds>
     <enableReports>false</enableReports>
@@ -270,7 +270,7 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <label>caesars$pos_trans_service_charge</label>
-    <pluralLabel>caesars$pos_trans_service_charge</pluralLabel>
+    <label>Pos Trans Service Charge</label>
+    <pluralLabel>Pos Trans Service Charges</pluralLabel>
     <searchLayouts/>
 </CustomObject>

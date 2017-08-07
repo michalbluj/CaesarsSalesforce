@@ -12,7 +12,6 @@ public with sharing class PropMailCustomerInfo implements CustomerInfoInterface{
     * @return row representation
     */
 	public Map<String, Object> populateData(Map<String, Object> row,CustomerInfo wrapper){
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('quality_cd', wrapper.data.c_quality_cd);
 		row.put('prop_mail_cd', wrapper.data.c_prop_mail_cd);
 		return row;

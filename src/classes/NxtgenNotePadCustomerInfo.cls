@@ -19,7 +19,6 @@ public with sharing class NxtgenNotePadCustomerInfo implements CustomerInfoInter
 		row.put('prop_cd', wrapper.data.c_prop_cd);
 		row.put('note_pad', wrapper.data.c_note_pad);
 		row.put('create_dt', wrapper.data.d_create_dt);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('note_pad_id', wrapper.data.i_note_pad_id);
 		row.put('creator_login', wrapper.data.c_creator_login);
 		row.put('modifier_login', wrapper.data.c_modifier_login);

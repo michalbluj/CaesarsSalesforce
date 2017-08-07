@@ -41,6 +41,7 @@ public with sharing class EDSCustomerInfoOperation implements ExternalDataSource
         'PrefTemp'           => new PrefCustomerInfo(),
         'PropMail'           => new PropMailCustomerInfo(),
         'Repcode'            => new RepcodeCustomerInfo(),
+        'ScoreProp'          => new ScorePropCustomerInfo(),
         'TierScore'          => new TierScoreCustomerInfo(),
         'VedwAssociated'     => new VedwAssociatedCustomerInfo(),
         'VedwEthnicity'      => new VedwEthnicityCustomerInfo(),

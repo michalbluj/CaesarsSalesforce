@@ -24,7 +24,6 @@ public with sharing class NxtgenToDoCustomerInfo implements CustomerInfoInterfac
 		row.put('to_do_id', wrapper.data.i_to_do_id);
 		row.put('last_name', wrapper.data.c_last_name);
 		row.put('create_dt', wrapper.data.d_create_dt);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('first_name', wrapper.data.c_first_name);
 		row.put('to_do_type', wrapper.data.c_to_do_type);
 		row.put('market_adw', wrapper.data.f_market_adw);

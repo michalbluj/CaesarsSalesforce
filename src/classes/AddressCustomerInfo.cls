@@ -33,7 +33,6 @@ public with sharing class AddressCustomerInfo implements CustomerInfoInterface {
         row.put('addr_type', wrapper.data.c_addr_type);
         row.put('address_1', wrapper.data.c_address_1);
         row.put('address_2', wrapper.data.c_address_2);
-        //row.put('timestamp', wrapper.data.d_timestamp);
         row.put('country_cd', wrapper.data.c_country_cd);
         row.put('quality_cd', wrapper.data.c_quality_cd);
         row.put('zip_plus_4', wrapper.data.c_zip_plus_4);

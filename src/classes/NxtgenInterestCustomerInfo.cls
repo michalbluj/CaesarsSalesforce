@@ -15,7 +15,6 @@ public with sharing class NxtgenInterestCustomerInfo implements CustomerInfoInte
 		row.put('app_cd', wrapper.data.c_app_cd);
 		row.put('interest', wrapper.data.c_interest);
 		row.put('create_dt', wrapper.data.d_create_dt);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('interest_id', wrapper.data.i_interest_id);
 		row.put('creator_login', wrapper.data.c_creator_login);
 		row.put('interest_group', wrapper.data.c_interest_group);

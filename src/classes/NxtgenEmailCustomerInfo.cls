@@ -16,7 +16,6 @@ public with sharing class NxtgenEmailCustomerInfo implements CustomerInfoInterfa
 		row.put('app_cd', wrapper.data.c_app_cd);
 		row.put('email_id', wrapper.data.i_email_id);
 		row.put('create_dt', wrapper.data.d_create_dt);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('created_by', wrapper.data.c_created_by);
 		row.put('email_type', wrapper.data.c_email_type);
 		row.put('email_status', wrapper.data.c_email_status);

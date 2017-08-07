@@ -14,7 +14,6 @@ public with sharing class PrefGlbaCustomerInfo implements CustomerInfoInterface{
 	public Map<String, Object> populateData(Map<String, Object> row,CustomerInfo wrapper){
 		row.put('modifier', wrapper.data.c_modifier);
 		row.put('response', wrapper.data.i_response);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('quality_cd', wrapper.data.c_quality_cd);
 		row.put('category_id', wrapper.data.i_category_id);
 		row.put('derived_flag', wrapper.data.c_derived_flag);

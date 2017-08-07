@@ -358,6 +358,14 @@ public class CustomerInfo {
         public String d_cc_expire_dt {get;set;}
         public String c_spcl_instruction {get;set;}
 
+        //ScoreProp
+        public Integer i_mileage {get;set;}
+        public Decimal f_prep_trips {get;set;}
+        public Integer i_pred_worth {get;set;}
+        public String d_last_update {get;set;}
+        public Integer i_pred_hotel_day {get;set;}
+        public Integer i_pred_hotel_trip {get;set;}
+
         //VedwAssociated
         public String age {get;set;}
         public String d_dob {get;set;}

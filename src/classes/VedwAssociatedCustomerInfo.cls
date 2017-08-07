@@ -18,7 +18,6 @@ public with sharing class VedwAssociatedCustomerInfo implements CustomerInfoInte
 		row.put('addr_pref', wrapper.data.c_addr_pref);
 		row.put('mail_flag', wrapper.data.c_mail_flag);
 		row.put('create_dt', wrapper.data.d_create_dt);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('quality_cd', wrapper.data.c_quality_cd);
 		return row;
 	}

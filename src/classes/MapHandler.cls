@@ -8,6 +8,7 @@ public with sharing class MapHandler {
 
     public static final Map<String, String> EXTERNAL_OBJECT_TO_TABLE_MAP = new Map<String, String> {
         'caesars$offers_sent' => 'offers_sent',
+        'caesars$offers_redeemed' => 'offers_redeemed',
         'caesars$iot_action' => 'iot_action',
         'caesars$marketing_campaigns' => 'marketing_campaigns',
         'caesars$marketing_campaigns_properties' => 'marketing_campaigns_properties',
@@ -37,12 +38,11 @@ public with sharing class MapHandler {
         'caesars$gst_id_xref' => 'gst_id_xref',
         'caesars$pdb_trip' => 'pdb_trip',
         'caesars$pdb_trip_info' => 'pdb_trip_info',
-        'caesars$offers_redeemed' => 'caesars_offers_redeemed',
-        'caesars$comp_detail' => 'caesars_comp_detail',
-        'caesars$hotel_event' => 'caesars_hotel_event'
+        'caesars$comp_detail' => 'comp_detail',
+        'caesars$hotel_event' => 'hotel_event'
     };
 
-    public static final Map<String, String> externalTableToClassNameMap = new Map<String, String> {
+    public static final Map<String, String> EXTERNAL_TABLE_TO_CLASSNAME_MAP = new Map<String, String> {
         'caesars$offers_sent' => 'OfferSent',
         'caesars$offers_redeemed' => 'OfferRedeemed',
         'caesars$iot_action' => 'IOTAction',

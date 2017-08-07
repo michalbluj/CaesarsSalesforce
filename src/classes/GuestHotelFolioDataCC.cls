@@ -69,7 +69,13 @@ global with sharing class  GuestHotelFolioDataCC extends GuestSubjectDataBaseCC 
 		soql1 += ' c_credit_card_auth_nbr__c, ';
 		soql1 += ' c_credit_card_exp_dt__c, ';
 		soql1 += ' c_credit_card_nbr__c, ';
-		soql1 += ' source_code_fk__c ';
+		soql1 += ' source_code_fk__c, ';
+		soql1 += ' source_code_fk__r.Code__c, ';
+		soql1 += ' hotel_act_status_code_fk__r.Description__c, ';
+		//soql1 += ' customer_control_segments_fk__r.c_control_segment_desc__c ,';
+		//soql1 += ' hotel_wing_codes_fk__r.Code__c, ';
+		//soql1 += ' lms_room_type_desc_sda_fk__r.c_rm_type__c , ';
+		soql1 += ' c_prop_cd__c ';
 		soql1 += ' FROM lms_hotel_activity__x  ';
 		if (idType == 'contact'){
 			soql1 += whereClause1 + ': allContactIds';
@@ -77,6 +83,20 @@ global with sharing class  GuestHotelFolioDataCC extends GuestSubjectDataBaseCC 
 		} else {
 			soql1 += whereClause1 + ': ids';
 		}
+
+		String soql2 = ' SELECT externalid, ';
+		soql2 += ' customer_control_segments_fk__r.c_control_segment_desc__c ,';
+		soql2 += ' hotel_wing_codes_fk__r.Code__c, ';
+		soql2 += ' lms_room_type_desc_sda_fk__r.c_rm_type__c , ';
+		soql2 += ' c_prop_cd__c ';
+		soql2 += ' FROM lms_hotel_activity__x  ';
+		if (idType == 'contact'){
+			soql2 += whereClause1 + ': allContactIds';
+			soql2 += whereClause2 + ': allContactIds';
+		} else {
+			soql2 += whereClause1 + ': ids';
+		}
+
 
 		soql1 = String.escapeSingleQuotes(soql1);
 
@@ -89,6 +109,11 @@ global with sharing class  GuestHotelFolioDataCC extends GuestSubjectDataBaseCC 
 	  	system.debug('*** activityList ' + activityList );
 
 	  	updateActivity (activityMap, activityList, '1');
+
+	  	soql2 = String.escapeSingleQuotes(soql2);
+	  	activityList = (!mockedActivity.isEmpty()) ? mockedActivity : Database.query(soql2);
+	  	updateActivity (activityMap, activityList, '2');
+
 	  	
 	  	system.debug('*** activityMap return ' + activityMap.values());
 
@@ -127,10 +152,19 @@ global with sharing class  GuestHotelFolioDataCC extends GuestSubjectDataBaseCC 
 		  		activityWrap.c_credit_card_auth_nbr = activity.c_credit_card_auth_nbr__c;
 		  		activityWrap.c_credit_card_exp_dt = activity.c_credit_card_exp_dt__c;
 		  		activityWrap.c_credit_card_nbr = activity.c_credit_card_nbr__c;
-		  	
+		  		activityWrap.source_cd = activity.source_code_fk__r.Code__c ;
+		  		activityWrap.hotel_act_status_cd = activity.hotel_act_status_code_fk__r.Description__c;
+		  		
 		  		activityWrap.contact1 = activity.contact1__c;
 		  		activityWrap.contact2 = activity.contact2__c;
 		  		
+		  	}
+		  	if (pass == '2'){
+		  		activityWrap.customer_control_segment_desc = activity.customer_control_segments_fk__r.c_control_segment_desc__c ;
+		  		activityWrap.hotel_wing_cd = activity.hotel_wing_codes_fk__r.Code__c;
+		  		activityWrap.lms_room_type_desc_sda = activity.lms_room_type_desc_sda_fk__r.c_rm_type__c;
+		  		activityWrap.prop_cd = activity.c_prop_cd__c;
+		  	
 		  	}
 		  	
 	  		activityMap.put(activity.ExternalId, activityWrap);
@@ -952,6 +986,12 @@ global with sharing class  GuestHotelFolioDataCC extends GuestSubjectDataBaseCC 
 		@AuraEnabled global String c_credit_card_auth_nbr { get; set; } 
 		@AuraEnabled global String c_credit_card_exp_dt { get; set; } 
 		@AuraEnabled global String c_credit_card_nbr { get; set; } 
+		@AuraEnabled global String source_cd { get; set; } 
+		@AuraEnabled global String hotel_act_status_cd { get; set; } 
+		@AuraEnabled global String customer_control_segment_desc { get; set; } 
+		@AuraEnabled global String hotel_wing_cd { get; set; } 
+		@AuraEnabled global String lms_room_type_desc_sda { get; set; }  
+		@AuraEnabled global String prop_cd { get; set; } 
 	
 	  	global ActivityWrapper(){
 

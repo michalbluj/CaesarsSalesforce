@@ -15,7 +15,6 @@ public with sharing class OccupationCustomerInfo implements CustomerInfoInterfac
 		row.put('sic_cd', wrapper.data.c_sic_cd);
 		row.put('firm_name', wrapper.data.c_firm_name);
 		row.put('job_title', wrapper.data.c_job_title);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('occupation', wrapper.data.c_occupation);
 		row.put('owner_flag', wrapper.data.c_owner_flag);
 		row.put('quality_cd', wrapper.data.c_quality_cd);
