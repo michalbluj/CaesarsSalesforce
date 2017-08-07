@@ -35,6 +35,12 @@ public with sharing class GuestSlotRatingDetail extends ExternalObjectResponse i
         public final String d_end_time {get; set;}
     }
 
+    /*
+    * @description populates data from wrapper to map that represents row
+    * @param row data row to be filled
+    * @param wrapper object that contains data
+    * @return row representation
+    */
     public List<Map<String, Object>> populateData(List<Map<String, Object>> rows) {
         for (GuestSlotRatingDetail.Record wrapper : this.body) {
             Map<String, Object> row = new Map<String, Object>();

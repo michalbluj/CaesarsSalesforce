@@ -240,6 +240,12 @@ public with sharing class MarketingCampaignProperty extends ExternalObjectRespon
         public final String i_dmid {get;set;}
     }
 
+    /*
+    * @description populates data from wrapper to map that represents row
+    * @param row data row to be filled
+    * @param wrapper object that contains data
+    * @return row representation
+    */
     public List<Map<String, Object>> populateData(List<Map<String, Object>> rows){
         for(MarketingCampaignProperty.Record wrapper : this.body) {
             Map<String, Object> row = new Map<String, Object>();

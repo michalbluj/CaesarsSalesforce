@@ -1,7 +1,9 @@
 /**
- * Created by ceezar on 31.07.2017.
+ * @author Cezary Zeleznicki
+ * @date 31.07.2017.
+ * @group Model
+ * @description generic class responsible mappign ApPdbTripCmx json response
  */
-
 public with sharing class ApPdbTripCmx extends ExternalObjectResponse implements ExternalObjectInterface{
 
     public List<Record> body {get; set;}
@@ -35,6 +37,12 @@ public with sharing class ApPdbTripCmx extends ExternalObjectResponse implements
         public final String market_fk {get; set;}
     }
 
+    /*
+    * @description populates data from wrapper to map that represents row
+    * @param row data row to be filled
+    * @param wrapper object that contains data
+    * @return row representation
+    */
     public List<Map<String, Object>> populateData(List<Map<String, Object>> rows) {
         for (ApPdbTripCmx.Record wrapper : this.body) {
             Map<String, Object> row = new Map<String, Object>();

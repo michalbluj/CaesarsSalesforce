@@ -1,5 +1,8 @@
 /**
- * Created by ceezar on 31.07.2017.
+ * @author Cezary Zeleznicki
+ * @date 31.07.2017.
+ * @group Model
+ * @description generic class responsible mappign PosTransItemizer json response
  */
 
 public with sharing class PosTransItemizer extends ExternalObjectResponse implements ExternalObjectInterface {
@@ -26,6 +29,12 @@ public with sharing class PosTransItemizer extends ExternalObjectResponse implem
         public final String i_xref_dmid {get; set;}
     }
 
+    /*
+    * @description populates data from wrapper to map that represents row
+    * @param row data row to be filled
+    * @param wrapper object that contains data
+    * @return row representation
+    */
     public List<Map<String, Object>> populateData(List<Map<String, Object>> rows) {
         for (PosTransItemizer.Record wrapper : this.body) {
             Map<String, Object> row = new Map<String, Object>();
