@@ -139,6 +139,10 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Element_Name__c</fields>
+        <fields>Element_Product_Type__c</fields>
+        <fields>Non_Standard_Element__c</fields>
+        <fields>Element_Vendor__c</fields>
         <relatedList>Campaign_Project_Studio_Element__c.Campaign_Project_Studio_Scope__c</relatedList>
     </relatedLists>
     <relatedLists>

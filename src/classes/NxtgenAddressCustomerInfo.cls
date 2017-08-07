@@ -27,7 +27,6 @@ public with sharing class NxtgenAddressCustomerInfo implements CustomerInfoInter
 		row.put('addr_desc', wrapper.data.c_addr_desc);
 		row.put('city_name', wrapper.data.c_city_name);
 		row.put('create_dt', wrapper.data.d_create_dt);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('country_cd', wrapper.data.c_country_cd);
 		row.put('state_name', wrapper.data.c_state_name);
 		row.put('note_pad_id', wrapper.data.i_note_pad_id);

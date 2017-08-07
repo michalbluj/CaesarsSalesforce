@@ -135,9 +135,10 @@ public without sharing class CampaignProjectModel {
     //public static void createCases(List<Id> modifiedCampProjects, Map<Id,List<Id>> wTemplateIdToCaseIdMap, Map<Id,Workflow_Template_Case__c> caseIdToWTCMap, map<id,Campaign_Project__c> modifiedCampProjectsMap){
       public static void createCases(Map<Id,List<Id>> wTemplateIdToCaseIdMap, Map<Id,Workflow_Template_Case__c> caseIdToWTCMap, map<id,Campaign_Project__c> modifiedCampProjectsMap){
         List<Case> casesToInsert                                   = new List<Case>();
+        id BussinessHourID= BusinessHourUtil.caesarsBusinessWeek.id;
         Map<Id,List<Id>> campProjIdToCaseIdMap                     = new Map<Id,List<Id>>();
         Map<Id,List<Workflow_Template_Case__c>> campProjIdToWTCMap = new Map<Id,List<Workflow_Template_Case__c>>();
-        Map<Id,Case> casesToClone                                  = new Map<Id,Case>([select Id,Project_Type__c,Approval_Case__c,Status,Case_Sub_Group__c,Member_Role__c,Escalation_Assignment__c,EntitlementId,
+        Map<Id,Case> casesToClone                                  = new Map<Id,Case>([select Id,Project_Type__c,Approval_Case__c,Member_Role_Queue_Derivation__c,Status,Case_Sub_Group__c,Member_Role__c,Escalation_Assignment__c,EntitlementId,
                                                                                        Planning_Task__c,Anchored__c,Dependencies__c,Legacy_Task_Code__c,Scheduled_Through__c,Target_Duration_Days__c,Target_Duration_Hours__c,
                                                                                        Subject,Target_Duration_Minutes__c,Task_Code__c from Case where Id in: caseIdToWTCMap.keySet()]);
         map<id,Proforma__c> proformaCampaignMap                    = new map<id,Proforma__c>(); // this map will hold the related proforma of a campaign
@@ -160,6 +161,7 @@ public without sharing class CampaignProjectModel {
         for (Id campProjId:campProjIdToCaseIdMap.keySet()){
             for (Id caseId:campProjIdToCaseIdMap.get(campProjId)){
                 Case newCase                     = casesToClone.get(caseId).clone(false,false,false,false);
+                newcase.BusinessHoursId          =  BussinessHourID;
                 newCase.ParentId                 = modifiedCampProjectsMap.get(campProjId).Campaign_Project_Case__c;
                 newCase.RecordTypeId             = Schema.SObjectType.Case.getRecordTypeInfosByName().get(CaseModel.CASE_TYPE_CAMPAIGN_WORKFLOW_INSTANCE).getRecordTypeId();
                 newCase.Campaign_Project__c      = campProjId;
@@ -171,10 +173,11 @@ public without sharing class CampaignProjectModel {
                 //newCase.Member_Role__c           = (modifiedCampProjectsMap.get(campProjId).Market_Text__c != null && casesToClone.get(caseId).Member_Role__c != null) ? modifiedCampProjectsMap.get(campProjId).Market_Text__c + ' - ' + 
                 //                                    casesToClone.get(caseId).Member_Role__c : '';
                 newCase.Member_Role__c           = (casesToClone.get(caseId).Member_Role_Queue_Derivation__c == 'Market' && modifiedCampProjectsMap.get(campProjId).Market_Text__c != null && casesToClone.get(caseId).Member_Role__c != null) ?  
-                                                   modifiedCampProjectsMap.get(campProjId).Market_Text__c + ' - ' + casesToClone.get(caseId).Member_Role__c : 
+                                                   modifiedCampProjectsMap.get(campProjId).Market_Text__c + '_' + casesToClone.get(caseId).Member_Role__c : 
                                                    (casesToClone.get(caseId).Member_Role_Queue_Derivation__c == 'DMC' && modifiedCampProjectsMap.get(campProjId).DMC_Text__c != null && casesToClone.get(caseId).Member_Role__c != null) ?
-                                                   modifiedCampProjectsMap.get(campProjId).DMC_Text__c + ' - ' + casesToClone.get(caseId).Member_Role__c : 
+                                                   modifiedCampProjectsMap.get(campProjId).DMC_Text__c + '_' + casesToClone.get(caseId).Member_Role__c : 
                                                    (casesToClone.get(caseId).Member_Role_Queue_Derivation__c == 'Generic' && casesToClone.get(caseId).Member_Role__c != null) ? casesToClone.get(caseId).Member_Role__c : '';
+                newCase.Member_Role__c           = newCase.Member_Role__c.replace(' ','_');
                 newCase.Milestone__c             = (caseIdToWTCMap.get(caseId).Milestone_Type__c != null) ? caseIdToWTCMap.get(caseId).Milestone_Type__c : ''; 
                 newCase.OwnerId                  = (queueNameToQueueMap.get(newCase.Member_Role__c) != null) ? 
                                                     queueNameToQueueMap.get(newCase.Member_Role__c) : UserInfo.getUserId();
@@ -202,7 +205,7 @@ public without sharing class CampaignProjectModel {
                 casesToInsert.add(newCase);
             }   
         }
-        insert casesToInsert;
+        DML.save(casesToInsert);
     }
     /*******************************************************************************************************
     * @description updatete target start and end dates of Anchor tasks cases 
@@ -351,7 +354,7 @@ public without sharing class CampaignProjectModel {
        
        if(!(mapCasesToUpdate.isEmpty()))
        {
-           update mapCasesToUpdate.values();
+           DML.save(mapCasesToUpdate.values());
        }
     }
     

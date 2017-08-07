@@ -996,7 +996,6 @@ ref: US1397</description>
                 <fullName>Generic</fullName>
                 <default>false</default>
             </picklistValues>
-            <restrictedPicklist>true</restrictedPicklist>
             <sorted>false</sorted>
         </picklist>
         <required>false</required>
@@ -1594,7 +1593,7 @@ ref: US1397</description>
         <fullName>AC_Analytics_Case</fullName>
         <filterScope>Queue</filterScope>
         <label>ACM - Analytics</label>
-        <queue>ACM_Analytics</queue>
+        <queue>Atlantic_City_Analytics</queue>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
@@ -1603,7 +1602,7 @@ ref: US1397</description>
         <fullName>AC_DMC_Associate_Case</fullName>
         <filterScope>Queue</filterScope>
         <label>AC - DMC Associate</label>
-        <queue>AC_DMC_Associate</queue>
+        <queue>Atlantic_City_DMC_Associate</queue>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
@@ -1679,8 +1678,9 @@ ref: US1397</description>
         <columns>CASES.SUBJECT</columns>
         <columns>CASES.STATUS</columns>
         <columns>CASES.PRIORITY</columns>
-        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
         <columns>CORE.USERS.ALIAS</columns>
+        <columns>Approval_Case__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>CASES.RECORDTYPE</field>
@@ -1713,14 +1713,51 @@ ref: US1397</description>
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>LVM_Analytics_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Nevada Analytics</label>
+        <queue>Nevada_Analytics</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>LVM_Marketing_Campaign_Associate_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>LVM Marketing Campaign Associate</label>
+        <queue>LVM_Marketing_Campaign_Associate</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>LVM_POD_Specialist_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>LVM - POD Specialist</label>
+        <queue>LVM_POD_Specialist</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Las_Vegas_DMC_Associate_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Nevada - DMC Associate</label>
+        <queue>Nevada_DMC_Associate</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>MPE_Workflow_Template</fullName>
-        <booleanFilter>1 AND (2 or 3 or 4)</booleanFilter>
+        <booleanFilter>1</booleanFilter>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>CASES.SUBJECT</columns>
         <columns>Controlling_Anchored_Case__c</columns>
         <columns>Target_Duration_Days__c</columns>
         <columns>Target_Duration_Hours__c</columns>
         <columns>Target_Duration_Minutes__c</columns>
+        <columns>Member_Role__c</columns>
         <columns>Anchored__c</columns>
         <columns>CASES.RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
@@ -1728,21 +1765,6 @@ ref: US1397</description>
             <field>CASES.RECORDTYPE</field>
             <operation>equals</operation>
             <value>Case.Campaign_Workflow_Template</value>
-        </filters>
-        <filters>
-            <field>Predecessor_Task_To_Anchored_Case__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <filters>
-            <field>Successor_Task_To_Anchored_Case__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <filters>
-            <field>Anchored__c</field>
-            <operation>equals</operation>
-            <value>1</value>
         </filters>
         <label>Workflow Template Cases</label>
     </listViews>
@@ -3274,4 +3296,10 @@ ref: US1397</description>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Dummy_Validition_do_not_migrate</fullName>
+        <active>false</active>
+        <errorConditionFormula>AccountId !=null</errorConditionFormula>
+        <errorMessage>dummy</errorMessage>
+    </validationRules>
 </CustomObject>

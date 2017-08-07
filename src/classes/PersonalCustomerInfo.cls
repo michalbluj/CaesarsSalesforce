@@ -15,7 +15,6 @@ public with sharing class PersonalCustomerInfo implements CustomerInfoInterface{
 		row.put('ssn', wrapper.data.i_ssn);
 		row.put('dl_num', wrapper.data.c_dl_num);
 		row.put('gender', wrapper.data.c_gender);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('quality_cd', wrapper.data.c_quality_cd);
 		row.put('dl_state_cd', wrapper.data.c_dl_state_cd);
 		row.put('id_verified', wrapper.data.c_id_verified);

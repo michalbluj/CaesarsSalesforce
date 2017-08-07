@@ -22,7 +22,6 @@ public with sharing class NxtgenContactHistCustomerInfo implements CustomerInfoI
 		row.put('direction', wrapper.data.c_direction);
 		row.put('last_name', wrapper.data.c_last_name);
 		row.put('create_dt', wrapper.data.d_create_dt);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('first_name', wrapper.data.c_first_name);
 		row.put('contact_dt', wrapper.data.d_contact_dt);
 		row.put('contact_id', wrapper.data.i_contact_id);

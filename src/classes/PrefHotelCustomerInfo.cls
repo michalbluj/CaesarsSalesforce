@@ -17,7 +17,6 @@ public with sharing class PrefHotelCustomerInfo implements CustomerInfoInterface
 		row.put('bed_type', wrapper.data.c_bed_type);
 		row.put('cc_number', wrapper.data.c_cc_number);
 		row.put('room_type', wrapper.data.c_room_type);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('quality_cd', wrapper.data.c_quality_cd);
 		row.put('companion_id', wrapper.data.c_companion_id);
 		row.put('spcl_request', wrapper.data.c_spcl_request);

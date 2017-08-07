@@ -17,7 +17,6 @@ public with sharing class NxtgenRelationshipCustomerInfo implements CustomerInfo
 		row.put('rel_name', wrapper.data.c_rel_name);
 		row.put('rel_notes', wrapper.data.c_rel_notes);
 		row.put('create_dt', wrapper.data.d_create_dt);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('gst_rel_id', wrapper.data.i_gst_rel_id);
 		row.put('rel_type_cd', wrapper.data.c_rel_type_cd);
 		row.put('relationship', wrapper.data.c_relationship);

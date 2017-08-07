@@ -20,7 +20,6 @@ global class ExternalDataSourceConnection extends DataSource.Connection
         for (String tableName : ExternalDataSourceUtil.retrieveSupportedTables()) {
             tables.add(ExternalDataSourceUtil.constructTable(tableName));
         }
-        System.debug('**** sync tables ' + tables);
         return tables;
     }
 

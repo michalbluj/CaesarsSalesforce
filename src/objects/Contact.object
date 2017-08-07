@@ -151,36 +151,6 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
-        <fullName>C_AGE_18_PLUS__c</fullName>
-        <externalId>false</externalId>
-        <label>Is 18 plus</label>
-        <length>1</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>C_AGE_19_PLUS__c</fullName>
-        <externalId>false</externalId>
-        <label>Is 19 plus</label>
-        <length>1</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>C_AGE_21_PLUS__c</fullName>
-        <externalId>false</externalId>
-        <label>Is 21 plus</label>
-        <length>1</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Campaign_Project_Event_Announcement__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -351,6 +321,61 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>I_est_names_12mn__c</fullName>
+        <externalId>false</externalId>
+        <label>Est names 12months</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>I_user_score_1__c</fullName>
+        <externalId>false</externalId>
+        <label>User score 1</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>I_user_score_2__c</fullName>
+        <externalId>false</externalId>
+        <label>User score 2</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>I_user_score_3__c</fullName>
+        <externalId>false</externalId>
+        <label>User score 3</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>I_user_score_4__c</fullName>
+        <externalId>false</externalId>
+        <label>User score 4</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Jigsaw</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -465,10 +490,60 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>c_age_18_plus__c</fullName>
+        <externalId>false</externalId>
+        <label>Is 18 plus</label>
+        <length>1</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_age_19_plus__c</fullName>
+        <externalId>false</externalId>
+        <label>Is 19 plus</label>
+        <length>1</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_age_21_plus__c</fullName>
+        <externalId>false</externalId>
+        <label>Is 21 plus</label>
+        <length>1</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>c_bed_type__c</fullName>
         <externalId>false</externalId>
         <label>Bed type</label>
         <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_dl_num__c</fullName>
+        <externalId>false</externalId>
+        <label>DL number</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_dl_state_cd__c</fullName>
+        <externalId>false</externalId>
+        <label>DL state code</label>
+        <length>2</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
@@ -489,6 +564,96 @@
         <externalId>false</externalId>
         <label>Email Valid Code</label>
         <length>1</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_ethdom_relg_cd__c</fullName>
+        <externalId>false</externalId>
+        <label>Ethdom religion code</label>
+        <length>1</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_ethdom_relg_cd_desc__c</fullName>
+        <externalId>false</externalId>
+        <label>Ethdom religion code description</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_ethinicitygroup1__c</fullName>
+        <externalId>false</externalId>
+        <label>Ethinicity group 1</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_ethinicitygroup2__c</fullName>
+        <externalId>false</externalId>
+        <label>Ethinicity group 2</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_ethinicitygroup3__c</fullName>
+        <externalId>false</externalId>
+        <label>Ethinicity group 3</label>
+        <length>1</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_ethinicitygroup4__c</fullName>
+        <externalId>false</externalId>
+        <label>Ethinicity group 4</label>
+        <length>1</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_ethnic_code__c</fullName>
+        <externalId>false</externalId>
+        <label>Ethnic code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_ethnic_code_desc__c</fullName>
+        <externalId>false</externalId>
+        <label>Ethnic code description</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_firm_name__c</fullName>
+        <externalId>false</externalId>
+        <label>Firm name</label>
+        <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
@@ -565,10 +730,40 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>c_id_verified__c</fullName>
+        <externalId>false</externalId>
+        <label>Id verified</label>
+        <length>1</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_job_title__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Title</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>c_marital_status__c</fullName>
         <externalId>false</externalId>
         <label>Marital status</label>
         <length>1</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_match_type__c</fullName>
+        <externalId>false</externalId>
+        <label>Match type</label>
+        <length>20</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
@@ -585,10 +780,50 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>c_nbr_yr_emply__c</fullName>
+        <externalId>false</externalId>
+        <label>Number years employed</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_nick_name__c</fullName>
+        <externalId>false</externalId>
+        <label>Nick name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_occupation__c</fullName>
+        <externalId>false</externalId>
+        <label>Occupation</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>c_ofr_freq__c</fullName>
         <externalId>false</externalId>
         <label>Email offer frequency</label>
         <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_owner_flag__c</fullName>
+        <externalId>false</externalId>
+        <label>Owner flag</label>
+        <length>1</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
@@ -683,6 +918,16 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>c_sic_cd__c</fullName>
+        <externalId>false</externalId>
+        <label>Sic code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>c_smoking__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -753,9 +998,27 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>c_vendor_code__c</fullName>
+        <externalId>false</externalId>
+        <label>Vendor code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>d_acct_type_as_of__c</fullName>
         <externalId>false</externalId>
         <label>Account type as of</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>d_annivers_dt__c</fullName>
+        <externalId>false</externalId>
+        <label>Anniversary date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
@@ -785,6 +1048,60 @@
         <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>f_user_amt_1__c</fullName>
+        <externalId>false</externalId>
+        <label>User amount 1</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>f_user_amt_2__c</fullName>
+        <externalId>false</externalId>
+        <label>User amount 2</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>f_user_amt_3__c</fullName>
+        <externalId>false</externalId>
+        <label>User amount 3</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>f_user_amt_4__c</fullName>
+        <externalId>false</externalId>
+        <label>User amount 4</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>i_ssn__c</fullName>
+        <externalId>false</externalId>
+        <label>SSN</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>

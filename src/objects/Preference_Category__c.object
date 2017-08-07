@@ -164,6 +164,12 @@
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
+        <columns>Category_Group__c</columns>
+        <columns>Category_Id__c</columns>
+        <columns>Parent_Category_Id__c</columns>
+        <columns>Depth__c</columns>
+        <columns>Rank_Rule__c</columns>
+        <columns>Response_Rule__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

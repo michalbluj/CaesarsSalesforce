@@ -15,7 +15,6 @@ public with sharing class CasinoCustomerInfo implements CustomerInfoInterface {
     public Map<String, Object> populateData(Map<String, Object> row,CustomerInfo wrapper){
         row.put('rep_id', wrapper.data.c_rep_id);
         row.put('prop_cd', wrapper.data.c_prop_cd);
-        //row.put('timestamp', wrapper.data.d_timestamp);
         row.put('update_dt', wrapper.data.d_update_dt);
         row.put('casino_id', wrapper.data.i_casino_id);
         row.put('quality_cd', wrapper.data.c_quality_cd);

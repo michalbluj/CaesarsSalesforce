@@ -15,7 +15,6 @@ public with sharing class AssociationCustomerInfo implements CustomerInfoInterfa
     public Map<String, Object> populateData(Map<String, Object> row,CustomerInfo wrapper){
         row.put('req_dmid', wrapper.data.i_req_dmid);
         row.put('create_dt', wrapper.data.d_create_dt);
-        //row.put('timestamp', wrapper.data.d_timestamp);
         row.put('quality_cd', wrapper.data.c_quality_cd);
         row.put('assn_reason', wrapper.data.c_assn_reason);
         row.put('req_prop_cd', wrapper.data.c_req_prop_cd);

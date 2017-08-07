@@ -8,15 +8,15 @@
         <label>New Offer Trigger</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Goal_How_should_it_work__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>What_real_time_data_to_realize__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>What_contextual_data_Single_View__c</field>
             </layoutItems>
         </layoutColumns>

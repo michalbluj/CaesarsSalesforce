@@ -76,29 +76,6 @@ private class GuestContactMasterTest {
 	
 	}
 
-	@isTest static void testPropMailMock() {
-		String cId = [SELECT Id FROM Contact LIMIT 1].id;
-		Test.startTest();
-	    Customer_Info_External_c__x mockedPropM = new Customer_Info_External_c__x(
-	        contact__c = cId,
-	        recordtype__c = 'PropMail'
-	    );
-
-	    List<Id> contactIds = new List<Id>();
-	    contactIds.add(cId);
-
-	    GuestContactMasterCC.mockedPropMail.add(mockedPropM);
-	    List<GuestContactMasterCC.PropMailWrapper> requestList = 
-	    		GuestContactMasterCC.retrievePropMailByContacts(contactIds);
-	    Test.stopTest();
-
-	    system.debug('*** requestList ' + requestList);
-
-	    System.assertEquals(1, requestList.size(), 'There should be 1 Prop Mail record'); 
-	    System.assertEquals(cId, requestList[0].contact, 'The Prop Mail record should be for the contact'); 
-	
-	}
-
 	@isTest static void testPrefMarketMailMock() {
 		String cId = [SELECT Id FROM Contact LIMIT 1].id;
 		Test.startTest();
@@ -329,6 +306,121 @@ private class GuestContactMasterTest {
 	
 	}
 
+	@isTest static void testAcquisitionMock() {
+		String cId = [SELECT Id FROM Contact LIMIT 1].id;
+		Test.startTest();
+	    Customer_Info_External_c__x mockedAcq = new Customer_Info_External_c__x(
+	        contact__c = cId,
+	        recordtype__c = 'Acquisition'
+	    );
+
+	    List<Id> contactIds = new List<Id>();
+	    contactIds.add(cId);
+
+	    GuestContactMasterCC.mockedAcquisition.add(mockedAcq);
+	    List<GuestContactMasterCC.AcquisitionWrapper> requestList = 
+	    		GuestContactMasterCC.retrieveAcquisitionByContacts(contactIds);
+	    Test.stopTest();
+
+	    system.debug('*** requestList ' + requestList);
+
+	    System.assertEquals(1, requestList.size(), 'There should be 1 Acquisition record'); 
+	    System.assertEquals(cId, requestList[0].contact, 'The Repcode Acquisition should be for the contact'); 
+	
+	}
+
+	@isTest static void testAliasMock() {
+		String cId = [SELECT Id FROM Contact LIMIT 1].id;
+		Test.startTest();
+	    Customer_Info_External_c__x mockedAcq = new Customer_Info_External_c__x(
+	        contact__c = cId,
+	        recordtype__c = 'Alias'
+	    );
+
+	    List<Id> contactIds = new List<Id>();
+	    contactIds.add(cId);
+
+	    GuestContactMasterCC.mockedAlias.add(mockedAcq);
+	    List<GuestContactMasterCC.AliasWrapper> requestList = 
+	    		GuestContactMasterCC.retrieveAliasByContacts(contactIds);
+	    Test.stopTest();
+
+	    system.debug('*** requestList ' + requestList);
+
+	    System.assertEquals(1, requestList.size(), 'There should be 1 Alias record'); 
+	    System.assertEquals(cId, requestList[0].contact, 'The  Alias should be for the contact'); 
+	
+	}
+
+	@isTest static void testEthnicityAppendMock() {
+		String cId = [SELECT Id FROM Contact LIMIT 1].id;
+		Test.startTest();
+	    Customer_Info_External_c__x mockedAcq = new Customer_Info_External_c__x(
+	        contact__c = cId,
+	        recordtype__c = 'EthnicityAppend'
+	    );
+
+	    List<Id> contactIds = new List<Id>();
+	    contactIds.add(cId);
+
+	    GuestContactMasterCC.mockedEthnicityAppend.add(mockedAcq);
+	    List<GuestContactMasterCC.EthnicityAppendWrapper> requestList = 
+	    		GuestContactMasterCC.retrieveEthnicityAppendByContacts(contactIds);
+	    Test.stopTest();
+
+	    system.debug('*** requestList ' + requestList);
+
+	    System.assertEquals(1, requestList.size(), 'There should be 1 EthnicityAppend record'); 
+	    System.assertEquals(cId, requestList[0].contact, 'The  EthnicityAppend should be for the contact'); 
+	
+	}
+
+	@isTest static void testAIdXrefMock() {
+		String wId = [SELECT Id, winet_Id__c FROM Contact LIMIT 1].winet_Id__c;
+		String cId = [SELECT Id, winet_Id__c FROM Contact LIMIT 1].id;
+		Test.startTest();
+	    caesars_gst_id_xref__x mockedIx = new caesars_gst_id_xref__x(
+	        i_dmid__c = wId
+	    );
+
+	    List<Id> contactIds = new List<Id>();
+	    contactIds.add(cId);
+
+	    GuestContactMasterCC.mockedIDXref.add(mockedIx);
+	    List<GuestContactMasterCC.IdXrefWrapper> requestList = 
+	    		GuestContactMasterCC.retrieveIdXrefByContacts(contactIds);
+	    Test.stopTest();
+
+	    system.debug('*** requestList ' + requestList);
+
+	    System.assertEquals(1, requestList.size(), 'There should be 1 IdXref record'); 
+	    System.assertEquals(wId, requestList[0].i_dmid, 'The IdXref should be for the contact'); 
+	
+	}
+
+	@isTest static void testAConsxrefMock() {
+		String wId = [SELECT Id, winet_Id__c FROM Contact LIMIT 1].winet_Id__c;
+		String cId = [SELECT Id, winet_Id__c FROM Contact LIMIT 1].id;
+		Test.startTest();
+	    gst_cons_xref__x mockedIx = new gst_cons_xref__x(
+	        i_dmid__c = wId
+	    );
+
+	    List<Id> contactIds = new List<Id>();
+	    contactIds.add(cId);
+
+	    GuestContactMasterCC.mockedConsXref.add(mockedIx);
+	    List<GuestContactMasterCC.ConsXrefWrapper> requestList = 
+	    		GuestContactMasterCC.retrieveConsXrefByContacts(contactIds);
+	    Test.stopTest();
+
+	    system.debug('*** requestList ' + requestList);
+
+	    System.assertEquals(1, requestList.size(), 'There should be 1 ConsXref record'); 
+	    System.assertEquals(wId, requestList[0].i_dmid, 'The ConsXref should be for the contact'); 
+	
+	}
+
 
 	@isTest static void testAddressDetailsMock() {
 		String cId = [SELECT Id FROM Contact LIMIT 1].id;
@@ -375,30 +467,6 @@ private class GuestContactMasterTest {
 
 	    System.assertEquals(1, requestList.size(), 'There should be 1 Email record'); 
 	    System.assertEquals(cId, requestList[0].contact, 'The Email record should be for the contact'); 
-	
-	}
-
-	@isTest static void testPropMailDetailsMock() {
-		String cId = [SELECT Id FROM Contact LIMIT 1].id;
-		Test.startTest();
-	    Customer_Info_External_c__x mockedPropM = new Customer_Info_External_c__x(
-	        contact__c = cId,
-	        recordtype__c = 'PropMail',
-	        ExternalId = '111' 
-	    );
-
-	    List<String> externalIds = new List<String>();
-	    externalIds.add('111');
-
-	    GuestContactMasterCC.mockedPropMail.add(mockedPropM);
-	    List<GuestContactMasterCC.PropMailWrapper> requestList = 
-	    		GuestContactMasterCC.retrievePropMailDetails(externalIds);
-	    Test.stopTest();
-
-	    system.debug('*** requestList ' + requestList);
-
-	    System.assertEquals(1, requestList.size(), 'There should be 1 Prop Mail record'); 
-	    System.assertEquals(cId, requestList[0].contact, 'The Prop Mail record should be for the contact'); 
 	
 	}
 
@@ -641,6 +709,78 @@ private class GuestContactMasterTest {
 
 	    System.assertEquals(1, requestList.size(), 'There should be 1 Repcode record'); 
 	    System.assertEquals(cId, requestList[0].contact, 'The Repcode record should be for the contact'); 
+	
+	}
+
+	@isTest static void testAcquisitionDetailsMock() {
+		String cId = [SELECT Id FROM Contact LIMIT 1].id;
+		Test.startTest();
+	    Customer_Info_External_c__x mockedAcq = new Customer_Info_External_c__x(
+	        contact__c = cId,
+	        recordtype__c = 'Acquisition',
+	        ExternalId = '111' 
+	    );
+
+	    List<String> externalIds = new List<String>();
+	    externalIds.add('111');
+
+	    GuestContactMasterCC.mockedAcquisition.add(mockedAcq);
+	    List<GuestContactMasterCC.AcquisitionWrapper> requestList = 
+	    		GuestContactMasterCC.retrieveAcquisitionDetails(externalIds);
+	    Test.stopTest();
+
+	    system.debug('*** requestList ' + requestList);
+
+	    System.assertEquals(1, requestList.size(), 'There should be 1 Acquisition record'); 
+	    System.assertEquals(cId, requestList[0].contact, 'The Repcode Acquisition should be for the contact'); 
+	
+	}
+
+	@isTest static void testAliasDetailsMock() {
+		String cId = [SELECT Id FROM Contact LIMIT 1].id;
+		Test.startTest();
+	    Customer_Info_External_c__x mockedAcq = new Customer_Info_External_c__x(
+	        contact__c = cId,
+	        recordtype__c = 'Alias',
+	        ExternalId = '111' 
+	    );
+
+	    List<String> externalIds = new List<String>();
+	    externalIds.add('111');
+
+	    GuestContactMasterCC.mockedAlias.add(mockedAcq);
+	    List<GuestContactMasterCC.AliasWrapper> requestList = 
+	    		GuestContactMasterCC.retrieveAliasDetails(externalIds);
+	    Test.stopTest();
+
+	    system.debug('*** requestList ' + requestList);
+
+	    System.assertEquals(1, requestList.size(), 'There should be 1 Alias record'); 
+	    System.assertEquals(cId, requestList[0].contact, 'The Alias should be for the contact'); 
+	
+	}
+
+	@isTest static void testEthnicityAppendDetailsMock() {
+		String cId = [SELECT Id FROM Contact LIMIT 1].id;
+		Test.startTest();
+	    Customer_Info_External_c__x mockedAcq = new Customer_Info_External_c__x(
+	        contact__c = cId,
+	        recordtype__c = 'EthnicityAppend',
+	        ExternalId = '111' 
+	    );
+
+	    List<String> externalIds = new List<String>();
+	    externalIds.add('111');
+
+	    GuestContactMasterCC.mockedEthnicityAppend.add(mockedAcq);
+	    List<GuestContactMasterCC.EthnicityAppendWrapper> requestList = 
+	    		GuestContactMasterCC.retrieveEthnicityAppendByContacts(externalIds);
+	    Test.stopTest();
+
+	    system.debug('*** requestList ' + requestList);
+
+	    System.assertEquals(1, requestList.size(), 'There should be 1 EthnicityAppend record'); 
+	    System.assertEquals(cId, requestList[0].contact, 'The  EthnicityAppend should be for the contact'); 
 	
 	}
 

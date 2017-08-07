@@ -477,9 +477,9 @@
         <fields>Dependencies__c</fields>
         <fields>Anchored__c</fields>
         <fields>Target_Start_Date__c</fields>
-        <fields>Target_End_Date__c</fields>
         <fields>Member_Role__c</fields>
         <fields>Escalation_Assignment__c</fields>
+        <fields>OWNER_NAME</fields>
         <relatedList>Case.Campaign_Project__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -500,13 +500,6 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedEntityHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Vendor__c</fields>
-        <fields>Vendor_Email__c</fields>
-        <fields>Vendor_Phone__c</fields>
-        <relatedList>Campaign_Project_Direct_Mail_Vendor__c.Campaign_Project__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
@@ -542,6 +535,13 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Campaign_Project_Event__c.Campaign_Project__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Actual_DM_Drop_Date__c</fields>
+        <fields>Event_setup_required__c</fields>
+        <fields>Hotel_setup_required__c</fields>
+        <relatedList>Campaign_Project_Direct_Mail__c.Campaign_Project__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

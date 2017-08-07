@@ -18,7 +18,6 @@ public with sharing class ActivityFtdCustomerInfo implements CustomerInfoInterfa
 		row.put('acq_date', wrapper.data.d_acq_date);
 		row.put('comp_flag', wrapper.data.c_comp_flag);
 		row.put('curr_flag', wrapper.data.c_curr_flag);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('event_flag', wrapper.data.c_event_flag);
 		row.put('hotel_flag', wrapper.data.c_hotel_flag);
 		row.put('quality_cd', wrapper.data.c_quality_cd);

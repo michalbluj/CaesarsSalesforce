@@ -17,7 +17,6 @@ public with sharing class EmailCustomerInfo implements CustomerInfoInterface{
 		row.put('qual_cd', wrapper.data.c_qual_cd);
 		row.put('ofr_freq', wrapper.data.c_ofr_freq);
 		row.put('qual_cat', wrapper.data.c_qual_cat);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('email_flag', wrapper.data.c_email_flag);
 		row.put('quality_cd', wrapper.data.c_quality_cd);
 		row.put('contact_count', wrapper.data.i_contact_count);

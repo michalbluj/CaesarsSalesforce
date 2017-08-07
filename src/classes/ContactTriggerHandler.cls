@@ -16,13 +16,13 @@ public with sharing class ContactTriggerHandler extends TriggerHandler {
         ContactTriggerHandler.updateDominant((List<Contact>)Trigger.new, (Map<Id,Contact>)Trigger.oldMap);
     }
 
-    private static Id UCP = null;
+    private static Id ucp = null;
 
     private static Id getUCPId(){
-        if(UCP == null){
-            UCP = [select id from RecordType where name = 'UCP'].id;
+        if(ucp == null){
+            ucp = [select id from RecordType where name = 'UCP'].id;
         }
-        return UCP;
+        return ucp;
     }
 
     private static Map<String,Account> winetToAccountMap = new Map<String,Account>();

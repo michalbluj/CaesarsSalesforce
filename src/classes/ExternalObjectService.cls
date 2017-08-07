@@ -32,7 +32,7 @@ public with sharing class ExternalObjectService {
         }
         configJson = configJson.substring(0,configJson.length() - 1);
         configJson += '],';
-        String tableNameJson = '"tableName":"'+MapHandler.externalObjectToTableMap.get(tableSelection.tableSelected)+'"}';
+        String tableNameJson = '"tableName":"'+MapHandler.EXTERNAL_OBJECT_TO_TABLE_MAP.get(tableSelection.tableSelected)+'"}';
         return configJson+tableNameJson;
     }
 
@@ -41,7 +41,7 @@ public with sharing class ExternalObjectService {
         String tableSelected = tableSelection.tableSelected;
         System.debug('tableSelected ' + tableSelected);
         System.debug('jsonData ' + jsonData);
-        System.Type objectClass = Type.forName(MapHandler.externalTableToClassNameMap.get(tableSelected));
+        System.Type objectClass = Type.forName(MapHandler.EXTERNAL_TABLE_TO_CLASSNAME_MAP.get(tableSelected));
         return (ExternalObjectInterface) JSON.deserialize(jsonData, objectClass);
     }
 

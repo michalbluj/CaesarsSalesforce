@@ -36,7 +36,7 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deploymentStatus>Deployed</deploymentStatus>
     <description>caesars$pdb_trip_info</description>
     <enableFeeds>false</enableFeeds>
     <enableReports>false</enableReports>

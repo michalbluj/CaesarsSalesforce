@@ -36,7 +36,7 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deploymentStatus>Deployed</deploymentStatus>
     <description>caesars$pos_trans_itemizer</description>
     <enableFeeds>false</enableFeeds>
     <enableReports>false</enableReports>

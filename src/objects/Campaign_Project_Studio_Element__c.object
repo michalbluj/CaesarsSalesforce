@@ -70,18 +70,6 @@
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
-        <fullName>Element_Detail__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Element Detail</label>
-        <referenceTo>Element_Detail__c</referenceTo>
-        <relationshipLabel>Campaign Project Studio Element</relationshipLabel>
-        <relationshipName>Campaign_Project_Studio_Element</relationshipName>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Element_Name__c</fullName>
         <externalId>false</externalId>
         <label>Element Name</label>

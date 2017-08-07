@@ -6,7 +6,7 @@
  */
 
 
-public with sharing class CaseModel {
+public without sharing class CaseModel {
     
 
     public static final String CASE_TYPE_CAMPAIGN_WORKFLOW_INSTANCE = 'Campaign Workflow Instance';
@@ -48,7 +48,7 @@ public with sharing class CaseModel {
         Map<String,Id> queueNameToQueueMap = new Map<String,Id>(); 
         for(QueueSobject queueSObj:[SELECT Id,QueueId,SobjectType,Queue.DeveloperName,Queue.Id,Queue.Name FROM QueueSobject where SobjectType = 'Case']){
             if(queueSObj.queue.DeveloperName != null && queueSObj.queue.DeveloperName != '' && queueNameToQueueMap.get(queueSObj.Queue.DeveloperName) == null){
-            queueNameToQueueMap.put(queueSObj.Queue.Name,queueSObj.Queue.Id);
+            queueNameToQueueMap.put(queueSObj.Queue.DeveloperName,queueSObj.Queue.Id);
             }
         }
         system.debug('***queueNameToQueueMap ' + queueNameToQueueMap);

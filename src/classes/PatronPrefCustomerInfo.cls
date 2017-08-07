@@ -15,7 +15,6 @@ public with sharing class PatronPrefCustomerInfo implements CustomerInfoInterfac
 		row.put('file_id', wrapper.data.i_file_id);
 		row.put('modifier', wrapper.data.c_modifier);
 		row.put('response', wrapper.data.i_response);
-		//row.put('timestamp', wrapper.data.d_timestamp);
 		row.put('quality_code', wrapper.data.c_quality_cd);
 		row.put('ins_run_id', wrapper.data.i_ins_run_id);
 		row.put('rank_value', wrapper.data.i_rank_value);

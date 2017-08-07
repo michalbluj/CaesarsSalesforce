@@ -36,7 +36,7 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deploymentStatus>Deployed</deploymentStatus>
     <description>caesars$pos_trans_tender</description>
     <enableFeeds>false</enableFeeds>
     <enableReports>false</enableReports>
@@ -313,7 +313,7 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <label>caesars$pos_trans_tender</label>
-    <pluralLabel>caesars$pos_trans_tender</pluralLabel>
+    <label>Pos Trans Tender</label>
+    <pluralLabel>Pos Trans Tenders</pluralLabel>
     <searchLayouts/>
 </CustomObject>

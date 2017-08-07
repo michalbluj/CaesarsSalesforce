@@ -265,7 +265,11 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Delivery_Scope__c.Vendor__c</relatedList>
+        <relatedList>Campaign_Project_Direct_Mail__c.Vendor__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Campaign_Project_Direct_Mail__c.Vendor_2__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
