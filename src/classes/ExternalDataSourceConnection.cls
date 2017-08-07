@@ -5,7 +5,7 @@
 global class ExternalDataSourceConnection extends DataSource.Connection
 {
     private static LogModel logs;
-
+    @testVisible
     private static LogModel getLogs() {
         if (logs == null) {
             logs = LogModel.startLog('ExternalDataSourceConnection', 'Exception', LogModel.LOG_CATEGORY_APEX);
