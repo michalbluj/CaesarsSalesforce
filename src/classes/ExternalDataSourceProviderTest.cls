@@ -22,7 +22,6 @@ private class ExternalDataSourceProviderTest {
         Test.stopTest();
 
         System.assertEquals(DataSource.Capability.ROW_QUERY, caps[0], 'Should contain ROW_QUERY capability');
-        System.assertEquals(DataSource.Capability.SEARCH, caps[1], 'Should contain SEARCH capability');
     }
 
     static testMethod void test_getConnection() {

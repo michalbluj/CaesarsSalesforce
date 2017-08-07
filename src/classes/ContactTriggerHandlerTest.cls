@@ -5,6 +5,14 @@
 @IsTest
 private class ContactTriggerHandlerTest {
 
+    @testSetup
+    static void createData() {
+        CaesarsSetup__c cs = new CaesarsSetup__c();
+        cs.Name = 'Contact';
+        cs.turnOffContactTrigger__c = false;
+        insert cs;
+    }
+
     static testMethod void setUpDominantOnAccountWithExistingAccountTest() {
         Account dominantAccount = AccountBuilder.buildAccount()
                 .withName('Clark Kent').get();

@@ -11,20 +11,23 @@ private class HKUEndpointTest {
         Test.startTest();
         String endpoint = HKUEndpoint.getEndpoint();
         Test.stopTest();
-        System.assertEquals(endpoint,'https://caesarsapp.herokuapp.com/api/v1/customer/getCustomers');
+        System.assertEquals('https://caesarsapp.herokuapp.com/api/v1/customer/getCustomers', endpoint,
+            'Endpoint should be correctly retrieved');
     }
 
     static testMethod void getCustomerEndpointTest() {
         Test.startTest();
         String endpoint = HKUEndpoint.getCustomerEndpoint();
         Test.stopTest();
-        System.assertEquals(endpoint,'https://caesarsapp.herokuapp.com/api/v1/customer/getCustomers');
+        System.assertEquals('https://caesarsapp.herokuapp.com/api/v1/customer/getCustomers', endpoint,
+            'Endpoint should be correctly retrieved');
     }
 
     static testMethod void getGenericExternalObjectEndpointTest() {
         Test.startTest();
         String endpoint = HKUEndpoint.getGenericExternalObjectEndpoint();
         Test.stopTest();
-        System.assertEquals(endpoint,'https://caesarsapp.herokuapp.com/api/v1/customer/getCustomers');
+        System.assertEquals('https://caesarsapp.herokuapp.com/api/v1/Salesforce/getDataFromTable', endpoint,
+            'Endpoint should be correctly retrieved');
     }
 }
