@@ -358,6 +358,11 @@ public class CustomerInfo {
         public String d_cc_expire_dt {get;set;}
         public String c_spcl_instruction {get;set;}
 
+        //PrefMarketMail
+        public String c_market_cd {get;set;}
+        public Integer i_market_type {get;set;}
+        public String c_gst_pref_mail_flag {get;set;}
+
         //ScoreProp
         public Integer i_mileage {get;set;}
         public Decimal f_prep_trips {get;set;}

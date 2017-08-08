@@ -34,8 +34,10 @@ public with sharing class EDSCustomerInfoOperation implements ExternalDataSource
         'PrefHotel'          => new PrefHotelCustomerInfo(),
         'PrefHotelBrand'     => new PrefCustomerInfo(),
         'PrefInterests'      => new PrefCustomerInfo(),
+        'PrefMarketMail'     => new PrefMarketMailCustomerInfo(),
         'PrefPartner'        => new PrefCustomerInfo(),
         'PrefProgram'        => new PrefCustomerInfo(),
+        'PrefPropMail'       => new PrefPropMailCustomerInfo(),
         'PrefSpecialty'      => new PrefCustomerInfo(),
         'PrefSpecified'      => new PrefSpecifiedCustomerInfo(),
         'PrefTemp'           => new PrefCustomerInfo(),
@@ -71,20 +73,5 @@ public with sharing class EDSCustomerInfoOperation implements ExternalDataSource
             rows.add(row);
         }
         return rows;
-    }
-
-    public List<DataSource.TableResult> search(DataSource.SearchContext context) {
-        List<DataSource.TableResult> results = new List<DataSource.TableResult>();
-
-        HttpRequest req = CustomerInfoService.createHttpRequest(HKUEndpoint.getEndpoint(),context);
-        HttpResponse res = CustomerInfoService.sendHttpRequest(req);
-        String responseBody = res.getBody();
-        CustomerInfoResponse response = CustomerInfoService.parseData(res.getBody());
-
-        for(CustomerInfo wrapper : response.body){
-
-        }
-
-        return results;
     }
 }
