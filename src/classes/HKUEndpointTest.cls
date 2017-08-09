@@ -11,7 +11,7 @@ private class HKUEndpointTest {
         Test.startTest();
         String endpoint = HKUEndpoint.getEndpoint();
         Test.stopTest();
-        System.assertEquals('https://caesarsapp.herokuapp.com/api/v1/customer/getCustomers', endpoint,
+        System.assertEquals('callout:herokuapp/customer/getCustomers', endpoint,
             'Endpoint should be correctly retrieved');
     }
 
@@ -19,7 +19,7 @@ private class HKUEndpointTest {
         Test.startTest();
         String endpoint = HKUEndpoint.getCustomerEndpoint();
         Test.stopTest();
-        System.assertEquals('https://caesarsapp.herokuapp.com/api/v1/customer/getCustomers', endpoint,
+        System.assertEquals('callout:herokuapp/customer/getCustomers', endpoint,
             'Endpoint should be correctly retrieved');
     }
 
@@ -27,7 +27,7 @@ private class HKUEndpointTest {
         Test.startTest();
         String endpoint = HKUEndpoint.getGenericExternalObjectEndpoint();
         Test.stopTest();
-        System.assertEquals('https://caesarsapp.herokuapp.com/api/v1/Salesforce/getDataFromTable', endpoint,
+        System.assertEquals('callout:herokuapp/Salesforce/getDataFromTable', endpoint,
             'Endpoint should be correctly retrieved');
     }
 }

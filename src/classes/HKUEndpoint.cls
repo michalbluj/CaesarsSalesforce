@@ -31,15 +31,15 @@ public with sharing class HKUEndpoint {
     }
 
     private static String initiate() {
-        return 'https://caesarsapp.herokuapp.com/api/v1/customer/getCustomers';
+        return 'callout:herokuapp/customer/getCustomers';
     }
 
     private static String initiateCustomer() {
-        return 'https://caesarsapp.herokuapp.com/api/v1/customer/getCustomers';
+        return 'callout:herokuapp/customer/getCustomers';
     }
 
     private static String initiateGeneralExternalObject(){
-        return 'https://caesarsapp.herokuapp.com/api/v1/Salesforce/getDataFromTable';
+        return 'callout:herokuapp/Salesforce/getDataFromTable';
     }
 
 }
