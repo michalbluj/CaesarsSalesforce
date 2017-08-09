@@ -36,7 +36,7 @@ public with sharing class AddressCustomerInfo implements CustomerInfoInterface {
         row.put('country_cd', wrapper.data.c_country_cd);
         row.put('quality_cd', wrapper.data.c_quality_cd);
         row.put('zip_plus_4', wrapper.data.c_zip_plus_4);
-        row.put('acquisition_cd', MapHandler.getAcquisitionCodeMap().get(wrapper.data.c_acquisition_cd));
+        row.put('acquisition_cd', wrapper.data.c_acquisition_cd);
         row.put('country_tele_cd', wrapper.data.c_country_tele_cd);
         return row;
     }

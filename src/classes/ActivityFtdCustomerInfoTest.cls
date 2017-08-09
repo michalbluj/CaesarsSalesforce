@@ -49,7 +49,7 @@ private class ActivityFtdCustomerInfoTest {
 		System.assertEquals((String)row.get('last_trip_dt'),'1999-05-09');
 		System.assertEquals((String)row.get('cons_rev_flag'),'N');
 		System.assertEquals((String)row.get('first_trip_dt'),'1999-05-09');
-		System.assertEquals((String)row.get('acquisition_cd'),null);
+		System.assertEquals((String)row.get('acquisition_cd'),'CAS');
 		System.assertEquals((String)row.get('offer_rdm_flag'),'N');
 		System.assertEquals((String)row.get('last_activity_dt'),'1999-05-09');
 	}

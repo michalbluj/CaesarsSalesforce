@@ -26,7 +26,7 @@ public with sharing class ActivityFtdCustomerInfo implements CustomerInfoInterfa
 		row.put('last_trip_dt', wrapper.data.d_last_trip_dt);
 		row.put('cons_rev_flag', wrapper.data.c_cons_rev_flag);
 		row.put('first_trip_dt', wrapper.data.d_first_trip_dt);
-		row.put('acquisition_cd', MapHandler.getAcquisitionCodeMap().get(wrapper.data.c_acquisition_cd));
+		row.put('acquisition_cd', wrapper.data.c_acquisition_cd);
 		row.put('offer_rdm_flag', wrapper.data.c_offer_rdm_flag);
 		row.put('last_activity_dt', wrapper.data.d_last_activity_dt);
         return row;
