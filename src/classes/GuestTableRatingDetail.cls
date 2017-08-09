@@ -36,14 +36,14 @@ public with sharing class GuestTableRatingDetail extends ExternalObjectResponse 
         public final String c_quality_cd {get; set;}
         public final String c_rated_by {get; set;}
         public final String c_rate_type {get; set;}
-        public final Date d_rating_date {get; set;}
+        public final String d_rating_date {get; set;}
         public final Integer i_rating_hyd {get; set;}
         public final Integer i_rating_num {get; set;}
         public final String c_shift {get; set;}
         public final String c_table_num {get; set;}
         public final Decimal f_theo_win {get; set;}
-        public final Date d_timestamp {get; set;}
-        public final Date d_trans_date {get; set;}
+        public final String d_timestamp {get; set;}
+        public final String d_trans_date {get; set;}
         public final Integer i_trans_hyd {get; set;}
         public final Integer i_cms_dmid {get; set;}
         public final String d_trans_time {get; set;}

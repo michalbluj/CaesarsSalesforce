@@ -24,11 +24,11 @@ public with sharing class GuestSlotRatingDetail extends ExternalObjectResponse i
         public final String c_prep_by {get; set;}
         public final String c_prop_cd {get; set;}
         public final String c_quality_cd {get; set;}
-        public final Date d_rating_date {get; set;}
+        public final String d_rating_date {get; set;}
         public final Integer i_rs_seq_num {get; set;}
         public final Decimal f_theo_win {get; set;}
-        public final Date d_timestamp {get; set;}
-        public final Date d_trans_date {get; set;}
+        public final String d_timestamp {get; set;}
+        public final String d_trans_date {get; set;}
         public final Integer i_cms_dmid {get; set;}
         public final Decimal f_winloss {get; set;}
         public final String d_start_time {get; set;}

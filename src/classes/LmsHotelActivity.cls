@@ -55,7 +55,7 @@ public with sharing class LmsHotelActivity extends ExternalObjectResponse implem
         public final String c_wing_cd {get; set;}
         public final String c_zip_cd {get; set;}
         public final String customer_control_segments_fk {get; set;}
-        public final DateTime d_timestamp {get; set;}
+        public final String d_timestamp {get; set;}
         public final Decimal f_comp_fb_rev {get; set;}
         public final Decimal f_comp_other_rev {get; set;}
         public final Decimal f_comp_room_rev {get; set;}
@@ -78,14 +78,14 @@ public with sharing class LmsHotelActivity extends ExternalObjectResponse implem
         public final String i_xref_dmid {get; set;}
         public final String lms_room_type_desc_sda_fk {get; set;}
         public final String source_code_fk {get; set;}
-        public final DateTime d_transaction_dt {get; set;}
-        public final DateTime d_reserve_dt {get; set;}
-        public final DateTime d_dob {get; set;}
-        public final DateTime d_departure_dt {get; set;}
-        public final DateTime d_checkout_dt {get; set;}
-        public final DateTime d_checkin_dt {get; set;}
-        public final DateTime d_cancel_dt {get; set;}
-        public final DateTime d_arrival_dt {get; set;}
+        public final String d_transaction_dt {get; set;}
+        public final String d_reserve_dt {get; set;}
+        public final String d_dob {get; set;}
+        public final String d_departure_dt {get; set;}
+        public final String d_checkout_dt {get; set;}
+        public final String d_checkin_dt {get; set;}
+        public final String d_cancel_dt {get; set;}
+        public final String d_arrival_dt {get; set;}
     }
 
 	/*

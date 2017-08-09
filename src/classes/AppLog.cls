@@ -15,7 +15,7 @@ public with sharing class AppLog extends ExternalObjectResponse implements Exter
         public final String meta {get; set;}
         public final String msg {get; set;}
         public final String reqkey {get; set;}
-        public final DateTime ttime {get; set;}
+        public final String ttime {get; set;}
     }
 
     /*

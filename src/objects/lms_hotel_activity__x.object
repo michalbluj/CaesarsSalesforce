@@ -752,8 +752,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_arrival_dt</label>
+        <length>40</length>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_cancel_dt__c</fullName>
@@ -764,8 +766,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_cancel_dt</label>
+        <length>40</length>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_checkin_dt__c</fullName>
@@ -776,8 +780,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_checkin_dt</label>
+        <length>40</length>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_checkout_dt__c</fullName>
@@ -788,8 +794,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_checkout_dt</label>
+        <length>40</length>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_departure_dt__c</fullName>
@@ -800,8 +808,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_departure_dt</label>
+        <length>40</length>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_dob__c</fullName>
@@ -812,8 +822,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_dob</label>
+        <length>40</length>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_reserve_dt__c</fullName>
@@ -824,8 +836,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_reserve_dt</label>
+        <length>40</length>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_timestamp__c</fullName>
@@ -836,8 +850,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_timestamp</label>
+        <length>40</length>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>d_transaction_dt__c</fullName>
@@ -848,8 +864,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>d_transaction_dt</label>
+        <length>40</length>
         <required>false</required>
-        <type>DateTime</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>f_comp_fb_rev__c</fullName>

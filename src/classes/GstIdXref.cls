@@ -13,7 +13,7 @@ public with sharing class GstIdXref extends ExternalObjectResponse implements Ex
 
         public final String c_quality_cd {get; set;}
         public final String c_xref_type {get; set;}
-        public final DateTime d_timestamp {get; set;}
+        public final String d_timestamp {get; set;}
         public final String i_dmid {get; set;}
         public final String i_xref_dmid {get; set;}
     }

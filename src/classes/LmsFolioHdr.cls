@@ -22,10 +22,10 @@ public with sharing class LmsFolioHdr extends ExternalObjectResponse implements 
         public final String c_prop_cd {get; set;}
         public final String c_prop_cd_fk {get; set;}
         public final String c_quality_cd {get; set;}
-        public final Datetime d_folio_create_timestamp {get; set;}
-        public final Datetime d_folio_effective_dt {get; set;}
-        public final Datetime d_folio_expire_dt {get; set;}
-        public final Datetime d_timestamp {get; set;}
+        public final String d_folio_create_timestamp {get; set;}
+        public final String d_folio_effective_dt {get; set;}
+        public final String d_folio_expire_dt {get; set;}
+        public final String d_timestamp {get; set;}
         public final String f_folio_id {get; set;}
         public final Decimal f_reserve_id {get; set;}
         public final Integer i_folio_type_id {get; set;}
