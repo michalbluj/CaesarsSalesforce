@@ -5,7 +5,7 @@
 global class ExternalDataSourceConnection extends DataSource.Connection
 {
     private static LogModel logs;
-    @testVisible
+
     private static LogModel getLogs() {
         if (logs == null) {
             logs = LogModel.startLog('ExternalDataSourceConnection', 'Exception', LogModel.LOG_CATEGORY_APEX);
@@ -28,10 +28,4 @@ global class ExternalDataSourceConnection extends DataSource.Connection
         List<Map<String, Object>> result = operation.query(context);
         return DataSource.TableResult.get(context, result);
     }
-
-    override global List<DataSource.TableResult> search(DataSource.SearchContext context) {
-        List<DataSource.TableResult> result = OperationBuilder.buildOperation(context).search(context);
-        return result;
-    }
-
 }

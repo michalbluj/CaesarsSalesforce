@@ -51,21 +51,11 @@ private class ExternalDataSourceConnectionTest {
         System.assertEquals('test', (String) tableResult.rows[0].get('c_offer_id'), 'Rows of data should be populated');
     }
 
-    static testMethod void test_search() {
-        ExternalDataSourceConnection edsc = new ExternalDataSourceConnection(new DataSource.ConnectionParams());
-
-        DataSource.SearchContext sc = new DataSource.SearchContext();
-        DataSource.TableSelection tableSelection = new DataSource.TableSelection();
-        tableSelection.tableSelected = 'caesars$offers_sent';
-        sc.tableSelections = new List<DataSource.TableSelection>{tableSelection, tableSelection};
-
+    static testMethod void test_getLogs() {
         Test.startTest();
-        List<DataSource.TableResult> tableResult = edsc.search(sc);
         LogModel lm = ExternalDataSourceConnection.getLogs();
         Test.stopTest();
 
-        //Search method is not fully implemented in EDSExternalObjectOperation
-        System.assert(tableResult.isEmpty(), 'The results should be empty');
-        System.assertNotEquals(null, lm, 'Log model shouldn\'t be empty');
+        System.assert(lm != null, 'Logs were started correctly');
     }
 }
