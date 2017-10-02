@@ -52,7 +52,7 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
@@ -221,6 +221,19 @@
         <unique>false</unique>
     </fields>
     <label>Customer Control Segments</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>c_control_segment_desc__c</columns>
+        <columns>c_control_segment_lvl__c</columns>
+        <columns>c_customer_segment_desc__c</columns>
+        <columns>c_customer_segment_short_desc__c</columns>
+        <columns>c_quality_cd__c</columns>
+        <columns>i_control_segment__c</columns>
+        <columns>c_prop_cd__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <displayFormat>CCS-{00000}</displayFormat>
         <label>Name</label>

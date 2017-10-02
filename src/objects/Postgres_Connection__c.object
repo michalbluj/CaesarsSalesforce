@@ -112,8 +112,8 @@
         <columns>heroku_postgres_name__c</columns>
         <columns>databaseURL__c</columns>
         <columns>databaseName__c</columns>
-        <columns>password__c</columns>
         <columns>userName__c</columns>
+        <columns>password__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

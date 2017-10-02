@@ -53,6 +53,9 @@ public with sharing class ApPdbTripCms extends ExternalObjectResponse implements
             row.put('DisplayUrl', wrapper.id);
             row.put('ap_pdb_trip_hdr_fk', wrapper.ap_pdb_trip_hdr_fk);
             row.put('c_prop_market_cd', wrapper.c_prop_market_cd);
+            if(MapHandler.getPropertyCodeObjectMap().get(wrapper.c_prop_market_cd) != null){
+            	row.put('c_prop_market_cd_fk', MapHandler.getPropertyCodeObjectMap().get(wrapper.c_prop_market_cd).id);
+            }
             row.put('c_quality_cd', wrapper.c_quality_cd);
             row.put('contact_fk', wrapper.contact_fk);
             row.put('d_end_dt', wrapper.d_end_dt);

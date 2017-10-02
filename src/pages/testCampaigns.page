@@ -1,0 +1,16 @@
+<apex:page standardController="Campaign_Project__c" showHeader="false" sidebar="false">
+
+     <A HREF="#" onClick="testOpenPrimaryTab();return false">
+         Click here to open a new primary tab</A> 
+
+    <apex:includeScript value="/support/console/40.0/integration.js"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+   sforce.one.navigateToURL('/apex/CreateOfferLibrary');
+    });
+    </script>
+
+</apex:page>

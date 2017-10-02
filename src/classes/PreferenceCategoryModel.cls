@@ -41,4 +41,77 @@ public class PreferenceCategoryModel {
     		}
     }
     
+    /*
+    SELECT Category_Id__c,Name,Parent_Category_Id__c, Parent_Category_Id__r.name, depth__c
+	FROM Preference_Category__c
+	where depth__c = 2
+    */
+
+    public static boolean isPrefBeverage(String path) {
+    		if(path.contains('Beverage on Demand Master List:')) {
+    			return true;
+    		}
+    		return false;
+    }   
+    
+    
+    public static boolean isPrefEvents(String path) {
+    		if(path.contains('Marketing:Events:')) {
+    			return true;
+    		}
+    		return false;
+    }    
+
+    public static boolean isPrefGLBA(String path) {
+    	//to investigate wtih Dara
+    		if(path.contains('GLBA')) {
+    			return true;
+    		}
+    		return false;
+    }  
+
+    public static boolean isPrefHtlBrand(String path) {
+    		if(path.contains('Marketing:Hotels & Casinos:')) {
+    			return true;
+    		}
+    		return false;
+    }  
+
+    public static boolean isPrefInterests(String path) {
+    		if(path.contains('Marketing:Interests:')) {
+    			return true;
+    		}
+    		return false;
+    }  
+
+    public static boolean isPrefPartnerSubs(String path) {
+    	    	//to investigate wtih Dara
+    		if(path.contains('Marketing:PartnerSubs:')) {
+    			return true;
+    		}
+    		return false;
+    } 
+    
+    public static boolean isPrefProgramSubs(String path) {
+    	    	//to investigate wtih Dara
+    		if(path.contains('Marketing:ProgramSubs:')) {
+    			return true;
+    		}
+    		return false;
+    }  
+
+    public static boolean isPrefSpecialty(String path) {
+    		if(path.contains('Marketing Lists:Specialty Lists:')) {
+    			return true;
+    		}
+    		return false;
+    }  
+
+    public static boolean isPrefTemp(String path) {
+    		if(path.contains('Marketing Lists:Temp Lists:')) {
+    			return true;
+    		}
+    		return false;
+    }  
+
 }

@@ -90,6 +90,119 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Advertising_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Advertising Start Date</label>
+        <length>2500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Benefit__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the consumer take away.</inlineHelpText>
+        <label>Benefit</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Brand_Character__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Brand Personality (if existing).</inlineHelpText>
+        <label>Brand Character</label>
+        <length>1200</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Business_Situation_Oppotunity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of current business situation that design can help address moving forward.</inlineHelpText>
+        <label>Business Situation/Oppotunity</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Campaign_Audience__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Audience</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Who 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Who 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Frequency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Campaign When 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign When 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_How__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign How</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Campaign How 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign How 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Campaign_Label__c</fullName>
         <externalId>false</externalId>
         <formula>IF( CONTAINS(RecordType.Name , &apos;Standalone Creative&apos;) , &apos;C&apos;, &apos;S&apos;) +
@@ -106,6 +219,28 @@ TEXT( Market__r.Market_Code__c ) +
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Campaign_Primary_Incentive__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Primary Incentive</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Incentive 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inventive 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Campaign_Project_Case__c</fullName>
@@ -157,6 +292,50 @@ TEXT( Market__r.Market_Code__c ) +
         <trackTrending>false</trackTrending>
         <type>MultiselectPicklist</type>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Campaign_Secondary_Incentive__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Secondary Incentive</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Incentive 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incentive 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Tertiary_Incentive__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Tertiary Incentive</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Incentive 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incentive 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Campaign__c</fullName>
@@ -276,6 +455,17 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Date_Submitted__c</fullName>
+        <description>Creative Brief Submission date.  Populated with Draft date and then updated once the Campaign project is approved.</description>
+        <externalId>false</externalId>
+        <label>Date Submitted</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Delivery_Channel__c</fullName>
         <externalId>false</externalId>
         <globalPicklist>Delivery_Channel</globalPicklist>
@@ -296,6 +486,18 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Design_Advertising_Goal__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What are we trying to achieve through this particular project? Be very specific. This is not a list of deliverables.</inlineHelpText>
+        <label>Design/Advertising Goal</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
     </fields>
     <fields>
         <fullName>Direct_Mail_Drop_Date__c</fullName>
@@ -349,6 +551,17 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Due_Date_Creative_Materials__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date Creative Materials</label>
+        <length>2500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
     </fields>
     <fields>
         <fullName>Email_Drop_Date__c</fullName>
@@ -530,6 +743,42 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <visibleLines>4</visibleLines>
     </fields>
     <fields>
+        <fullName>Key_Consumer_Insights__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of who they are and why they are the right target for this.</inlineHelpText>
+        <label>Key Consumer Insights</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Key_Dates_Milestones__c</fullName>
+        <externalId>false</externalId>
+        <label>Key Dates/Milestones</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Key_Decision_Maker__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Key Decision Maker</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Campaign_Projects2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Market_Text__c</fullName>
         <externalId>false</externalId>
         <formula>Market__r.Name</formula>
@@ -631,6 +880,19 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Program_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Campaign_Projects</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Property_Marketer_Approval_Required__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -639,6 +901,54 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_Deliverables__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of all creative elements needed include formats for each creative element.</inlineHelpText>
+        <label>Proposed Deliverables</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of pieces for printing.</inlineHelpText>
+        <label>Quantity</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ready_for_MC__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Ready for MC</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reason_to_Believe__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Explanation of why the consumer should buy this product, service compared to competitor.</inlineHelpText>
+        <label>Reason to Believe</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
     </fields>
     <fields>
         <fullName>Redemption_Channel__c</fullName>
@@ -840,6 +1150,19 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Studio_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Studio Contact</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Campaign_Projects1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Studio_Copywriting__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Studio Copywriting</description>
@@ -919,6 +1242,19 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Target_Consumer__c</fullName>
+        <description>Who is our target consumer - Include Demographic / psychographics with identification of primary, secondary, etc. targets</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Be specific-&apos;21 years old and over&apos; is not enough information.</inlineHelpText>
+        <label>Target Consumer</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
     </fields>
     <fields>
         <fullName>Ticket_Price__c</fullName>
@@ -1069,9 +1405,14 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <columns>RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>Market_Text__c</field>
+            <field>Valid_Start_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>5/1/2017</value>
+        </filters>
+        <filters>
+            <field>CREATEDBY_USER</field>
             <operation>equals</operation>
-            <value>ACM</value>
+            <value>Maria Wilson</value>
         </filters>
         <label>All</label>
     </listViews>
@@ -1122,6 +1463,50 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <compactLayoutAssignment>Campaign_Project</compactLayoutAssignment>
         <description>Campaign Project in Draft Status</description>
         <label>Draft</label>
+        <picklistValues>
+            <picklist>Campaign_Audience__c</picklist>
+            <values>
+                <fullName>Who 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Who 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign_Frequency__c</picklist>
+            <values>
+                <fullName>Campaign When 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campaign When 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign_How__c</picklist>
+            <values>
+                <fullName>Campaign How 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campaign How 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign_Primary_Incentive__c</picklist>
+            <values>
+                <fullName>Incentive 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventive 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
         <picklistValues>
             <picklist>Campaign_Project_Type__c</picklist>
             <values>
@@ -1221,6 +1606,28 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Campaign_Secondary_Incentive__c</picklist>
+            <values>
+                <fullName>Incentive 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incentive 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign_Tertiary_Incentive__c</picklist>
+            <values>
+                <fullName>Incentive 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incentive 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Campaign__c</picklist>
             <values>
                 <fullName>Daily</fullName>
@@ -1268,11 +1675,11 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <picklistValues>
             <picklist>Delivery_Channel</picklist>
             <values>
-                <fullName>Advertise in Core</fullName>
+                <fullName>2 line reader %28slot Machine%29</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Decile Email</fullName>
+                <fullName>Advertise in Core</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1292,19 +1699,23 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Kiosk - APS Promo</fullName>
+                <fullName>Groupon</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Kiosk - TR Enhanced</fullName>
+                <fullName>Instagram</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Kiosk - iGames</fullName>
+                <fullName>Kiosks APS Promo</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Mobile Downloadable FSP</fullName>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1312,11 +1723,31 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Play by TR app - Mobile messaging</fullName>
+                <fullName>Open Table</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Play by TR app - Push Notification</fullName>
+                <fullName>PRISM display %28slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28text messaging%29%C2%A0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1328,15 +1759,15 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Website</fullName>
+                <fullName>TotalRewards%2Ecom</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>eReel Rewards %28PRISM%29</fullName>
+                <fullName>Twitter</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>iCRM %28PRISM%29</fullName>
+                <fullName>Yelp</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1646,6 +2077,50 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <description>Standard Campaign Project</description>
         <label>Standard</label>
         <picklistValues>
+            <picklist>Campaign_Audience__c</picklist>
+            <values>
+                <fullName>Who 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Who 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign_Frequency__c</picklist>
+            <values>
+                <fullName>Campaign When 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campaign When 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign_How__c</picklist>
+            <values>
+                <fullName>Campaign How 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Campaign How 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign_Primary_Incentive__c</picklist>
+            <values>
+                <fullName>Incentive 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventive 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Campaign_Project_Type__c</picklist>
             <values>
                 <fullName>Creative Standalone</fullName>
@@ -1744,6 +2219,28 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Campaign_Secondary_Incentive__c</picklist>
+            <values>
+                <fullName>Incentive 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incentive 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Campaign_Tertiary_Incentive__c</picklist>
+            <values>
+                <fullName>Incentive 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incentive 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Campaign__c</picklist>
             <values>
                 <fullName>Daily</fullName>
@@ -1791,11 +2288,11 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
         <picklistValues>
             <picklist>Delivery_Channel</picklist>
             <values>
-                <fullName>Advertise in Core</fullName>
+                <fullName>2 line reader %28slot Machine%29</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Decile Email</fullName>
+                <fullName>Advertise in Core</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1815,19 +2312,23 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Kiosk - APS Promo</fullName>
+                <fullName>Groupon</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Kiosk - TR Enhanced</fullName>
+                <fullName>Instagram</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Kiosk - iGames</fullName>
+                <fullName>Kiosks APS Promo</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Mobile Downloadable FSP</fullName>
+                <fullName>Kiosks TR Enhanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Application</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1835,11 +2336,31 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Play by TR app - Mobile messaging</fullName>
+                <fullName>Open Table</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Play by TR app - Push Notification</fullName>
+                <fullName>PRISM display %28slot Machine%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Mobile Push Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Play by TR Offers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMS %28text messaging%29%C2%A0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snapchat</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -1851,15 +2372,15 @@ Digital &amp; Studio : T1 or T2</inlineHelpText>
                 <default>false</default>
             </values>
             <values>
-                <fullName>Website</fullName>
+                <fullName>TotalRewards%2Ecom</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>eReel Rewards %28PRISM%29</fullName>
+                <fullName>Twitter</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>iCRM %28PRISM%29</fullName>
+                <fullName>Yelp</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

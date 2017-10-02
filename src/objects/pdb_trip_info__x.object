@@ -932,7 +932,7 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <label>caesars$pdb_trip_info</label>
-    <pluralLabel>caesars$pdb_trip_info</pluralLabel>
+    <label>Pdb trip info</label>
+    <pluralLabel>Pdb trip infos</pluralLabel>
     <searchLayouts/>
 </CustomObject>

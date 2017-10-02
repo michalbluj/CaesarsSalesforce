@@ -645,14 +645,19 @@
     </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
+        <columns>winet_id__c</columns>
         <columns>ACCOUNT.NAME</columns>
         <columns>UCPId__c</columns>
-        <columns>ACCOUNT.RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>RecordTypeName__c</field>
             <operation>equals</operation>
             <value>UCP</value>
+        </filters>
+        <filters>
+            <field>winet_id__c</field>
+            <operation>equals</operation>
+            <value>18003185028</value>
         </filters>
         <label>All Accounts</label>
     </listViews>
@@ -678,6 +683,11 @@
             <field>ACCOUNT.RECORDTYPE</field>
             <operation>equals</operation>
             <value>Account.UCP</value>
+        </filters>
+        <filters>
+            <field>winet_id__c</field>
+            <operation>equals</operation>
+            <value>18003185028</value>
         </filters>
         <label>All Customers</label>
     </listViews>
@@ -2550,7 +2560,7 @@
         <searchResultsAdditionalFields>ACCOUNT.PHONE1</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>Private</sharingModel>
+    <sharingModel>Read</sharingModel>
     <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>

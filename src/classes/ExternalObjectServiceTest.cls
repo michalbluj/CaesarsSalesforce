@@ -5,30 +5,6 @@
 
 @IsTest
 private class ExternalObjectServiceTest {
-    static testMethod void test_createHttpRequest() {
-        DataSource.QueryContext qc = new DataSource.QueryContext();
-        DataSource.TableSelection tableSelection = new DataSource.TableSelection();
-        DataSource.ColumnSelection column = new DataSource.ColumnSelection();
-        column.columnName = 'Test Col';
-        tableSelection.tableSelected = 'caesars$offers_sent';
-        tableSelection.columnsSelected = new List<DataSource.ColumnSelection>{column};
-        DataSource.Filter filter = new DataSource.Filter();
-        filter.columnName = 'Test col';
-        filter.columnValue = 'Test col val';
-        tableSelection.filter = filter;
-        qc.tableSelection = tableSelection;
-
-        Test.startTest();
-        HttpRequest req = ExternalObjectService.createHttpRequest('https://test.com', qc);
-        HttpRequest req2 = ExternalObjectService.createHttpRequest('test', new DataSource.SearchContext ());
-        Test.stopTest();
-
-        System.assertEquals('https://test.com', req.getEndpoint(), 'Endpoint should be set correctly');
-        System.assertEquals('application/json', req.getHeader('Content-Type'), 'Content type should be set correctly');
-        String body = req.getBody();
-        System.assert(body.contains('"columns": [{"name":"Test Col"}'), 'Body should contain test column name');
-        System.assert(body.contains('"tableName":"offers_sent"'), 'Body should contain test table name');
-    }
 
     static testMethod void test_sendHttpRequest() {
         DataSource.QueryContext qc = new DataSource.QueryContext();

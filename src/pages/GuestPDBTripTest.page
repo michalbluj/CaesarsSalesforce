@@ -1,0 +1,76 @@
+<apex:page controller="GuestPDBTripCC">
+    <script type="text/javascript">
+    function getPDBTripByContacts() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestPDBTripCC.retrievePDBTripByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getPDBTripDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestPDBTripCC.retrievePDBTripDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    </script>
+
+    <input id="guestSearch" type="text"/>
+    <button onclick="getPDBTripByContacts()">Retrieve PDB Trip by Contacts</button>
+    <button onclick="getPDBTripDetails()">Retrieve PDB Trip Details</button><br/>
+
+    <div id="responseErrors"></div>
+
+    <apex:pageBlock id="block">
+        <apex:pageBlockSection id="blockSection" columns="2">
+            <apex:pageBlockSectionItem id="secondItem">
+                <apex:outputText id="resultObj"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

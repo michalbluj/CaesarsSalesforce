@@ -409,7 +409,7 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>caesars$ap_pdb_trip_cmx</label>
-    <pluralLabel>caesars$ap_pdb_trip_cmx</pluralLabel>
+    <label>Ap pdb trip cmx</label>
+    <pluralLabel>Ap pdb trip cmxs</pluralLabel>
     <searchLayouts/>
 </CustomObject>

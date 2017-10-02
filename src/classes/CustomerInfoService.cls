@@ -11,12 +11,6 @@ public with sharing class CustomerInfoService {
         return req;
     }
 
-    public static HttpRequest createHttpRequest(String endpoint,DataSource.SearchContext context){
-        HttpRequest req = createHttpRequest();
-        req.setEndpoint(endpoint);
-        return req;
-    }
-
     private static String buildQueryBody(DataSource.QueryContext context){
         DataSource.TableSelection tableSelection = context.tableSelection;
         DataSource.Filter filter = tableSelection != null ? tableSelection.filter : null;

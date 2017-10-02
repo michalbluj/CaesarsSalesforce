@@ -27,6 +27,7 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@TestVisible private static List<caesars_gst_id_xref__x> mockedIdXref = new List<caesars_gst_id_xref__x>();
 	@TestVisible private static List<gst_cons_xref__x> mockedConsXref = new List<gst_cons_xref__x>();
 
+	private static Map<String, Acquisition_Code__c> acquisitionCodeMap = new Map<String, Acquisition_Code__c>([SELECT Id , Name, Description__c FROM Acquisition_Code__c]);
 
 	/*******************************************************************************************************
     * @description Retrieve the Address from Customer Info External
@@ -42,7 +43,7 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveAddress(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveAddress(externalIds, whereClause, idType);
 	}
 
 	@RemoteAction
@@ -51,59 +52,33 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveAddress(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveAddress(contactIds, whereClause, idType);
 	}
 
-	private static List<AddressWrapper> retrieveAddress(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);			
+	private  List<AddressWrapper> retrieveAddress(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 			
 
-		Set<String> recordtypes = new Set<String>();
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('Address');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' adi__c, ';
-	   	soql1 += ' city__c, ';
-	   	soql1 += ' state_cd__c, ';
-	   	soql1 += ' country_cd__c, ';
-	   	soql1 += ' quality_cd__c, ';
-	   	soql1 += ' dpbc__c, ';
-	   	soql1 += ' date__c, ';
-	   	soql1 += ' zip_3__c, ';
-	   	soql1 += ' zip_7__c, ';
-		soql1 += ' zip_plus_4__c, ';
-		soql1 += ' county__c, ';
-		soql1 += ' msa_cd__c, ';
-		soql1 += ' pci_cd__c, ';
-		soql1 += ' apt_num__c, ';
-		soql1 += ' area_cd__c, ';
-		soql1 += ' mail_cd__c, ';
-		soql1 += ' am_pm_cd__c, ';
-		soql1 += ' tele_num__c, ';
-		soql1 += ' address_1__c, ';
-		soql1 += ' address_2__c, ';
-		soql1 += ' contact__c, ';
-		soql1 += ' addr_type__c, ';
-		soql1 += ' acquisition_cd__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' country_tele_cd__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.Address,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
 
-		soql1 = String.escapeSingleQuotes(soql1);
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 
-		system.debug('*** soql1 ' + soql1);
-		
 		Map<String, AddressWrapper> addressMap = new Map<String, AddressWrapper> ();
-
 		List<customer_info_external_c__x> addressList = (!mockedAddress.isEmpty()) ? mockedAddress : Database.query(soql1);
-	   	
-	  	system.debug('*** addressList ' + addressList );
-
 	  	updateAddress (addressMap, addressList, '1');
-	  	
-	  	system.debug('*** addressMap return ' + addressMap.values());
 
 	  	return addressMap.values();
 	}
@@ -119,8 +94,6 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	*   		GuestContactMasterCC.updateAddress(Map<String, AddressWrapper> addressMap, List<customer_info_external_c__x> addressList, String pass);
     */
 	private static void updateAddress (Map<String, AddressWrapper> addressMap, List<customer_info_external_c__x> addressList, String pass){
-
-		Map<String, Acquisition_Code__c> acquisitionCodeMap = new Map<String, Acquisition_Code__c>([SELECT Id , Name, Description__c FROM Acquisition_Code__c]);
 
 		AddressWrapper addrWrap;
 
@@ -179,67 +152,43 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<EmailWrapper> retrieveEmailDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveEmail(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveEmail(externalIds, whereClause, idType);
+
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<EmailWrapper> retrieveEmailByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveEmail(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveEmail(contactIds, whereClause, idType);
 	}
 
-	private static List<EmailWrapper> retrieveEmail(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);	
+	private  List<EmailWrapper> retrieveEmail(List<String> ids, String whereClause, String idType) {	
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
 
-		Set<String> recordtypes = new Set<String>();
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('Email');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' email__c, ';
-	   	soql1 += ' source__c, ';
-	   	soql1 += ' qual_cd__c, ';
-	   	soql1 += ' ofr_freq__c, ';
-	   	soql1 += ' qual_cat__c, ';
-	   	soql1 += ' email_flag__c, ';
-	   	soql1 += ' quality_cd__c, ';
-	   	soql1 += ' contact_count__c, ';
-		soql1 += ' last_bounce_cd__c, ';
-		soql1 += ' qual_reason_cd__c, ';
-		soql1 += ' qual_hygiene_cd__c, ';
-		soql1 += ' bounce_timestamp__c, ';
-		soql1 += ' qual_chg_timestamp__c, ';
-		soql1 += ' email_engagement_cd__c, ';
-		soql1 += ' email_chg_timestamp__c, ';
-		soql1 += ' qual_conf_timestamp__c, ';
-		soql1 += ' email_address_valid_cd__c, ';
-		soql1 += ' email_address_quality_cd__c, ';
-		soql1 += ' last_change_timestamp_utc__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
-
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.Email,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 		
 		Map<String, EmailWrapper> emailMap = new Map<String, EmailWrapper> ();
-
 		List<customer_info_external_c__x> emailList = (!mockedEmail.isEmpty()) ? mockedEmail : Database.query(soql1);
-	   	
-	  	system.debug('*** emailList ' + emailList );
-
 	  	updateEmail (emailMap, emailList, '1');
-	  	
-	  	system.debug('*** emailMap return ' + emailMap.values());
 
 	  	return emailMap.values();
 	}
@@ -266,24 +215,13 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		  		emailWrap.ExternalId = email.ExternalId;
 
 		  		emailWrap.email = email.email__c;
-			   	emailWrap.source = email.source__c;
-			   	emailWrap.qual_cd = email.qual_cd__c;
-			   	emailWrap.ofr_freq = email.ofr_freq__c;
-			   	emailWrap.qual_cat = email.qual_cat__c;
 			   	emailWrap.email_flag = email.email_flag__c;
-			   	emailWrap.quality_cd = email.quality_cd__c;
-			   	emailWrap.i_contact_count = email.contact_count__c;
-				emailWrap.last_bounce_cd = email.last_bounce_cd__c;
-				emailWrap.qual_reason_cd = email.qual_reason_cd__c;
-				emailWrap.qual_hygiene_cd =  email.qual_hygiene_cd__c;
-				emailWrap.bounce_timestamp = email.bounce_timestamp__c;
-				emailWrap.qual_chg_timestamp = email.qual_chg_timestamp__c;
 				emailWrap.email_engagement_cd = email.email_engagement_cd__c;
 				emailWrap.email_chg_timestamp = email.email_chg_timestamp__c;
-				emailWrap.qual_conf_timestamp = email.qual_conf_timestamp__c;
 				emailWrap.email_address_valid_cd = email.email_address_valid_cd__c;
 				emailWrap.email_address_quality_cd = email.email_address_quality_cd__c;
-				emailWrap.last_change_timestamp_utc = email.last_change_timestamp_utc__c;
+				emailWrap.email_id = email.email_id__c;
+				emailWrap.email_status = email.email_status__c;
 				emailWrap.contact = email.contact__c;
 				emailWrap.recordtype = email.recordtype__c;
 
@@ -307,7 +245,7 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrievePrefMarketMail(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrievePrefMarketMail(externalIds, whereClause, idType);
 	}
 
 	@RemoteAction
@@ -316,40 +254,36 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrievePrefMarketMail(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrievePrefMarketMail(contactIds, whereClause, idType);
 	}
 
-	private static List<PrefMarketMailWrapper> retrievePrefMarketMail(List<String> ids, String whereClause, String idType) {
+	private  List<PrefMarketMailWrapper> retrievePrefMarketMail(List<String> ids, String whereClause, String idType) {
 		system.debug('*** whereClaus ' + whereClause);
 		system.debug('*** idType ' + idType);	
 
-		Set<String> recordtypes = new Set<String>();
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
+
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('PrefMarketMail');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' quality_cd__c, ';
-	   	//soql1 += ' market_cd__c, ';
-	   	//soql1 += ' market_type__c, ';
-	   	//soql1 += ' gst_pref_mail_flag__c, ';
-	   	soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.PrefMarketMail,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
-		
 		Map<String, PrefMarketMailWrapper> prefMarketMailMap = new Map<String, PrefMarketMailWrapper> ();
-
 		List<customer_info_external_c__x> prefMarketMailList = (!mockedPrefMarketMail.isEmpty()) ? mockedPrefMarketMail : Database.query(soql1);
-	   	
-	  	system.debug('*** prefMarketMailList ' + prefMarketMailList );
-
 	  	updatePrefMarketMail (prefMarketMailMap, prefMarketMailList, '1');
 	  	
-	  	system.debug('*** prefMarketMailMap return ' + prefMarketMailMap.values());
 
 	  	return prefMarketMailMap.values();
 	}
@@ -398,52 +332,44 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<PrefPropMailWrapper> retrievePrefPropMailDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrievePrefPropMail(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrievePrefPropMail(externalIds, whereClause, idType);
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<PrefPropMailWrapper> retrievePrefPropMailByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrievePrefPropMail(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrievePrefPropMail(contactIds, whereClause, idType);
 	}
 
-	private static List<PrefPropMailWrapper> retrievePrefPropMail(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);	
+	private List<PrefPropMailWrapper> retrievePrefPropMail(List<String> ids, String whereClause, String idType) {	
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
 
-		Set<String> recordtypes = new Set<String>();
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('PrefPropMail');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' quality_cd__c, ';
-	   	soql1 += ' prop_cd__c, ';
-	   	//soql1 += ' gst_pref_mail_flag__c, ';
-	   	soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.PrefPropMail,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
 
-		soql1 = String.escapeSingleQuotes(soql1);
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 
-		system.debug('*** soql1 ' + soql1);
-		
 		Map<String, PrefPropMailWrapper> prefPropMailMap = new Map<String, PrefPropMailWrapper> ();
-
 		List<customer_info_external_c__x> prefPropMailList = (!mockedPrefPropMail.isEmpty()) ? mockedPrefPropMail : Database.query(soql1);
-	   	
-	  	system.debug('*** prefPropMailList ' + prefPropMailList );
-
 	  	updatePrefPropMail (prefPropMailMap, prefPropMailList, '1');
 	  	
-	  	system.debug('*** prefPropMailMap return ' + prefPropMailMap.values());
-
 	  	return prefPropMailMap.values();
 	}
 
@@ -491,71 +417,44 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<NxtGenAddressWrapper> retrieveNxtGenAddressDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveNxtGenAddress(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveNxtGenAddress(externalIds, whereClause, idType);
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<NxtGenAddressWrapper> retrieveNxtGenAddressByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveNxtGenAddress(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveNxtGenAddress(contactIds, whereClause, idType);
 	}
 
-	private static List<NxtGenAddressWrapper> retrieveNxtGenAddress(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);	
+	private  List<NxtGenAddressWrapper> retrieveNxtGenAddress(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
 
-		Set<String> recordtypes = new Set<String>();
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('NxtgenAddress');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' email__c, ';
-	   	soql1 += ' notes__c, ';
-	   	soql1 += ' phone__c, ';
-	   	soql1 += ' addr_1__c, ';
-	   	soql1 += ' addr_2__c, ';
-	   	soql1 += ' addr_3__c, ';
-	   	soql1 += ' app_cd__c, ';
-	   	soql1 += ' rep_id__c, ';
-	   	soql1 += ' zip_cd__c, ';
-	   	soql1 += ' book_id__c, ';
-	   	soql1 += ' prop_cd__c, ';
-	   	soql1 += ' state_cd__c, ';
-	   	soql1 += ' addr_desc__c, ';
-		soql1 += ' city_name__c, ';
-		soql1 += ' create_dt__c, ';
-		soql1 += ' country_cd__c, ';
-		soql1 += ' state_name__c, ';
-		soql1 += ' note_pad_id__c, ';
-		soql1 += ' creator_login__c, ';
-		soql1 += ' addr_status_cd__c, ';
-		soql1 += ' modifier_login__c, ';
-		soql1 += ' pcs_address_id__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.NxtgenAddress,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
 
-		soql1 = String.escapeSingleQuotes(soql1);
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 
-		system.debug('*** soql1 ' + soql1);
-		
 		Map<String, NxtGenAddressWrapper> nxtGenAddressMap = new Map<String, NxtGenAddressWrapper> ();
-
 		List<customer_info_external_c__x> nxtGenAddressList = (!mockedNxtGenAddress.isEmpty()) ? mockedNxtGenAddress : Database.query(soql1);
-	   	
-	  	system.debug('*** nxtGenAddressList ' + nxtGenAddressList );
-
 	  	updateNxtGenAddress (nxtGenAddressMap, nxtGenAddressList, '1');
 	  	
-	  	system.debug('*** NxtGenAddressMap return ' + NxtGenAddressMap.values());
-
 	  	return nxtGenAddressMap.values();
 	}
 
@@ -624,7 +523,7 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveNxtGenEmail(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveNxtGenEmail(externalIds, whereClause, idType);
 	}
 
 	@RemoteAction
@@ -633,43 +532,34 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveNxtGenEmail(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveNxtGenEmail(contactIds, whereClause, idType);
 	}
 
-	private static List<NxtGenEmailWrapper> retrieveNxtGenEmail(List<String> ids, String whereClause, String idType) {
+	private  List<NxtGenEmailWrapper> retrieveNxtGenEmail(List<String> ids, String whereClause, String idType) {
 		system.debug('*** whereClaus ' + whereClause);
 		system.debug('*** idType ' + idType);	
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
 
-		Set<String> recordtypes = new Set<String>();
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('NxtgenEmail');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' email__c, ';
-	   	soql1 += ' app_cd__c, ';
-		soql1 += ' create_dt__c, ';
-		soql1 += ' created_by__c, ';
-		soql1 += ' email_type__c, ';
-		soql1 += ' email_status__c, ';
-		soql1 += ' email_id__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
-
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.NxtgenEmail,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 		
 		Map<String, NxtGenEmailWrapper> nxtGenEmailMap = new Map<String, NxtGenEmailWrapper> ();
-
 		List<customer_info_external_c__x> nxtGenEmailList = (!mockedNxtGenEmail.isEmpty()) ? mockedNxtGenEmail : Database.query(soql1);
-	   	
-	  	system.debug('*** nxtGenEmailList ' + nxtGenEmailList );
-
 	  	updateNxtGenEmail (nxtGenEmailMap, nxtGenEmailList, '1');
-	  	
-	  	system.debug('*** NxtGenEmailMap return ' + NxtGenEmailMap.values());
 
 	  	return nxtGenEmailMap.values();
 	}
@@ -722,54 +612,44 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<NxtGenContactChanWrapper> retrieveNxtGenContactChanDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveNxtGenContactChan(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveNxtGenContactChan(externalIds, whereClause, idType);
+
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<NxtGenContactChanWrapper> retrieveNxtGenContactChanByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveNxtGenContactChan(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveNxtGenContactChan(contactIds, whereClause, idType);
+
 	}
 
-	private static List<NxtGenContactChanWrapper> retrieveNxtGenContactChan(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);	
+	private List<NxtGenContactChanWrapper> retrieveNxtGenContactChan(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
 
-		Set<String> recordtypes = new Set<String>();
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('NxtgenContactChan');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' app_cd__c, ';
-		soql1 += ' create_dt__c, ';
-		soql1 += ' creator_login__c, ';
-		soql1 += ' modifier_login__c, ';
-		soql1 += ' do_not_contact_channel__c, ';
-		soql1 += ' preferred_contact_channel__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.NxtgenContactChan,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
-		
 		Map<String, NxtGenContactChanWrapper> nxtGenContactChanMap = new Map<String, NxtGenContactChanWrapper> ();
-
 		List<customer_info_external_c__x> nxtGenContactChanList = (!mockedNxtGenContactChan.isEmpty()) ? mockedNxtGenContactChan : Database.query(soql1);
-	   	
-	  	system.debug('*** nxtGenContactChanList ' + nxtGenContactChanList );
-
 	  	updateNxtGenContactChan (nxtGenContactChanMap, nxtGenContactChanList, '1');
-	  	
-	  	system.debug('*** NxtGenContactChanMap return ' + NxtGenContactChanMap.values());
 
 	  	return nxtGenContactChanMap.values();
 	}
@@ -822,56 +702,41 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<NxtGenPhoneWrapper> retrieveNxtGenPhoneDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveNxtGenPhone(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveNxtGenPhone(externalIds, whereClause, idType);
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<NxtGenPhoneWrapper> retrieveNxtGenPhoneByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveNxtGenPhone(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveNxtGenPhone(contactIds, whereClause, idType);
 	}
 
-	private static List<NxtGenPhoneWrapper> retrieveNxtGenPhone(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);	
-
-		Set<String> recordtypes = new Set<String>();
+	private  List<NxtGenPhoneWrapper> retrieveNxtGenPhone(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('NxtgenPhone');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' phone__c, ';
-		soql1 += ' app_cd__c, ';
-		soql1 += ' private__c, ';
-		soql1 += ' create_dt__c, ';
-		soql1 += ' created_by__c, ';
-		soql1 += ' phone_type__c, ';
-		soql1 += ' pcs_phone_id__c, ';
-		soql1 += ' phone_status__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
-
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.NxtgenPhone,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 		
 		Map<String, NxtGenPhoneWrapper> nxtGenPhoneMap = new Map<String, NxtGenPhoneWrapper> ();
-
 		List<customer_info_external_c__x> nxtGenPhoneList = (!mockedNxtGenPhone.isEmpty()) ? mockedNxtGenPhone : Database.query(soql1);
-	   	
-	  	system.debug('*** nxtGenPhoneList ' + nxtGenPhoneList );
-
 	  	updateNxtGenPhone (nxtGenPhoneMap, nxtGenPhoneList, '1');
-	  	
-	  	system.debug('*** NxtGenPhoneMap return ' + NxtGenPhoneMap.values());
 
 	  	return nxtGenPhoneMap.values();
 	}
@@ -925,77 +790,41 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<NxtGenToDoWrapper> retrieveNxtGenToDoDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveNxtGenToDo(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveNxtGenToDo(externalIds, whereClause, idType);
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<NxtGenToDoWrapper> retrieveNxtGenToDoByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveNxtGenToDo(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveNxtGenToDo(contactIds, whereClause, idType);
 	}
 
-	private static List<NxtGenToDoWrapper> retrieveNxtGenToDo(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);	
-
-		Set<String> recordtypes = new Set<String>();
+	private  List<NxtGenToDoWrapper> retrieveNxtGenToDo(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('NxtgenToDo');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' worth__c, ';
-		soql1 += ' app_cd__c, ';
-		soql1 += ' rep_id__c, ';
-		soql1 += ' due_dt__c, ';
-		soql1 += ' book_id__c, ';
-		soql1 += ' prop_cd__c, ';
-		soql1 += ' task_id__c, ';
-		soql1 += ' due_time__c, ';
-		soql1 += ' event_id__c, ';
-		soql1 += ' to_do_id__c, ';
-		soql1 += ' last_name__c, ';
-		soql1 += ' create_dt__c, ';
-		soql1 += ' first_name__c, ';
-		soql1 += ' to_do_type__c, ';
-		soql1 += ' market_adw__c, ';
-		soql1 += ' middle_init__c, ';
-		soql1 += ' to_do_notes__c, ';
-		soql1 += ' to_do_status__c, ';
-		soql1 += ' last_trip_dt__c, ';
-		soql1 += ' creator_login__c, ';
-		soql1 += ' to_do_segment__c, ';
-		soql1 += ' to_do_subject__c, ';
-		soql1 += ' modifier_login__c, ';
-		soql1 += ' offer_reserved__c, ';
-		soql1 += ' suggested_channel__c, ';
-		soql1 += ' contact_dt_by_all__c, ';
-		soql1 += ' my_last_contact_dt__c, ';
-		soql1 += ' last_contact_dt_by_me__c, ';
-		soql1 += ' phone_contact_dt_by_all__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
-
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.NxtgenToDo,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 		
 		Map<String, NxtGenToDoWrapper> nxtGenToDoMap = new Map<String, NxtGenToDoWrapper> ();
-
 		List<customer_info_external_c__x> nxtGenToDoList = (!mockedNxtGenToDo.isEmpty()) ? mockedNxtGenToDo : Database.query(soql1);
-	   	
-	  	system.debug('*** nxtGenToDoList ' + nxtGenToDoList );
-
 	  	updateNxtGenToDo (nxtGenToDoMap, nxtGenToDoList, '1');
-	  	
-	  	system.debug('*** NxtGenToDoMap return ' + NxtGenToDoMap.values());
 
 	  	return nxtGenToDoMap.values();
 	}
@@ -1072,57 +901,41 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<TierScoreWrapper> retrieveTierScoreDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveTierScore(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveTierScore(externalIds, whereClause, idType);
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<TierScoreWrapper> retrieveTierScoreByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveTierScore(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveTierScore(contactIds, whereClause, idType);
 	}
 
-	private static List<TierScoreWrapper> retrieveTierScore(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);	
-
-		Set<String> recordtypes = new Set<String>();
+	private  List<TierScoreWrapper> retrieveTierScore(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('TierScore');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' year__c, ';
-		soql1 += ' as_of__c, ';
-		soql1 += ' posted_on__c, ';
-		soql1 += ' quality_cd__c, ';
-		soql1 += ' promo_base__c, ';
-		soql1 += ' tier_score__c, ';
-		soql1 += ' adjust_base__c, ';
-		soql1 += ' earned_base__c, ';
-		soql1 += ' prev_tier_score__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
-
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.TierScore,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 		
 		Map<String, TierScoreWrapper> tierScoreMap = new Map<String, TierScoreWrapper> ();
-
 		List<customer_info_external_c__x> tierScoreList = (!mockedTierScore.isEmpty()) ? mockedTierScore : Database.query(soql1);
-	   	
-	  	system.debug('*** tierScoreList ' + tierScoreList );
-
 	  	updateTierScore (tierScoreMap, tierScoreList, '1');
-	  	
-	  	system.debug('*** tierScoreMap return ' + tierScoreMap.values());
 
 	  	return tierScoreMap.values();
 	}
@@ -1178,62 +991,42 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<CasinoWrapper> retrieveCasinoDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveCasino(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveCasino(externalIds, whereClause, idType);
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<CasinoWrapper> retrieveCasinoByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveCasino(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveCasino(contactIds, whereClause, idType);
 	}
 
-	private static List<CasinoWrapper> retrieveCasino(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);	
-
-		Set<String> recordtypes = new Set<String>();
+	private List<CasinoWrapper> retrieveCasino(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('Casino');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' rep_id__c, ';
-		soql1 += ' prop_cd__c, ';
-		soql1 += ' update_dt__c, ';
-		soql1 += ' casino_id__c, ';
-		soql1 += ' quality_cd__c, ';
-		soql1 += ' create_date__c, ';
-		soql1 += ' purge_react__c, ';
-		soql1 += ' cred_appr_by__c, ';
-		soql1 += ' prop_mail_cd__c, ';
-		soql1 += ' avail_credit__c, ';
-		soql1 += ' credit_limit__c, ';
-		soql1 += ' credit_status__c, ';
-		soql1 += ' outstand_credit__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.Casino,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
-		
 		Map<String, CasinoWrapper> casinoMap = new Map<String, CasinoWrapper> ();
-
 		List<customer_info_external_c__x> casinoList = (!mockedCasino.isEmpty()) ? mockedCasino : Database.query(soql1);
-	   	
-	  	system.debug('*** casinoList ' + casinoList );
-
 	  	updateCasino (casinoMap, casinoList, '1');
 	  	
-	  	system.debug('*** casinoMap return ' + casinoMap.values());
-
 	  	return casinoMap.values();
 	}
 
@@ -1292,69 +1085,41 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<RepcodeWrapper> retrieveRepcodeDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveRepcode(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveRepcode(externalIds, whereClause, idType);
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<RepcodeWrapper> retrieveRepcodeByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveRepcode(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveRepcode(contactIds, whereClause, idType);
 	}
 
-	private static List<RepcodeWrapper> retrieveRepcode(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);	
-
-		Set<String> recordtypes = new Set<String>();
+	private List<RepcodeWrapper> retrieveRepcode(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('Repcode');
-
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' rep_cd__c, ';
-		soql1 += ' prop_cd__c, ';
-		soql1 += ' efft_dy__c, ';
-		soql1 += ' efft_mn__c, ';
-		soql1 += ' efft_yr__c, ';
-		soql1 += ' rep_type__c, ';
-		soql1 += ' rep_rank__c, ';
-		soql1 += ' patron_id__c, ';
-		soql1 += ' current_cd__c, ';
-		soql1 += ' entered_by__c, ';
-		soql1 += ' quality_cd__c, ';
-		soql1 += ' trans_time__c, ';
-		soql1 += ' efft_end_dt__c, ';
-		soql1 += ' efft_start_dt__c, ';
-		soql1 += ' trans_100_yr__c, ';
-		soql1 += ' rep_trip_nbr__c, ';
-		soql1 += ' patron_rep_appv__c, ';
-		soql1 += ' last_rep_h_date__c, ';
-		soql1 += ' assigned_century__c, ';
-		soql1 += ' last_rep_cd_date__c, ';
-		soql1 += ' trans_cal_dt__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
-
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
+		
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.Repcode,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 		
 		Map<String, RepcodeWrapper> repcodeMap = new Map<String, RepcodeWrapper> ();
-
 		List<customer_info_external_c__x> repcodeList = (!mockedRepcode.isEmpty()) ? mockedRepcode : Database.query(soql1);
-	   	
-	  	system.debug('*** repcodeList ' + repcodeList );
-
 	  	updateRepcode (repcodeMap, repcodeList, '1');
-	  	
-	  	system.debug('*** repcodeMap return ' + repcodeMap.values());
 
 	  	return repcodeMap.values();
 	}
@@ -1422,53 +1187,42 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<AcquisitionWrapper> retrieveAcquisitionDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveAcquisition(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveAcquisition(externalIds, whereClause, idType);
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<AcquisitionWrapper> retrieveAcquisitionByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveAcquisition(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveAcquisition(contactIds, whereClause, idType);
 	}
 
-	private static List<AcquisitionWrapper> retrieveAcquisition(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);	
-
-		Set<String> recordtypes = new Set<String>();
+	private List<AcquisitionWrapper> retrieveAcquisition(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('Acquisition');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' acq_date__c, ';
-		soql1 += ' prop_cd__c, ';
-		soql1 += ' quality_cd__c, ';
-		soql1 += ' acquisition_cd__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
-
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.Acquisition,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 		
 		Map<String, AcquisitionWrapper> acquisitionMap = new Map<String, AcquisitionWrapper> ();
-
 		List<customer_info_external_c__x> acquisitionList = (!mockedAcquisition.isEmpty()) ? mockedAcquisition : Database.query(soql1);
-	   	
-	  	system.debug('*** acquisitionList ' + acquisitionList );
-
 	  	updateAcquisition (acquisitionMap, acquisitionList, '1');
 	  	
-	  	system.debug('*** acquisitionMap return ' + acquisitionMap.values());
-
 	  	return acquisitionMap.values();
 	}
 
@@ -1497,7 +1251,11 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 				acqWrap.prop_cd = acq.prop_cd__c;
 				acqWrap.quality_cd = acq.quality_cd__c;
 				acqWrap.acquisition_cd = acq.acquisition_cd__c;
-
+				if (!String.IsBlank(acq.acquisition_cd__c) &&
+					 acquisitionCodeMap.containsKey(acq.acquisition_cd__c) &&
+					 !String.IsBlank(acquisitionCodeMap.get(acq.acquisition_cd__c).Name) ){
+					acqWrap.acquisition_cd_name = acquisitionCodeMap.get(acq.acquisition_cd__c).Name;
+				}
 			   	acqWrap.recordtype = acq.recordtype__c;			   
 				acqWrap.contact = acq.contact__c;
 
@@ -1518,51 +1276,44 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<AliasWrapper> retrieveAliasDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  and ExternalId in';
 		String idType = 'external';
-		return retrieveAlias(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveAlias(externalIds, whereClause, idType);
+
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<AliasWrapper> retrieveAliasByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' and contact__c in';
 		String idType = 'contact';
-		return retrieveAlias(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveAlias(contactIds, whereClause, idType);
+
 	}
 
-	private static List<AliasWrapper> retrieveAlias(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);	
-
-		Set<String> recordtypes = new Set<String>();
+	private List<AliasWrapper> retrieveAlias(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('Alias');
 
-		String soql1 = ' SELECT externalid, ';
-	   	soql1 += ' first_name__c, ';
-		soql1 += ' last_name__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.Alias,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
-		
 		Map<String, AliasWrapper> aliasMap = new Map<String, AliasWrapper> ();
-
 		List<customer_info_external_c__x> aliasList = (!mockedAlias.isEmpty()) ? mockedAlias : Database.query(soql1);
-	   	
-	  	system.debug('*** aliasList ' + aliasList );
-
 	  	updateAlias (aliasMap, aliasList, '1');
 	  	
-	  	system.debug('*** aliasMap return ' + aliasMap.values());
-
 	  	return aliasMap.values();
 	}
 
@@ -1609,26 +1360,30 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<ScorePropWrapper> retrieveScorePropDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  AND  ExternalId in';
 		String idType = 'external';
-		return retrieveScoreProp(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveScoreProp(externalIds, whereClause, idType);
+
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<ScorePropWrapper> retrieveScorePropByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' AND contact__c in';
 		String idType = 'contact';
-		return retrieveScoreProp(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveScoreProp(contactIds, whereClause, idType);
+
 	}
 
-	private static List<ScorePropWrapper> retrieveScoreProp(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);			
-
-		Set<String> recordtypes = new Set<String>();
+	private List<ScorePropWrapper> retrieveScoreProp(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('ScoreProp');
 
 		Map<String, String> contactDmIdMap = new Map<String, String>();
@@ -1636,58 +1391,18 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 			contactDmIdMap.put(c.id, c.winet_Id__c );
 		}
 
-		String soql1 = ' SELECT externalid, ';
-		soql1 += ' quality_cd__c, '; 
-		soql1 += ' user_amt_1__c, '; 
-		soql1 += ' user_amt_2__c, '; 
-		soql1 += ' user_amt_3__c, ';
-		soql1 += ' user_amt_4__c, ';
-		soql1 += ' user_amt_5__c, '; 
-		soql1 += ' user_amt_6__c, '; 
-		soql1 += ' user_amt_7__c, ';
-		soql1 += ' user_amt_8__c, '; 
-		soql1 += ' user_amt_9__c, ';
-		soql1 += ' worth__c, ';
-		soql1 += ' user_flag_1__c, ';
-		soql1 += ' user_flag_2__c, ';
-		soql1 += ' user_flag_3__c, ';
-		soql1 += ' user_flag_4__c, '; 
-		soql1 += ' user_flag_5__c, '; 
-		soql1 += ' user_flag_6__c, '; 
-		soql1 += ' user_flag_7__c, '; 
-		soql1 += ' user_flag_8__c, ';
-		soql1 += ' prop_cd__c, ';
-		soql1 += ' user_flag_9__c, '; 
-		soql1 += ' last_update_dt__c, ';
-		soql1 += ' user_score_1__c, ';
-		soql1 += ' user_score_2__c, ';
-		soql1 += ' user_score_3__c, '; 
-		soql1 += ' user_score_4__c, '; 
-		soql1 += ' user_score_5__c, ';
-		soql1 += ' user_score_6__c, ';
-		soql1 += ' user_score_7__c, ';
-		soql1 += ' user_score_8__c, ';
-		soql1 += ' user_score_9__c, ';
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
-
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.ScoreProp,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 		
 		Map<String, ScorePropWrapper> scorePropMap = new Map<String, ScorePropWrapper> ();
-
 		List<customer_info_external_c__x> scorePropList = (!mockedScoreProp.isEmpty()) ? mockedScoreProp : Database.query(soql1);
-	   	
-	  	system.debug('*** scorePropList ' + scorePropList );
-
 	  	updateScoreProp (scorePropMap, scorePropList, '1', contactDmIdMap);
 	  	
-	  	system.debug('*** scorePropMap return ' + scorePropMap.values());
-
 	  	return scorePropMap.values();
 	}
 
@@ -1722,7 +1437,7 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 				splWrap.user_amt_7 = spl.user_amt_7__c;
 				splWrap.user_amt_8 = spl.user_amt_8__c ;
 				splWrap.user_amt_9 = spl.user_amt_9__c;
-				splWrap.worth = spl.worth__c;
+				splWrap.pred_worth = spl.pred_worth__c;
 				splWrap.user_flag_1 = spl.user_flag_1__c;
 				splWrap.user_flag_2 = spl.user_flag_2__c;
 				splWrap.user_flag_3 = spl.user_flag_3__c;
@@ -1733,7 +1448,7 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 				splWrap.user_flag_8 = spl.user_flag_8__c;
 				splWrap.prop_cd = spl.prop_cd__c;
 				splWrap.user_flag_9 = spl.user_flag_9__c;
-				splWrap.last_update_dt = spl.last_update_dt__c;
+				splWrap.last_update = spl.last_update__c;
 				splWrap.user_score_1 = spl.user_score_1__c;
 				splWrap.user_score_2 = spl.user_score_2__c;
 				splWrap.user_score_3 = spl.user_score_3__c ;
@@ -1743,6 +1458,10 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 				splWrap.user_score_7 = spl.user_score_7__c;
 				splWrap.user_score_8 = spl.user_score_8__c;
 				splWrap.user_score_9 = spl.user_score_9__c;
+				splWrap.pred_hotel_day = spl.pred_hotel_day__c;
+				splWrap.pred_hotel_trip = spl.pred_hotel_trip__c;
+				splWrap.mileage = spl.mileage__c;
+				splWrap.prep_trips = spl.prep_trips__c;
 				if (contactDmIdMap.containsKey(spl.contact__c)){
 					splWrap.dmid = contactDmIdMap.get(spl.contact__c);
 				}
@@ -1767,26 +1486,30 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<EthnicityAppendWrapper> retrieveEthnicityAppendDetails(List<String> externalIds) {
-		system.debug('*** externalIds ' + externalIds);
 		String whereClause = '  AND  ExternalId in';
 		String idType = 'external';
-		return retrieveEthnicityAppend(externalIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveEthnicityAppend(externalIds, whereClause, idType);
+
 	}
 
 	@RemoteAction
 	@AuraEnabled
 	global static List<EthnicityAppendWrapper> retrieveEthnicityAppendByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' AND contact__c in';
 		String idType = 'contact';
-		return retrieveEthnicityAppend(contactIds, whereClause, idType);
+		return (new GuestContactMasterCC()).retrieveEthnicityAppend(contactIds, whereClause, idType);
+
 	}
 
-	private static List<EthnicityAppendWrapper> retrieveEthnicityAppend(List<String> ids, String whereClause, String idType) {
-		system.debug('*** whereClaus ' + whereClause);
-		system.debug('*** idType ' + idType);			
-
-		Set<String> recordtypes = new Set<String>();
+	private List<EthnicityAppendWrapper> retrieveEthnicityAppend(List<String> ids, String whereClause, String idType) {
+		//
+		// get the cross-reference dmIds for the contacts in order to access unmerged activities
+		//
+		List<String> allContactIds = new List<String>();
+		if (idType == 'contact') {
+			allContactIds = (new GuestContactMasterCC()).getConsXrefIds(ids);
+		} 
+		List<String> recordtypes = new List<String>();
 		recordtypes.add('EthnicityAppend');
 
 		Map<String, String> contactDmIdMap = new Map<String, String>();
@@ -1794,49 +1517,18 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 			contactDmIdMap.put(c.id, c.winet_Id__c );
 		}
 
-		String soql1 = ' SELECT externalid, ';
-		soql1 += ' asian_flag__c, '; 
-		soql1 += ' source_file__c, '; 
-		soql1 += ' ethnic_group1__c, '; 
-		soql1 += ' ethnic_group2__c, '; 
-		soql1 += ' pref_language__c, '; 
-		soql1 += ' last_update_dt__c, '; 
-		soql1 += ' sub_ethnic_type__c, '; 
-		soql1 += ' main_ethnic_type__c, '; 
-		soql1 += ' user_amt_1__c, '; 
-		soql1 += ' user_amt_2__c, '; 
-		soql1 += ' user_amt_3__c, ';
-		soql1 += ' user_amt_4__c, ';
-		soql1 += ' user_flag_1__c, ';
-		soql1 += ' user_flag_2__c, ';
-		soql1 += ' user_flag_3__c, ';
-		soql1 += ' user_flag_4__c, '; 
-		soql1 += ' user_flag_5__c, '; 
-		soql1 += ' user_flag_6__c, '; 
-		soql1 += ' user_score_1__c, ';
-		soql1 += ' user_score_2__c, ';
-		soql1 += ' user_score_3__c, '; 
-		soql1 += ' user_score_4__c, '; 
-		soql1 += ' recordtype__c, ';
-		soql1 += ' contact__c ';
-		soql1 += ' FROM customer_info_external_c__x  ';
-		soql1 += ' WHERE recordtype__c in ' + ': recordtypes';
-		soql1 += whereClause + ': ids';
-
-		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
+		String soql1 = soqlFromFieldSet(SOBjectType.customer_info_external_c__x.FieldSets.EthnicityAppend,
+			'customer_info_external_c__x',recordTypes, new List<String>{'contact__c'});
+		if (idType == 'contact') {
+			soql1 += whereClause + ': allContactIds';
+		} else {
+			soql1 += whereClause + ': ids';
+		}
 		
 		Map<String, EthnicityAppendWrapper> ethnicityAppendMap = new Map<String, EthnicityAppendWrapper> ();
-
 		List<customer_info_external_c__x> ethnicityAppendList = (!mockedEthnicityAppend.isEmpty()) ? mockedEthnicityAppend : Database.query(soql1);
-	   	
-	  	system.debug('*** ethnicityAppendList ' + ethnicityAppendList );
-
 	  	updateEthnicityAppend (ethnicityAppendMap, ethnicityAppendList, '1');
 	  	
-	  	system.debug('*** EthnicityAppendMap return ' + ethnicityAppendMap.values());
-
 	  	return ethnicityAppendMap.values();
 	}
 
@@ -1913,13 +1605,12 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<ConsXrefWrapper> retrieveConsXrefByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' WHERE i_dmid__c in';
-		return retrieveConsXref(contactIds, whereClause);
+		return (new GuestContactMasterCC()).retrieveConsXref(contactIds, whereClause);
+
 	}
 
-	private static List<ConsXrefWrapper> retrieveConsXref(List<String> ids, String whereClause) {
-		system.debug('*** whereClaus ' + whereClause);
+	private List<ConsXrefWrapper> retrieveConsXref(List<String> ids, String whereClause) {
 
 		List<String> winIdList = retrieveConsIdRefs (ids);
 
@@ -1936,15 +1627,9 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		system.debug('*** soql1 ' + soql1);
 		
 		Map<String, ConsXrefWrapper> consXrefMap = new Map<String, ConsXrefWrapper> ();
-
 		List<gst_cons_xref__x> consXrefList = (!mockedConsXref.isEmpty()) ? mockedConsXref : Database.query(soql1);
-	   	
-	  	system.debug('*** consXrefList ' + consXrefList );
-
 	  	updateConsXref (consXrefMap, consXrefList, '1');
 	  	
-	  	system.debug('*** consXrefMap return ' + consXrefMap.values());
-
 	  	return consXrefMap.values();
 	}
 
@@ -2000,13 +1685,12 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	@RemoteAction
 	@AuraEnabled
 	global static List<IdXrefWrapper> retrieveIdXrefByContacts(List<String> contactIds) {
-		system.debug('*** contactIds ' + contactIds);
 		String whereClause = ' WHERE i_dmId__c in';
-		return retrieveIdXref(contactIds, whereClause);
+		return (new GuestContactMasterCC()).retrieveIdXref(contactIds, whereClause);
+
 	}
 
-	private static List<IdXrefWrapper> retrieveIdXref(List<String> ids, String whereClause) {
-		system.debug('*** whereClaus ' + whereClause);	
+	private List<IdXrefWrapper> retrieveIdXref(List<String> ids, String whereClause) {
 
 		List<String> winIdList = retrieveConsIdRefs (ids);
 
@@ -2020,19 +1704,11 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		soql1 += whereClause + ': winIdList';
 
 		soql1 = String.escapeSingleQuotes(soql1);
-
-		system.debug('*** soql1 ' + soql1);
 		
 		Map<String, IdXrefWrapper> idXrefMap = new Map<String, IdXrefWrapper> ();
-
 		List<caesars_gst_id_xref__x> idXrefList = (!mockedIdXref.isEmpty()) ? mockedIdXref : Database.query(soql1);
-	   	
-	  	system.debug('*** idXrefList ' + idXrefList );
-
 	  	updateIdXref (idXrefMap, idXrefList, '1');
 	  	
-	  	system.debug('*** idXrefMap return ' + idXrefMap.values());
-
 	  	return idXrefMap.values();
 	}
 
@@ -2195,24 +1871,13 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 	global class EmailWrapper {
 		@AuraEnabled global String ExternalId { get; set; } 
 	   	@AuraEnabled global String email { get; set; } 
-		@AuraEnabled global String source { get; set; } 
-		@AuraEnabled global String qual_cd { get; set; } 
-		@AuraEnabled global String ofr_freq { get; set; }  
-		@AuraEnabled global String qual_cat { get; set; } 
+		@AuraEnabled global Decimal email_id { get; set; } 
+		@AuraEnabled global String email_status { get; set; } 
 		@AuraEnabled global String email_flag { get; set; } 
-		@AuraEnabled global String quality_cd { get; set; } 
-		@AuraEnabled global Decimal i_contact_count { get; set; } 
-		@AuraEnabled global String last_bounce_cd { get; set; } 
-		@AuraEnabled global String qual_reason_cd { get; set; } 
-		@AuraEnabled global String qual_hygiene_cd { get; set; } 
-		@AuraEnabled global String bounce_timestamp { get; set; } 
-		@AuraEnabled global String qual_chg_timestamp { get; set; } 
 		@AuraEnabled global String email_engagement_cd { get; set; } 
 		@AuraEnabled global String email_chg_timestamp { get; set; } 
-		@AuraEnabled global String qual_conf_timestamp { get; set; } 
 		@AuraEnabled global String email_address_valid_cd { get; set; } 
 		@AuraEnabled global String email_address_quality_cd { get; set; } 
-		@AuraEnabled global String last_change_timestamp_utc { get; set; } 
 		@AuraEnabled global String recordtype { get; set; } 
 		@AuraEnabled global String contact { get; set; } 
 	
@@ -2220,6 +1885,7 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 
 	  	}
 	}
+
 
 	/*******************************************************************************************************
     * @description Wrapper class for PrefMarketMail
@@ -2481,6 +2147,7 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		@AuraEnabled global String prop_cd { get; set; } 
 		@AuraEnabled global String quality_cd { get; set; }
 		@AuraEnabled global String acquisition_cd { get; set; } 
+		@AuraEnabled global String acquisition_cd_name { get; set; } 
 		@AuraEnabled global String recordtype { get; set; } 
 		@AuraEnabled global String contact { get; set; } 
 
@@ -2518,7 +2185,7 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		 @AuraEnabled global Decimal user_amt_7  { get; set; } 
 		 @AuraEnabled global Decimal user_amt_8  { get; set; } 
 		 @AuraEnabled global Decimal user_amt_9  { get; set; } 
-		 @AuraEnabled global Decimal worth  { get; set; } 
+		 @AuraEnabled global Decimal pred_worth  { get; set; } 
 		 @AuraEnabled global String user_flag_1  { get; set; } 
 		 @AuraEnabled global String user_flag_2  { get; set; } 
 		 @AuraEnabled global String user_flag_3  { get; set; } 
@@ -2529,7 +2196,7 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		 @AuraEnabled global String user_flag_8  { get; set; } 
 		 @AuraEnabled global String prop_cd  { get; set; } 
 		 @AuraEnabled global String user_flag_9  { get; set; } 
-		 @AuraEnabled global String last_update_dt  { get; set; } 
+		 @AuraEnabled global String last_update  { get; set; } 
 		 @AuraEnabled global Decimal user_score_1  { get; set; } 
 		 @AuraEnabled global Decimal user_score_2  { get; set; } 
 		 @AuraEnabled global Decimal user_score_3  { get; set; } 
@@ -2540,6 +2207,10 @@ global with sharing class  GuestContactMasterCC extends GuestSubjectDataBaseCC {
 		 @AuraEnabled global Decimal user_score_8   { get; set; } 
 		 @AuraEnabled global Decimal user_score_9  { get; set; } 
 		 @AuraEnabled global String dmid  { get; set; } 
+		 @AuraEnabled global Decimal pred_hotel_day  { get; set; }
+		 @AuraEnabled global Decimal pred_hotel_trip  { get; set; }
+		 @AuraEnabled global Decimal mileage  { get; set; }
+		 @AuraEnabled global Decimal prep_trips  { get; set; }
 
 		 @AuraEnabled global String recordtype { get; set; } 
 		 @AuraEnabled global String contact { get; set; } 

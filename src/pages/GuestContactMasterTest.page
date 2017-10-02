@@ -1,0 +1,1039 @@
+<apex:page controller="GuestContactMasterCC">
+    <script type="text/javascript">
+    function getAddress() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveAddressByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getAddressDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveAddressDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getEmail() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveEmailByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getEmailDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveEmailDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getPrefMarketMail() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrievePrefMarketMailByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getPrefMarketMailDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrievePrefMarketMailDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getPrefPropMail() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrievePrefPropMailByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getPrefPropMailDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrievePrefPropMailDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getNxtgenAddr() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveNxtGenAddressByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getNxtgenAddrDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveNxtGenAddressDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getNxtgenEmail() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveNxtGenEmailByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getNxtgenEmailDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveNxtGenEmailDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getNxtgenContactChan() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveNxtGenContactChanByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getNxtgenContactChanDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveNxtGenContactChanDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getNxtgenPhone() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveNxtGenPhoneByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getNxtgenPhoneDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveNxtGenPhoneDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getNxtgenToDo() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveNxtGenToDoByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getNxtgenToDoDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveNxtGenToDoDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getTierScore() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveTierScoreByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getTierScoreDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveTierScoreDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getCasino() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveCasinoByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getCasinoDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveCasinoDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getRepcode() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveRepcodeByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getRepcodeDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveRepcodeDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getAcquisition() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveAcquisitionByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getAcquisitionDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveAcquisitionDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getAlias() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveAliasByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getAliasDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveAliasDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getScoreProp() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveScorePropByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getScorePropDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveScorePropDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getEthnicityAppend() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveEthnicityAppendByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+     function getEthnicityAppendDetails() {
+    	 var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveEthnicityAppendDetails}',
+            guestIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getIdXref() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveIdXrefByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getConsXref() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestContactMasterCC.retrieveConsXrefByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    </script>
+
+    <input id="guestSearch" type="text"/>
+    <button onclick="getAddress()">Retrieve Address by Contacts</button>
+    <button onclick="getAddressDetails()">Retrieve Address Details</button><br/>
+    <button onclick="getEmail()">Retrieve Email by Contacts</button>
+    <button onclick="getEmailDetails()">Retrieve Email Details</button><br/>
+    <button onclick="getPrefMarketMail()">Retrieve PrefMarketMail by Contacts</button>
+    <button onclick="getPrefMarketMailDetails()">Retrieve PrefMarketMail Details</button><br/>
+    <button onclick="getPrefPropMail()">Retrieve PrefPropMail by Contacts</button>
+    <button onclick="getPrefPropMailDetails()">Retrieve PrefPropMail Details</button><br/>
+    <button onclick="getNxtgenAddr()">Retrieve NxtgenAddress by Contacts</button>
+    <button onclick="getNxtgenAddrDetails()">Retrieve NxtgenAddress Details</button><br/>
+    <button onclick="getNxtgenEmail()">Retrieve NxtgenEmail by Contacts</button>
+    <button onclick="getNxtgenEmailDetails()">Retrieve NxtgenEmail Details</button><br/>
+    <button onclick="getNxtgenContactChan()">Retrieve NxtgenContactChan by Contacts</button>
+    <button onclick="getNxtgenContactChanDetails()">Retrieve NxtgenContactChan Details</button><br/>
+    <button onclick="getNxtgenPhone()">Retrieve NxtgenPhone by Contacts</button>
+    <button onclick="getNxtgenPhoneDetails()">Retrieve NxtgenPhone Details</button><br/>
+    <button onclick="getNxtgenToDo()">Retrieve NxtgenToDo by Contacts</button>
+    <button onclick="getNxtgenToDoDetails()">Retrieve NxtgenToDo Details</button><br/>
+    <button onclick="getTierScore()">Retrieve TierScore by Contacts</button>
+    <button onclick="getTierScoreDetails()">Retrieve TierScore Details</button><br/>
+    <button onclick="getCasino()">Retrieve Casino by Contacts</button>
+    <button onclick="getCasinoDetails()">Retrieve Casino Details</button><br/>
+    <button onclick="getRepcode()">Retrieve Repcode by Contacts</button>
+    <button onclick="getRepcodeDetails()">Retrieve Repcode Details</button><br/>
+    <button onclick="getAcquisition()">Retrieve Acquisition by Contacts</button>
+    <button onclick="getAcquisitionDetails()">Retrieve Acquisition Details</button><br/>
+    <button onclick="getAlias()">Retrieve Alias by Contacts</button>
+    <button onclick="getAliasDetails()">Retrieve Alias Details</button><br/>
+    <button onclick="getIdXref()">Retrieve Id Xref</button><br/>
+    <button onclick="getConsXref()">Retrieve Cons Xref</button><br/>
+    <button onclick="getScoreProp()">Retrieve ScoreProp by Contacts</button>
+    <button onclick="getScorePropDetails()">Retrieve ScoreProp Details</button><br/>
+    <button onclick="getEthnicityAppend()">Retrieve EthnicityAppend by Contacts</button>
+    <button onclick="getEthnicityAppendDetails()">Retrieve EthnicityAppend Details</button><br/>
+   
+    <div id="responseErrors"></div>
+
+    <apex:pageBlock id="block">
+        <apex:pageBlockSection id="blockSection" columns="2">
+            <!-- <apex:pageBlockSectionItem id="firstItem">
+                <span id="remoteId"/>
+            </apex:pageBlockSectionItem> -->
+            <apex:pageBlockSectionItem id="secondItem">
+                <apex:outputText id="resultObj"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

@@ -52,11 +52,11 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>ap_pdb_trip_hdr_fk</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <type>Number</type>
-        <unique>false</unique>
+        <length>18</length>
+        <referenceTo>ap_pdb_trip_hdr__x</referenceTo>
+        <relationshipLabel>caesars$ap_pdb_trip_cms</relationshipLabel>
+        <relationshipName>caesars_ap_pdb_trip_cms</relationshipName>
+        <type>ExternalLookup</type>
     </fields>
     <fields>
         <fullName>c_prop_market_cd__c</fullName>
@@ -71,6 +71,21 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_prop_market_cd_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalDeveloperName>c_prop_market_cd</externalDeveloperName>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Property code</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Ap pdb trip cms</relationshipLabel>
+        <relationshipName>caesars_ap_pdb_trip_cms</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>c_quality_cd__c</fullName>
@@ -88,6 +103,7 @@
     </fields>
     <fields>
         <fullName>contact_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>contact_fk</description>
         <externalDeveloperName>contact_fk</externalDeveloperName>
         <externalId>false</externalId>
@@ -95,10 +111,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>contact_fk</label>
-        <length>18</length>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>caesars_ap_pdb_trip_cms</relationshipName>
         <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>d_end_dt__c</fullName>
@@ -427,6 +443,7 @@
     </fields>
     <fields>
         <fullName>market_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>market_fk</description>
         <externalDeveloperName>market_fk</externalDeveloperName>
         <externalId>false</externalId>
@@ -434,12 +451,12 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>market_fk</label>
-        <length>18</length>
+        <referenceTo>Market__c</referenceTo>
+        <relationshipName>caesars_ap_pdb_trip_cms</relationshipName>
         <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
-    <label>caesars$ap_pdb_trip_cms</label>
-    <pluralLabel>caesars$ap_pdb_trip_cms</pluralLabel>
+    <label>Ap pdb trip cms</label>
+    <pluralLabel>Ap pdb trip cms</pluralLabel>
     <searchLayouts/>
 </CustomObject>

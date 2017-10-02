@@ -86,6 +86,20 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>c_pos_rev_center_cd_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>POS Revenue Center</label>
+        <referenceTo>POS_Revenue_Center__c</referenceTo>
+        <relationshipLabel>Pos Trans Tenders</relationshipLabel>
+        <relationshipName>Pos_Trans_Tenders</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>c_pos_trans_id__c</fullName>
         <description>c_pos_trans_id</description>
         <externalDeveloperName>c_pos_trans_id</externalDeveloperName>
@@ -112,6 +126,20 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_prop_cd_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Pos Trans Tenders</relationshipLabel>
+        <relationshipName>Pos_Trans_Tenders</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>c_quality_cd__c</fullName>
@@ -150,9 +178,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>c_tender_type_desc</label>
-        <length>32000</length>
-        <type>LongTextArea</type>
-        <visibleLines>10</visibleLines>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>c_trans_type_cd__c</fullName>
@@ -167,6 +196,20 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Pos Trans Tenders</relationshipLabel>
+        <relationshipName>Pos_Trans_Tenders</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>d_pos_trans_dt__c</fullName>

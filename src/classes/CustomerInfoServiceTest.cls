@@ -44,33 +44,6 @@ private class CustomerInfoServiceTest {
 	}
 
 	@isTest
-	static void createHttpRequestWithSearchContext(){
-		Test.startTest();
-		HttpRequest request = CustomerInfoService.createHttpRequest('http://www.customerserviceinfo.com', new DataSource.SearchContext());
-		Test.stopTest();
-
-		System.assertEquals('POST', request.getMethod());
-		System.assertEquals('http://www.customerserviceinfo.com',request.getEndpoint());
-	}
-
-	@isTest
-	static void sendHttpRequestTest(){
-		Test.startTest();
-		Test.setMock(HttpCalloutMock.class, new CustomerInfoServiceResponseGenerator());
-		HttpRequest request = CustomerInfoService.createHttpRequest('http://customerserviceinfo.com', new DataSource.SearchContext());
-		HttpResponse response=CustomerInfoService.sendHttpRequest(request);
-		Test.stopTest();
-
-		String contentType = response.getHeader('Content-Type');
-        System.assertEquals('application/json',contentType);
-        System.assertEquals(200, response.getStatusCode());
-        String actualValue = response.getBody();
-        String expectedValue = '{"test":"test"}';
-		System.assertEquals(actualValue, expectedValue);
-
-	}
-
-	@isTest
 	static void parseDataTest(){
 		String jsonData = '{"test":"test"}';
 

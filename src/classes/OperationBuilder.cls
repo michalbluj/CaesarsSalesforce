@@ -12,15 +12,4 @@ public with sharing class OperationBuilder {
         return tableSelection.tableSelected == 'caesars$customer_info' ? customerOperation : externalObjectOperation;
     }
 
-    public static ExternalDataSourceOperation buildOperation(DataSource.SearchContext context){
-        List<DataSource.TableSelection> tableSelections = context.tableSelections;
-        ExternalDataSourceOperation operation = externalObjectOperation;
-        if(tableSelections.size() == 1){
-            if(tableSelections.get(0).tableSelected == 'caesars$customer_info'){
-                operation = customerOperation;
-            }
-        }
-        return operation;
-    }
-
 }

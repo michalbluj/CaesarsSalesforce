@@ -150,6 +150,8 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Market</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts>
+        <searchFilterFields>Description__c</searchFilterFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

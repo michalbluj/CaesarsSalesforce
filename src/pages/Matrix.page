@@ -1,0 +1,66 @@
+<apex:page controller="MatrixController">
+
+    <apex:includeScript value="//code.jquery.com/jquery-latest.min.js"/>
+    
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS_STATIC_RESOURCE, 'assets/styles/salesforce-lightning-design-system.css')}"/>
+    
+    <script>
+        var onSaveClickAction = function(){
+        
+            var values = '';
+            for(var row = 1 ; row <= 6 ; row++){
+                for(var col = 1 ; col <= 6 ; col++){
+                    var idsel = '#Matrixselect'+col+''+row;
+                    values+=$(idsel).val()+',';
+                }
+            }
+            
+            values = values.substring(0,values.length-1);           
+            updateMatrix(values);
+            
+        }
+    </script>
+    
+    <style>
+        .errorMessageClass{
+            font-size: 17px;
+            color: #FF0000;
+        }
+        
+        .confirmMessageClass{
+            font-size: 17px;
+            color: #00FF00;
+        }
+    </style>
+    
+    <apex:form id="form" >
+    
+        <input type="button" class="slds-button slds-button--neutral slds-not-selected" onclick="onSaveClickAction();" value="Save"/>
+        <!-- <input type="button" class="slds-button slds-button--neutral slds-not-selected" onclick="cancel();" value="Cancel"/> -->
+        
+        <apex:actionFunction action="{!saveMatrix}" name="updateMatrix" rerender="matrix,ErrorPmsgs,Pmsgs">
+            <apex:param id="values" name="values" assignTo="{!values}" value="" />
+        </apex:actionFunction>
+        
+        <!-- <apex:actionFunction action="{!doCancel}" name="cancel"/> -->
+
+        <apex:outputPanel id="matrix" style="padding-top:20px;">
+        
+            <div style="padding-top:20px;">
+                <apex:outputLabel styleClass="errorMessageClass" id="ErrorPmsgs" value="{!errorMessage}"/>
+                <apex:outputLabel styleClass="confirmMessageClass" id="Pmsgs" value="{!message}"/>
+            </div> 
+        
+            <table style="width:800px;">
+                <tr>
+                    <td style="width:400px;">
+                        <div>
+                            <c:MatrixComponent matrix="{!matrix}" title="Change Matrix" name="Matrix"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </apex:outputPanel>
+    
+    </apex:form>
+</apex:page>

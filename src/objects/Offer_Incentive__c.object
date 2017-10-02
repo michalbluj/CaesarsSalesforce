@@ -1096,6 +1096,34 @@ E.g. You can have 5% off.</inlineHelpText>
         <type>Percent</type>
     </fields>
     <fields>
+        <fullName>Project_Campaign_Offer_Redemption_Key__c</fullName>
+        <description>This field will be used by developer to find the campaign project ID and if it has redemption values</description>
+        <externalId>false</externalId>
+        <formula>if(isblank(Offer_Definition__r.Campaign_Project__r.Id),&apos;NoProject&apos;,Offer_Definition__r.Campaign_Project__r.Id) 
+
++&apos;$&lt;id&gt;$&apos;+  
+if(isblank(Offer_Definition__r.Campaign_Project__r.Redemption_Channel__c),&apos;NoValues&apos;,&apos;HasValues&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Campaign Offer Redemption Key</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Redemption_Channel__c</fullName>
+        <externalId>false</externalId>
+        <globalPicklist>Campaign_Redemption_Channel</globalPicklist>
+        <label>Redemption Channel</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>Reservation_Phone_Number__c</fullName>
         <description>Reservation Contact Number</description>
         <externalId>false</externalId>
@@ -1317,6 +1345,11 @@ IF ( (Valid_End_Date__c - Valid_Start_Date__c) &lt;0, 0,
         <type>Checkbox</type>
     </fields>
     <label>Offer Incentive</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <displayFormat>OI-{0000000000}</displayFormat>
         <label>Offer Incentive Record Name</label>
@@ -1326,5 +1359,5 @@ IF ( (Valid_End_Date__c - Valid_Start_Date__c) &lt;0, 0,
     </nameField>
     <pluralLabel>Offer Incentives</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Read</sharingModel>
 </CustomObject>

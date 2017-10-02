@@ -45,6 +45,7 @@
     <externalName>caesars$pdb_trip</externalName>
     <fields>
         <fullName>account_c_home_prop_cd_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>account_c_home_prop_cd_fk</description>
         <externalDeveloperName>account_c_home_prop_cd_fk</externalDeveloperName>
         <externalId>false</externalId>
@@ -52,13 +53,14 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>account_c_home_prop_cd_fk</label>
-        <length>18</length>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>caesars_pdb_trip</relationshipName>
         <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>account_c_prop_cd_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>account_c_prop_cd_fk</description>
         <externalDeveloperName>account_c_prop_cd_fk</externalDeveloperName>
         <externalId>false</externalId>
@@ -66,10 +68,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>account_c_prop_cd_fk</label>
-        <length>18</length>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>caesars_pdb_trip1</relationshipName>
         <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>c_as_brand_flag__c</fullName>
@@ -269,6 +271,7 @@
     </fields>
     <fields>
         <fullName>contact_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>contact_fk</description>
         <externalDeveloperName>contact_fk</externalDeveloperName>
         <externalId>false</externalId>
@@ -276,10 +279,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>contact_fk</label>
-        <length>18</length>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>caesars_pdb_trip</relationshipName>
         <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>d_end_dt__c</fullName>
@@ -2797,6 +2800,7 @@
     </fields>
     <fields>
         <fullName>week_code_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <description>week_code_fk</description>
         <externalDeveloperName>week_code_fk</externalDeveloperName>
         <externalId>false</externalId>
@@ -2804,13 +2808,12 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>week_code_fk</label>
-        <precision>18</precision>
+        <referenceTo>Week_Code__c</referenceTo>
+        <relationshipName>caesars_pdb_trip</relationshipName>
         <required>false</required>
-        <scale>0</scale>
-        <type>Number</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
-    <label>caesars$pdb_trip</label>
-    <pluralLabel>caesars$pdb_trip</pluralLabel>
+    <label>PdbTrip</label>
+    <pluralLabel>PdbTrips</pluralLabel>
     <searchLayouts/>
 </CustomObject>

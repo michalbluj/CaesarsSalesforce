@@ -12,46 +12,65 @@ History
 private class CampaignProjectModelTest {
     @isTest static void test_Template_Association_Standard() {
         Test.startTest();
+        
         list<Campaign_Project__c> lstCampProj= TestFactory.CampaignProjects ;
-        list<Campaign_Project__c> InsertlstCampProj = new list<Campaign_Project__c>();
         Campaign_Project__c testCampProj = lstCampProj[0];
         
-        DML.save(testCampProj);
+        List<Case> caseList = TestFactory.uniqueCasesInstance;
+        caseList[0].Campaign_Project__c = lstCampProj[0].id;
+        update caseList[0];
         
         testCampProj = lstCampProj[1];
-        
-        InsertlstCampProj.add(testCampProj);
-        
-        DML.save(testCampProj);
-        Campaign_Project__c testCampProj2 = lstCampProj[0];
-        //testCampProj = lstCampProj[1];
-        testCampProj2.Status__c = 'Submitted for Approval';
-        testCampProj2.Email_Drop_Date__c = date.today();
-        testCampProj2.Valid_Start_Date__c =date.today()+3;
-        testCampProj2.Valid_End_Date__c =date.today()+4;
-        testCampProj2.Direct_Mail_Drop_Date__c =date.today()+4;
-        InsertlstCampProj.add(testCampProj2);
-         DML.save(InsertlstCampProj);
+        testCampProj.Email_Drop_Date__c = date.today()+1;
+        testCampProj.Valid_End_Date__c = date.today()+5;
+        testCampProj.Valid_Start_Date__c = date.today()+4;
+        testCampProj.Direct_Mail_Drop_Date__c = date.today()+3;
         
         testCampProj.Status__c = 'Plan';
+        DML.save(testCampProj); 
+        
+        testCampProj.Status__c = 'Submitted for Approval'; 
         DML.save(testCampProj);
         
-        list<Proforma__c> lstpf = TestFactory.getCampaignProjectProformaLst;
-        Proforma__c pf = lstpf[0];
-        pf.Campaign_Project__c =testCampProj.id;
-        DML.save(pf);
-        pf.Status__c = 'Submitted for Approval';
-        DML.save(pf);
-        testCampProj.Status__c = 'Submitted for Approval';
+        testCampProj.Status__c = 'Approved'; 
         DML.save(testCampProj);
-        
-         testCampProj.Status__c = 'Approved'; 
-         testCampProj.Delivery_Channel__c= null;
-        DML.save(testCampProj);
-        
-        testCampProj.Status__c = 'Rejected'; 
+        Campaign_Project_Workflow__c caProjectWork = TestFactory.addCampaignProjectWorkflow(lstCampProj[0]);
+        testCampProj.Status__c = 'Rejected';
+         
         DML.save(testCampProj);
         
         Test.stopTest();
+    }
+     @isTest static void ProformaModelTestMethod () {
+        list<Campaign_Project__c> lstCampProj= TestFactory.CampaignProjects ;
+        Campaign_Project__c testCampProj = lstCampProj[0];
+        testCampProj.Status__c = 'Plan';
+        DML.save(testCampProj);
+        testCampProj.Status__c = 'Approved';
+        DML.save(testCampProj);
+        
+        List<Case> caseList = TestFactory.uniqueCasesInstance;        
+        caseList[0].Campaign_Project__c = testCampProj.id;
+        caseList[0].subject = 'test Approve Pro Formation';
+        DML.save(caseList[0]);
+        
+        testCampProj.Email_Drop_Date__c = date.today()+1;
+        testCampProj.Valid_End_Date__c = date.today()+5;
+        testCampProj.Valid_Start_Date__c = date.today()+4;
+        testCampProj.Direct_Mail_Drop_Date__c = date.today()+3;
+        
+        testCampProj.Status__c = 'Plan';
+        DML.save(testCampProj); 
+        
+        testCampProj.Status__c = 'Submitted for Approval'; 
+        DML.save(testCampProj);
+                
+        List<Proforma__c> proList = TestFactory.getCampaignProjectProformaLst;      
+        proList[0].Campaign_Project__c = lstCampProj[1].id;
+        DML.save(proList);
+        
+        proList[0].Campaign_Project__c = testCampProj.id;
+        proList[0].Status__c = 'Approved';
+        DML.save(proList);
     }
 }

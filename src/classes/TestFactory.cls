@@ -249,7 +249,7 @@ public with sharing class TestFactory {
                 CampaignProject.Valid_End_Date__c =date.today()+4;
                 CampaignProject.Direct_Mail_Drop_Date__c =date.today()+4;
                 CampaignProject.Campaign_Project_Type__c = 'Standard';
-                CampaignProject.Delivery_Channel__c = 'Direct Mail;Email;Digital RSVP;Advertise in Core;Play by TR app - Push Notification;Social;Telemarketing';
+                CampaignProject.Delivery_Channel__c = 'Direct Mail;Email;Email;Facebook';
                 pCampaignProjects.add(CampaignProject); // Added this by VNP on 7/10 as we are trying to insert in the below line
                 
                 campaignProject = new Campaign_Project__c();
@@ -264,7 +264,7 @@ public with sharing class TestFactory {
                 CampaignProject.Direct_Mail_Drop_Date__c =date.today()+4;
                 
                 CampaignProject.Campaign_Project_Type__c = 'Standard';
-                CampaignProject.Delivery_Channel__c = 'Direct Mail;Email;Digital RSVP;Advertise in Core;Play by TR app - Push Notification;Social;Telemarketing';
+               CampaignProject.Delivery_Channel__c = 'Direct Mail;Email;Email;Facebook;Kiosks TR Enhanced';
                 pCampaignProjects.add(CampaignProject); // Added this by VNP on 7/10 as we are trying to insert in the below line
                 
                 
@@ -290,6 +290,25 @@ public with sharing class TestFactory {
         }    
         
     }
+  /*******************************************************************************************************
+    * @description generate Campaign Project Workflow for a campaign project
+    * @param   n/a
+    * @return void
+    */
+    public static Campaign_Project_Workflow__c addCampaignProjectWorkflow(Campaign_Project__c cp){
+
+
+        Campaign_Project_Workflow__c campProjectW= new Campaign_Project_Workflow__c ();
+        campProjectW.Campaign_Project__c = cp.Id;
+        campProjectW.Workflow_Template__c= workflowTemplates[0].id;
+        
+        DML.save(campProjectW);
+
+        return campProjectW;
+
+
+    }
+
     
  /*******************************************************************************************************
     * @description offer incentive properties
@@ -470,6 +489,7 @@ public with sharing class TestFactory {
     public static List<Proforma__c> getCampaignProjectProformaLst {
         get {
               if (ProformaLst == null) {
+                  ProformaLst = new List<Proforma__c>();
                   Proforma__c pf = new Proforma__c();
                   id pfID = pf.recordtypeid= Schema.SObjectType.Proforma__c.getRecordTypeInfosByName().get('Campaign Project Proforma').getRecordTypeId();
                   pf.Status__c = 'Draft';
@@ -479,7 +499,7 @@ public with sharing class TestFactory {
                   pf.recordtypeid = pfID; 
                   pf.Status__c = 'Submitted For approval'; // associate this to second case 
                   ProformaLst.add(pf);
-                  
+                  DML.save(ProformaLst);
                   
               }
               
@@ -525,7 +545,6 @@ public with sharing class TestFactory {
                 case  planningTaskCase = new case();
                 planningTaskCase.Case_Sub_Group__c = 'Project Kick Off';
                 planningTaskCase.Planning_Task__c = True;
-                planningTaskCase.Anchored__c = false;
                 planningTaskCase.Legacy_Task_Code__c = 'MPE7';
                 planningTaskCase.Scheduled_Through__c = 'Bus.';
                 planningTaskCase.Target_Duration_Days__c = 1;
@@ -560,7 +579,6 @@ public with sharing class TestFactory {
                 planningTaskCase.Case_Sub_Group__c = 'Project Kick Off';
                 planningTaskCase.subject = 'Approve Pro Forma';
                 planningTaskCase.Planning_Task__c = false;
-                planningTaskCase.Anchored__c = false;
                 planningTaskCase.Dependencies__c = 'Studio9' ;
                 planningTaskCase.Legacy_Task_Code__c = 'Studio12';
                 planningTaskCase.Scheduled_Through__c = 'Bus.';
@@ -580,7 +598,6 @@ public with sharing class TestFactory {
                 planningTaskCase = new case();
                 planningTaskCase.Case_Sub_Group__c = 'Project Kick Off';
                 planningTaskCase.Planning_Task__c = false;
-                planningTaskCase.Anchored__c = false;
                 planningTaskCase.Dependencies__c = 'MPE13, MPE14';
                 planningTaskCase.Legacy_Task_Code__c = 'MPE15';
                 planningTaskCase.Scheduled_Through__c = 'Bus.';
@@ -599,6 +616,103 @@ public with sharing class TestFactory {
             }
 
             return uniqueCases;
+        }
+    }
+    /*******************************************************************************************************
+    * @description generate Campaign Workflow Instance cases 
+    * @param   n/a
+    * @return List<case>;
+    */
+    //private static List<case> pUniqueCases = null;
+    private static id caseCampaignInsTypeRecordTypeID = [select id from recordtype where name = 'Campaign Workflow Instance'].id;
+    public static List<case> uniqueCasesInstance {
+
+        get {
+            if (uniqueCasesInstance== null) {
+
+                uniqueCasesInstance = new List<case>();
+                case  planningTaskCase = new case();
+                planningTaskCase.Case_Sub_Group__c = 'Project Kick Off';
+                planningTaskCase.Planning_Task__c = True;
+                planningTaskCase.Legacy_Task_Code__c = 'MPE7';
+                planningTaskCase.Scheduled_Through__c = 'Bus.';
+                planningTaskCase.Target_Duration_Days__c = 1;
+                planningTaskCase.Target_Duration_Hours__c = 2;
+                planningTaskCase.Status = 'Ready to Start';
+                planningTaskCase.Description = planningTaskCase.Subject = '1.02 Build T1 Creative';
+                planningTaskCase.Target_Duration_Minutes__c = 10;
+                planningTaskCase.Approval_Case__c = true;
+                planningTaskCase.Anchored__c=true;
+                planningTaskCase.Order__c = '10.2';
+                planningTaskCase.Dependencies__c = '10.2, 10.2, 10.2';
+                planningTaskCase.subject = 'Prepare & Deploy Email';
+                planningTaskCase.Project_Type__c = 'Campaign Project';
+                if(caseCampaignInsTypeRecordTypeID!=null)planningTaskCase.recordtypeID = caseCampaignInsTypeRecordTypeID;
+                uniqueCasesInstance.add(planningTaskCase);
+                
+                planningTaskCase = new case();
+                planningTaskCase.Case_Sub_Group__c = 'Studio Tier 1 Content Development and Review';
+                planningTaskCase.Planning_Task__c = false;
+                planningTaskCase.Anchored__c = true;
+                planningTaskCase.Dependencies__c = 'Studio9' ;
+                planningTaskCase.Legacy_Task_Code__c = 'Studio12';
+                planningTaskCase.Scheduled_Through__c = 'Bus.';
+                planningTaskCase.Target_Duration_Days__c = 10;
+                planningTaskCase.Target_Duration_Hours__c = 2;
+                planningTaskCase.Status = 'Not Started';
+                planningTaskCase.Order__c = '10.2';
+                planningTaskCase.Dependencies__c = '10.2, 10.2, 10.2';
+                planningTaskCase.Description = planningTaskCase.Subject = 'Execute Event';
+                planningTaskCase.Target_Duration_Minutes__c = 20;
+                if(caseCampaignInsTypeRecordTypeID!=null)planningTaskCase.recordtypeID = caseCampaignInsTypeRecordTypeID;
+                uniqueCasesInstance.add(planningTaskCase);
+                
+                
+                planningTaskCase = new case();
+                planningTaskCase.Case_Sub_Group__c = 'Project Kick Off';
+                planningTaskCase.subject = 'Approve Pro Forma';
+                planningTaskCase.Planning_Task__c = false;
+                planningTaskCase.Dependencies__c = 'Studio9' ;
+                planningTaskCase.Legacy_Task_Code__c = 'Studio12';
+                planningTaskCase.Scheduled_Through__c = 'Bus.';
+                planningTaskCase.Target_Duration_Days__c = 10;
+                planningTaskCase.Target_Duration_Hours__c = 2;
+                planningTaskCase.Status = 'Not Started';
+                planningTaskCase.Description = planningTaskCase.Subject = 'Drop Mail';
+                planningTaskCase.Target_Duration_Minutes__c = 20;
+                planningTaskCase.Order__c = '10.2';
+                planningTaskCase.Dependencies__c = '10.2, 10.2, 10.2';
+                planningTaskCase.Approval_Case__c = true;
+                planningTaskCase.Project_Type__c = 'Proforma';
+                planningTaskCase.Anchored__c=true;
+                if(caseCampaignInsTypeRecordTypeID!=null)planningTaskCase.recordtypeID = caseCampaignInsTypeRecordTypeID;
+                uniqueCasesInstance.add(planningTaskCase);
+                
+                
+                
+                planningTaskCase = new case();
+                planningTaskCase.Case_Sub_Group__c = 'Project Kick Off';
+                planningTaskCase.Planning_Task__c = false;
+                planningTaskCase.Dependencies__c = 'MPE13, MPE14';
+                planningTaskCase.Legacy_Task_Code__c = 'MPE15';
+                planningTaskCase.Scheduled_Through__c = 'Bus.';
+                planningTaskCase.Target_Duration_Days__c = 4;
+                planningTaskCase.Target_Duration_Hours__c = 2;
+                planningTaskCase.Status = 'Not Started';
+                planningTaskCase.Description = planningTaskCase.Subject = 'Approve Pro Forma';
+                planningTaskCase.Target_Duration_Minutes__c = 20;
+                planningTaskCase.Anchored__c=true;
+                planningTaskCase.Order__c = '10.2';
+                planningTaskCase.Dependencies__c = '10.2, 10.2, 10.2';
+                planningTaskCase.Approval_Case__c = true;
+                planningTaskCase.Project_Type__c = 'Proforma';
+                if(caseCampaignInsTypeRecordTypeID!=null)planningTaskCase.recordtypeID = caseCampaignInsTypeRecordTypeID;
+                uniqueCasesInstance.add(planningTaskCase);
+                //system.debug('****pUniqueCases ' + pUniqueCases);
+                DML.save(uniqueCasesInstance);
+            }
+
+            return uniqueCasesInstance;
         }
     }
 

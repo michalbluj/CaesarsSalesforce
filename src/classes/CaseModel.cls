@@ -159,9 +159,11 @@ public without sharing class CaseModel {
 
     /*******************************************************************************************************
     * @description update parent's milestone status and date
+    *     IY 2017-08-13 refactor remove deeply nested if and also use caseType
     * @param Map<Id,Case> oldCaseMap, List<Case> newCases
     * @return n/a
     * @example
+    *
     *
     */
     public static void updateParentMilestone(Map<Id,Case> oldCaseMap, List<Case> newCases){
@@ -171,39 +173,39 @@ public without sharing class CaseModel {
         Map <Id, Case> slaCaseUpdate = new Map <Id, Case>();
 
         for(Case c: newCases){
-            if (c.RecordTypeId == caseWorkflowInstance){
+            if ((c.RecordTypeId == caseWorkflowInstance  || c.type == CASE_TYPE_CAMPAIGN_WORKFLOW_INSTANCE ) &&
+            (c.ParentId != null && String.isNotBlank(c.Milestone__c) &&  (oldCaseMap == null || oldCaseMap.get(c.Id).status !=  c.Status ) )){
 
-                if (c.ParentId != null && String.isNotBlank(c.Milestone__c) &&  (oldCaseMap == null || oldCaseMap.get(c.Id).status !=  c.Status ) ){
+                Case milestoneCase = slaCaseUpdate.containsKey(c.ParentId)?slaCaseUpdate.get(c.ParentId): (new Case(Id = c.ParentId));
 
-                    Case milestoneCase = slaCaseUpdate.containsKey(c.ParentId)?slaCaseUpdate.get(c.ParentId): (new Case(Id = c.ParentId));
-
-                    // update the parent status field
-                    System.debug('####  milestone field: ' + c.Milestone__c + ' status ' + c.Status);
-                    String milestoneStatusField = milestoneStatusMap.get(c.Milestone__c.toUpperCase());
-                    if (milestoneStatusField != null){
-                        System.debug('#### matched milestone status field: ' + milestoneStatusField);
-                        milestoneCase.put( milestoneStatusField,  c.Status);
-                    }
-
-                    // update the corresponding milestone in parent case
-                    if (oldCaseMap != null && oldCaseMap.get(c.Id).status != 'Ready to Start' &&  c.Status == 'Ready to Start'){
-                        // check all other conditions:
-                        if (c.Target_End_Date__c != null && c.Target_Start_Date__c != null &&  c.Target_End_Date__c >= Date.Today()
-                                && !( c.Target_Duration_Days__c == null && c.Target_Duration_Hours__c==null && c.Target_Duration_Minutes__c == null)) {
-
-
-                            String milestoneTimeStampField = milestoneTimeStampMap.get(c.Milestone__c.toUpperCase());
-                            if (milestoneTimeStampField != null){
-                                Datetime targetDue = DateTime.newInstance(c.Target_End_Date__c, Time.newInstance(17,0,0,0)); // 5pm on that day
-                                milestoneCase.put(milestoneTimeStampField, targetDue);
-                            }
-                        }
-
-                    }
-
-                    slaCaseUpdate.put(milestoneCase.Id, milestoneCase);
+                // update the parent status field
+                System.debug('####  milestone field: ' + c.Milestone__c + ' status ' + c.Status);
+                String milestoneStatusField = milestoneStatusMap.get(c.Milestone__c.toUpperCase());
+                if (milestoneStatusField != null){
+                    System.debug('#### matched milestone status field: ' + milestoneStatusField);
+                    milestoneCase.put( milestoneStatusField,  c.Status);
                 }
+
+
+                String milestoneTimeStampField = milestoneTimeStampMap.get(c.Milestone__c.toUpperCase());
+                if (
+                    // check if milestone stamp is set yet
+                    (milestoneTimeStampField != null)
+                    // update the corresponding timestamp milestone in parent case only if the status changed to ready to start
+                    &&  (oldCaseMap != null && oldCaseMap.get(c.Id).status != 'Ready to Start' &&  c.Status == 'Ready to Start') &&
+                    // check all other conditions:
+                    (c.Target_End_Date__c != null && c.Target_Start_Date__c != null &&  c.Target_End_Date__c >= Date.Today()
+                    && !( c.Target_Duration_Days__c == null && c.Target_Duration_Hours__c==null && c.Target_Duration_Minutes__c == null)) ){
+                            Datetime targetDue = DateTime.newInstance(c.Target_End_Date__c, Time.newInstance(17,0,0,0)); // 5pm on that day
+                            milestoneCase.put(milestoneTimeStampField, targetDue);
+
+                }
+
+
+
+                slaCaseUpdate.put(milestoneCase.Id, milestoneCase);
             }
+
         }
         // this is used in before trigger. so there is no need to call DML on case
 
@@ -231,11 +233,11 @@ public without sharing class CaseModel {
         Id caseWorkflowInstance = Schema.SObjectType.Case.getRecordTypeInfosByName().get('Campaign Workflow Instance').getRecordTypeId();
 
         for(Case c: newCases){
-            if (c.RecordTypeId == caseWorkflowInstance){
-
-
+            if (
+                // only work on the correct type of case
+                (c.RecordTypeId == caseWorkflowInstance  || c.type == CASE_TYPE_CAMPAIGN_WORKFLOW_INSTANCE )
                 // find ready to start
-                if (oldCaseMap.get(c.Id).status != 'Ready to Start' &&  c.Status == 'Ready to Start'){
+                && (oldCaseMap.get(c.Id).status != 'Ready to Start' &&  c.Status == 'Ready to Start')){
                     // check all other conditions:
                     if (c.Target_End_Date__c != null && c.Target_Start_Date__c != null &&  c.Target_End_Date__c >= Date.Today()
                         && !( c.Target_Duration_Days__c == null && c.Target_Duration_Hours__c==null && c.Target_Duration_Minutes__c == null)
@@ -245,7 +247,6 @@ public without sharing class CaseModel {
 
                 }
 
-            }
         }
         // this is used in before trigger. so there is no need to call DML on case
 
@@ -267,22 +268,23 @@ public without sharing class CaseModel {
         Map<Id, String> closedCase = new Map<Id, String>();  // Set <Id> closedCase = new Set <Id>();     // workflow case - due milestone
         Map<Id, String> campaignMilestoneCase = new Map<Id, String>(); // Set <Id> campaignMilestoneCase = new Set <Id>();   // campaign project case - all milestones
         for(Case c: newCases){
-            if (c.RecordTypeId == caseWorkflowInstance){
+            if (c.RecordTypeId == caseWorkflowInstance || c.type == CASE_TYPE_CAMPAIGN_WORKFLOW_INSTANCE){
+
+                // find progress Case
+                if (oldCaseMap.get(c.Id).status == 'Ready to Start' && ( c.Status != 'Ready to Start')){
+                    progressCase.put(c.Id, MilestoneModel.MILESTONE_CHECKPOINT_23);
+                }
 
                 // find closed case
                 if (c.IsClosed ==  true  && oldCaseMap.get(c.Id).IsClosed == false ){
                     closedCase.put(c.Id, MilestoneModel.MILESTONE_CHECKPOINT_DUE);
                     progressCase.put(c.Id, MilestoneModel.MILESTONE_CHECKPOINT_23);
 
-                    // if the workflow case being completed is has an associated campaign milestone, update the corresponding milestone in the campaign project case as well
-                    if (c.ParentId != null && String.isNotBlank(c.Milestone__c) ){
-                        campaignMilestoneCase.put(c.ParentId, c.Milestone__c );
-                    }
                 }
 
-                // find progress Case
-                if (oldCaseMap.get(c.Id).status == 'Ready to Start' && ( c.Status != 'Ready to Start')){
-                    progressCase.put(c.Id, MilestoneModel.MILESTONE_CHECKPOINT_23);
+                // closed case && if the workflow case being completed is has an associated campaign milestone, update the corresponding milestone in the campaign project case as well
+                if ( (c.IsClosed ==  true  && oldCaseMap.get(c.Id).IsClosed == false ) && (c.ParentId != null && String.isNotBlank(c.Milestone__c) )){
+                    campaignMilestoneCase.put(c.ParentId, c.Milestone__c );
                 }
 
                 /*
@@ -330,6 +332,12 @@ public without sharing class CaseModel {
         Map<String,Boolean> orderKeyToIsClosedMap = new Map<String,Boolean>();
         Set<Id> casesToUpdateSet = new Set<Id>();
         String ordersStringForSOQL = 'select Id, Order__c, Dependencies__c, IsClosed, Campaign_Project__c from Case where Campaign_Project__c in:campProjs and (Dependencies__c like \'%';
+        // 2017-08-14: pending update on apex-land to version 1.8
+        // al.SoqlBuilder soqlB = new al.SoqlBuilder();
+        // soqlB.selectx(new Set<Object>{'id','Order__c','Dependencies__c','IsClosed','Campaign_Project__c'}).fromx(Case);
+        // al.AndCondition con =  new al.AndCondition();
+        // con.add(new al.SetCondition('Campaign_Project__c').inx(campProjs));
+
         for(Case c: newCases){
             if((c.RecordTypeId == Schema.SObjectType.Case.getRecordTypeInfosByName().get('Campaign Workflow Instance').getRecordTypeId() ||
                c.RecordTypeId == Schema.SObjectType.Case.getRecordTypeInfosByName().get('Campaign Project Approval').getRecordTypeId()) &&
@@ -352,7 +360,13 @@ public without sharing class CaseModel {
             }
             ordersStringForSOQL = ordersStringForSOQL + ')';
 
-            system.debug('****ordersStringForSOQL ' + ordersStringForSOQL);
+
+            // soqlB.wherex(con);  //bind the condition to the soql builder
+            // ordersStringForSOQL = soqlB.toSoql(new al.SoqlOptions().wildcardStringsInLikeOperators()); // add wild card for all like operations
+
+
+            system.debug('****ordersStringForSOQL ' + ordersStringForSOQL+'--'+Database.query(ordersStringForSOQL));
+            
             List<Case> dependentCasesList = Database.query(ordersStringForSOQL);
             Map<Id,Case> dependentCases = new Map<Id,Case>(dependentCasesList);
             system.debug('***** dependentCases ' + dependentCases);

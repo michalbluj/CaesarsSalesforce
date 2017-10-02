@@ -110,5 +110,5 @@
     </nameField>
     <pluralLabel>Offer Treatment</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Read</sharingModel>
 </CustomObject>

@@ -119,6 +119,28 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Actual_Close_Date__c</fullName>
+        <description>Date the Case is marked as closed/completed.  This field is used for reporting the Actual close date of the case.</description>
+        <externalId>false</externalId>
+        <label>Actual Close Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Start_Date__c</fullName>
+        <description>The actual start date based on someone taking ownership of the case and changing the the status to Active.  This field is used in reporting to mark when a case was actually started by a user.</description>
+        <externalId>false</externalId>
+        <label>Actual Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Anchored__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1629,7 +1651,7 @@ ref: US1397</description>
         <fullName>AC_Decision_Support_Manager_Case</fullName>
         <filterScope>Queue</filterScope>
         <label>AC - Decision Support Manager</label>
-        <queue>AC_Decision_Support_Manager</queue>
+        <queue>Atlantic_City_Decision_Support_Manager</queue>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
@@ -1642,21 +1664,6 @@ ref: US1397</description>
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>AllOpenCases</fullName>
-        <columns>CASES.CASE_NUMBER</columns>
-        <columns>CASES.SUBJECT</columns>
-        <columns>CASES.STATUS</columns>
-        <columns>CASES.PRIORITY</columns>
-        <columns>Case_Sub_Group__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CASES.CLOSED</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <label>All Open Cases</label>
     </listViews>
     <listViews>
         <fullName>All_Workflow_Instance_Cases</fullName>
@@ -1693,6 +1700,15 @@ ref: US1397</description>
             <value>1</value>
         </filters>
         <label>Approval Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>Atlantic_City_DMC_Supervisor_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Atlantic City DMC Supervisor</label>
+        <queue>Atlantic_City_DMC_Supervisor</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>Database_Analyst_Case</fullName>
@@ -1775,6 +1791,13 @@ ref: US1397</description>
     </listViews>
     <listViews>
         <fullName>MyOpenCases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>Milestone__c</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Mine</filterScope>
         <filters>
             <field>CASES.CLOSED</field>
@@ -1782,6 +1805,15 @@ ref: US1397</description>
             <value>0</value>
         </filters>
         <label>My Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Production_Design_Acct_Service_Director_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Production Design/Acct Service Director</label>
+        <queue>Production_Design_Acct_Service_Director</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>Studio_Copywriter_Case</fullName>

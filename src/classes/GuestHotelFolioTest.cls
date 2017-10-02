@@ -8,25 +8,27 @@ private class GuestHotelFolioTest {
 			);
 		insert csetup;
 
-		Account acct = new Account(
-			Name = 'Account1',
-			winet_id__c = '111');
-		insert acct;
+		Account acct = AccountBuilder.buildAccount()
+		.withName('Account1')
+		.withWinetId('111')
+		.get();
 
-		Contact c = new Contact (
-			FirstName = 'MyFirstName',
-			LastName = 'MyLastName',
-			AccountId = acct.id,
-			winet_Id__c = '111'
-			);
+		insert acct;
+		
+		Contact c = ContactBuilder.buildContact()
+		.withFirstName('MyFirstName')
+		.withLastName('MyLastName')
+		.withWinetId('111')
+		.withAccount(acct.id).get();
+		
 		insert c;
 
-		Contact cXref = new Contact (
-			FirstName = 'MyFirstNameX',
-			LastName = 'MyLastNameX',
-			AccountId = acct.id,
-			winet_Id__c = '333'
-			);
+		Contact cXref = ContactBuilder.buildContact()
+		.withFirstName('MyFirstNameX')
+		.withLastName('MyLastNameX')
+		.withWinetId('333')
+		.withAccount(acct.id).get();
+
 		insert cXref;
 	}
 

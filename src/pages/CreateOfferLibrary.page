@@ -1,0 +1,17 @@
+<apex:page standardController="Campaign_Project__c" showHeader="false" sidebar="false" > 
+
+    <apex:includeLightning />
+
+    <div id="lightning" />
+    <script>
+   
+        $Lightning.use("c:CreateOffer", function() {
+          $Lightning.createComponent("c:CreateOfferLibrary",
+          { label : "Press Me!"},
+          "lightning",
+          function(cmp) {
+            // do some stuff
+          });
+        });
+    </script>
+   </apex:page>

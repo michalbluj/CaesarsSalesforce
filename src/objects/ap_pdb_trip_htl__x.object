@@ -334,7 +334,7 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>caesars$ap_pdb_trip_htl</label>
-    <pluralLabel>caesars$ap_pdb_trip_htl</pluralLabel>
+    <label>Ap pdb trip htl</label>
+    <pluralLabel>Ap pdb trip htls</pluralLabel>
     <searchLayouts/>
 </CustomObject>

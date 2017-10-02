@@ -33,6 +33,15 @@ public with sharing class AccountBuilder {
         builderInstance.accountObject.name = name;
         return builderInstance;
     }
+    
+    /*
+    * @description Sets name for account beeing build
+    * @return builder instance
+    */
+    public AccountBuilder withWinetId(String winetId){
+        builderInstance.accountObject.winet_Id__c = winetId;
+        return builderInstance;
+    }
 
     /*
     * @return Built Contact record

@@ -52,7 +52,7 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
@@ -433,6 +433,22 @@
         <unique>false</unique>
     </fields>
     <label>LmsRoomTypeDescSda</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>c_rm_type__c</columns>
+        <columns>c_room_accessible__c</columns>
+        <columns>c_room_quality__c</columns>
+        <columns>c_room_smoking__c</columns>
+        <columns>c_room_desc1__c</columns>
+        <columns>c_room_bed_type__c</columns>
+        <columns>f_user_amt1__c</columns>
+        <columns>i_room_bet_type_sort__c</columns>
+        <columns>i_room_quality_sort__c</columns>
+        <columns>c_prop_cd__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <displayFormat>RTD-{0000000}</displayFormat>
         <label>Name</label>

@@ -52,7 +52,7 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
@@ -116,6 +116,17 @@
         <type>DateTime</type>
     </fields>
     <label>Source code</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Code__c</columns>
+        <columns>Description__c</columns>
+        <columns>Group__c</columns>
+        <columns>Quality_code__c</columns>
+        <columns>Property_code__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <displayFormat>SC-{00000}</displayFormat>
         <label>Name</label>

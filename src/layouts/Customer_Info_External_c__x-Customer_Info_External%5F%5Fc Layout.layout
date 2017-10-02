@@ -8,10 +8,6 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>timetest__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>inegertest__c</field>
             </layoutItems>
             <layoutItems>
@@ -20,7 +16,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>datetimetest__c</field>
+                <field>interest_cd_fk__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>

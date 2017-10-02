@@ -47,8 +47,14 @@ public with sharing class PosTransTender extends ExternalObjectResponse implemen
             row.put('c_admin_comp_cd', wrapper.c_admin_comp_cd);
             row.put('c_file_prop_cd', wrapper.c_file_prop_cd);
             row.put('c_pos_rev_center_cd', wrapper.c_pos_rev_center_cd);
+            if(MapHandler.getRevenueCenterObjectMap().get(wrapper.c_pos_rev_center_cd) != null){
+                row.put('c_pos_rev_center_cd_fk', MapHandler.getRevenueCenterObjectMap().get(wrapper.c_pos_rev_center_cd).id);
+            }
             row.put('c_pos_trans_id', wrapper.c_pos_trans_id);
             row.put('c_prop_cd', wrapper.c_prop_cd);
+            if(MapHandler.getPropertyCodeObjectMap().get(wrapper.c_prop_cd) != null){
+                row.put('c_prop_cd_fk', MapHandler.getPropertyCodeObjectMap().get(wrapper.c_prop_cd).id);
+            }
             row.put('c_quality_cd', wrapper.c_quality_cd);
             row.put('c_room_nbr', wrapper.c_room_nbr);
             row.put('c_tender_type_desc', wrapper.c_tender_type_desc);

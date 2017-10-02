@@ -306,11 +306,6 @@
         <externalId>false</externalId>
         <label>Casino Gifts</label>
         <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
-        <summaryFilterItems>
-            <field>Expense_Item__c.GL_Code__c</field>
-            <operation>equals</operation>
-            <value>7000-105</value>
-        </summaryFilterItems>
         <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
@@ -360,9 +355,9 @@ Table_Hold_Percent__c = 0),
         <label>Comp Airfare</label>
         <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
         <summaryFilterItems>
-            <field>Expense_Item__c.GL_Code__c</field>
+            <field>Expense_Item__c.Expense_Type__c</field>
             <operation>equals</operation>
-            <value>6250-020</value>
+            <value>Comp Airfare</value>
         </summaryFilterItems>
         <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
@@ -387,9 +382,9 @@ Table_Hold_Percent__c = 0),
         <label>Comp Transportation</label>
         <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
         <summaryFilterItems>
-            <field>Expense_Item__c.GL_Code__c</field>
+            <field>Expense_Item__c.Expense_Type__c</field>
             <operation>equals</operation>
-            <value>6250-000</value>
+            <value>Comp Transportation</value>
         </summaryFilterItems>
         <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
@@ -632,14 +627,13 @@ Table_Hold_Percent__c = 0),
     </fields>
     <fields>
         <fullName>Direct_Mail_Advertising__c</fullName>
-        <description>Rollup summary of All Directly Mail Advertising GL Expenses</description>
         <externalId>false</externalId>
         <label>Direct Mail Advertising</label>
         <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
         <summaryFilterItems>
-            <field>Expense_Item__c.GL_Code__c</field>
+            <field>Expense_Item__c.Expense_Type__c</field>
             <operation>equals</operation>
-            <value>7285-000</value>
+            <value>Direct Mail Advertising</value>
         </summaryFilterItems>
         <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
@@ -699,9 +693,9 @@ Table_Hold_Percent__c = 0),
         <label>Fixed Expenses</label>
         <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
         <summaryFilterItems>
-            <field>Expense_Item__c.GL_Code__c</field>
+            <field>Expense_Item__c.Expense_Type__c</field>
             <operation>equals</operation>
-            <value>7280-000,7300-100,7930-000,7940-000,8014-000,8018-000,8024-000,8070-225</value>
+            <value>Fixed Expenses</value>
         </summaryFilterItems>
         <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
@@ -722,14 +716,13 @@ Table_Hold_Percent__c = 0),
     </fields>
     <fields>
         <fullName>Giveaways__c</fullName>
-        <description>Summary of all expenses related to GL Accounts associated with Giveaways</description>
         <externalId>false</externalId>
         <label>Giveaways</label>
         <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
         <summaryFilterItems>
-            <field>Expense_Item__c.GL_Code__c</field>
-            <operation>contains</operation>
-            <value>7000-000,7000-002,7000-130,7000-400,8070-285</value>
+            <field>Expense_Item__c.Expense_Type__c</field>
+            <operation>equals</operation>
+            <value>Giveaways</value>
         </summaryFilterItems>
         <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
@@ -893,9 +886,9 @@ Table_Hold_Percent__c = 0),
         <label>Postage &amp; Freight</label>
         <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
         <summaryFilterItems>
-            <field>Expense_Item__c.GL_Code__c</field>
+            <field>Expense_Item__c.Expense_Type__c</field>
             <operation>equals</operation>
-            <value>8044-000</value>
+            <value>Postage &amp; Freight</value>
         </summaryFilterItems>
         <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
@@ -920,7 +913,7 @@ Table_Hold_Percent__c = 0),
         <label>Promo Chips/Match Play</label>
         <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
         <summaryFilterItems>
-            <field>Expense_Item__c.GL_Code__c</field>
+            <field>Expense_Item__c.Expense_Type__c</field>
             <operation>equals</operation>
             <value>Promo Chips/Match Play</value>
         </summaryFilterItems>
@@ -955,12 +948,17 @@ Table_Hold_Percent__c = 0),
         <fullName>RC_Gift__c</fullName>
         <externalId>false</externalId>
         <label>RC Gift</label>
-        <precision>16</precision>
-        <required>false</required>
-        <scale>0</scale>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.Expense_Type__c</field>
+            <operation>equals</operation>
+            <value>RC Gift</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Currency</type>
+        <type>Summary</type>
     </fields>
     <fields>
         <fullName>RC_Multiplier_Investment_Cust_Grps__c</fullName>
@@ -976,14 +974,18 @@ Table_Hold_Percent__c = 0),
     <fields>
         <fullName>RC_Multiplier_Investment__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText># of Multiplier</inlineHelpText>
         <label>RC Multiplier Investment</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.Expense_Type__c</field>
+            <operation>equals</operation>
+            <value>RC Multiplier Investment</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Currency</type>
+        <type>Summary</type>
     </fields>
     <fields>
         <fullName>RR_GV_Cust_Grps__c</fullName>
@@ -1002,7 +1004,7 @@ Table_Hold_Percent__c = 0),
         <label>RR/GV</label>
         <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
         <summaryFilterItems>
-            <field>Expense_Item__c.GL_Code__c</field>
+            <field>Expense_Item__c.Expense_Type__c</field>
             <operation>equals</operation>
             <value>RR/GV</value>
         </summaryFilterItems>
@@ -1587,17 +1589,18 @@ Table_Hold_Percent__c = 0),
     <fields>
         <fullName>Total_Expenses__c</fullName>
         <externalId>false</externalId>
-        <formula>Total_RC_Reinvestment__c +
- Direct_Mail_Advertising__c +
- Postage_Freight__c +
- RR_GV__c +
- Promo_Chips_Match_Play__c +
- Giveaways__c +
- Casino_Gifts__c +
- Comp_Transportation__c +
- Comp_Airfare__c +
- Variable_Expenses__c +
- Fixed_Expenses__c</formula>
+        <formula>Total_RC_Reinvestment__c + 
+Direct_Mail_Advertising__c + 
+Postage_Freight__c + 
+RR_GV__c + 
+Promo_Chips_Match_Play__c + 
+Giveaways__c + 
+Casino_Gifts__c + 
+Comp_Transportation__c + 
+Comp_Airfare__c + 
+Variable_Expenses__c + 
+Fixed_Expenses__c +
+RC_Gift__c</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Total Expenses</label>
         <precision>18</precision>
@@ -1756,14 +1759,18 @@ Table_Hold_Percent__c = 0),
     <fields>
         <fullName>Total_RC_Reinvestment__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>RC Cost Multiplier</inlineHelpText>
         <label>Total RC Reinvestment</label>
-        <precision>16</precision>
-        <required>false</required>
-        <scale>0</scale>
+        <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
+        <summaryFilterItems>
+            <field>Expense_Item__c.Expense_Type__c</field>
+            <operation>equals</operation>
+            <value>Total RC Reinvestment</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Currency</type>
+        <type>Summary</type>
     </fields>
     <fields>
         <fullName>Total_ROI_Delayered__c</fullName>
@@ -1931,9 +1938,9 @@ Table_Hold_Percent__c = 0),
         <label>Variable Expenses</label>
         <summarizedField>Expense_Item__c.Customer_Group_Expense__c</summarizedField>
         <summaryFilterItems>
-            <field>Expense_Item__c.GL_Code__c</field>
-            <operation>contains</operation>
-            <value>3099-300,6200-000,6210-000,6220-000,6240-000,6240-015,6240-040,6240-050,6240-110,6260-000,6260-010,6260-020,6260-040,Other Expenses</value>
+            <field>Expense_Item__c.Expense_Type__c</field>
+            <operation>equals</operation>
+            <value>Variable Expenses</value>
         </summaryFilterItems>
         <summaryForeignKey>Expense_Item__c.Customer_Group__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>

@@ -44,8 +44,14 @@ public with sharing class PosTransItemizer extends ExternalObjectResponse implem
             row.put('c_file_prop_cd', wrapper.c_file_prop_cd);
             row.put('c_itemizer_type_desc', wrapper.c_itemizer_type_desc);
             row.put('c_pos_rev_center_cd', wrapper.c_pos_rev_center_cd);
+            if(MapHandler.getRevenueCenterObjectMap().get(wrapper.c_pos_rev_center_cd) != null){
+                row.put('c_pos_rev_center_cd_fk', MapHandler.getRevenueCenterObjectMap().get(wrapper.c_pos_rev_center_cd).id);
+            }
             row.put('c_pos_trans_id', wrapper.c_pos_trans_id);
             row.put('c_prop_cd', wrapper.c_prop_cd);
+            if(MapHandler.getPropertyCodeObjectMap().get(wrapper.c_prop_cd) != null){
+                row.put('c_prop_cd_fk', MapHandler.getPropertyCodeObjectMap().get(wrapper.c_prop_cd).id);
+            }
             row.put('c_quality_cd', wrapper.c_quality_cd);
             row.put('c_trans_type_cd', wrapper.c_trans_type_cd);
             row.put('d_pos_trans_dt', wrapper.d_pos_trans_dt);

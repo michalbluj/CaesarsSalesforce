@@ -99,7 +99,7 @@ global with sharing class CaseWorkflowStdMilestoneTimeCalculator implements Supp
 
 
 
-        if (c != null ){
+        if (c != null && BusinessHourUtil.caesarsBusinessWeek != null ){
             if (c.Target_Duration_Days__c != null){
                 durationDays =   c.Target_Duration_Days__c;
             }
@@ -122,24 +122,24 @@ global with sharing class CaseWorkflowStdMilestoneTimeCalculator implements Supp
 
                 // calculate the offer date with business hours, in local user time
                 System.debug('#### business hours: ' + BusinessHourUtil.caesarsBusinessWeek);
-                if (BusinessHourUtil.caesarsBusinessWeek != null){
-                    dueDateTime = BusinessHours.add(BusinessHourUtil.caesarsBusinessWeek.Id , targetDue, -(intervalMilliseconds));
 
-                    System.debug('#### dueDateTime from offset : ' + dueDateTime );
+                dueDateTime = BusinessHours.add(BusinessHourUtil.caesarsBusinessWeek.Id , targetDue, -(intervalMilliseconds));
 
-                    //  finally calculate the milestones, in business hours, in unit of minutues
-                    // SLA enter milestone when the ownership changed
-                    // due when it is first set to ready to start.
-                    milestoneTime = (BusinessHours.diff(BusinessHourUtil.caesarsBusinessWeek.Id ,  Datetime.now(), dueDateTime) / (60 *1000)) .intValue();
+                System.debug('#### dueDateTime from offset : ' + dueDateTime );
 
-                    System.debug('#### milestone in min: ' + milestoneTime );
-                }
+                //  finally calculate the milestones, in business hours, in unit of minutues
+                // SLA enter milestone when the ownership changed
+                // due when it is first set to ready to start.
+                milestoneTime = (BusinessHours.diff(BusinessHourUtil.caesarsBusinessWeek.Id ,  Datetime.now(), dueDateTime) / (60 *1000)) .intValue();
+
+                System.debug('#### milestone in min: ' + milestoneTime );
+
 
             }
         }
 
 
-        System.debug('#### durationDays: ' + durationDays );
+        // System.debug('#### durationDays: ' + durationDays );
         System.debug('#### durationHours: ' + durationHours );
         System.debug('#### durationMinutes: ' + durationMinutes );
         System.debug('#### percentageOfDuration: ' + percentageOfDuration );

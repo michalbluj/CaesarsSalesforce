@@ -128,7 +128,7 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <label>caesars$gst_id_xref</label>
-    <pluralLabel>caesars$gst_id_xref</pluralLabel>
+    <label>GST Id Xref</label>
+    <pluralLabel>GST Id Xrefs</pluralLabel>
     <searchLayouts/>
 </CustomObject>

@@ -35,7 +35,7 @@ public with sharing class ProformaModel {
                                 (   
                                     pf.Status__c!='' 
                                     && 
-                                    pf.Status__c!= oldCProformaMap.get(pf.id).status__C 
+                                    pf.Status__c!= oldCProformaMap.get(pf.id).status__c 
                                     && 
                                     pf.Status__c != 'Draft' 
                                 )

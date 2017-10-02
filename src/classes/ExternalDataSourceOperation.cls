@@ -6,6 +6,4 @@ public interface ExternalDataSourceOperation {
 
     List<Map<String, Object>> query(DataSource.QueryContext context);
 
-    List<DataSource.TableResult> search(DataSource.SearchContext context);
-
 }

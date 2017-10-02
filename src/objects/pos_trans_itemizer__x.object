@@ -66,9 +66,10 @@
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
         <label>c_itemizer_type_desc</label>
-        <length>32000</length>
-        <type>LongTextArea</type>
-        <visibleLines>10</visibleLines>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>c_pos_rev_center_cd__c</fullName>
@@ -83,6 +84,20 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>c_pos_rev_center_cd_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>POS Revenue Center</label>
+        <referenceTo>POS_Revenue_Center__c</referenceTo>
+        <relationshipLabel>Pos Trans Itemizers</relationshipLabel>
+        <relationshipName>Pos_Trans_Itemizers</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>c_pos_trans_id__c</fullName>
@@ -113,6 +128,20 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>c_prop_cd_fk__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Pos Trans Itemizers</relationshipLabel>
+        <relationshipName>Pos_Trans_Itemizers</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>c_quality_cd__c</fullName>
         <description>c_quality_cd</description>
         <externalDeveloperName>c_quality_cd</externalDeveloperName>
@@ -139,6 +168,20 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Pos Trans Itemizers</relationshipLabel>
+        <relationshipName>Pos_Trans_Itemizers</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>d_pos_trans_dt__c</fullName>
@@ -270,7 +313,7 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <label>caesars$pos_trans_itemizer</label>
-    <pluralLabel>caesars$pos_trans_itemizer</pluralLabel>
+    <label>Pos Trans Itemizer</label>
+    <pluralLabel>Pos Trans Itemizers</pluralLabel>
     <searchLayouts/>
 </CustomObject>

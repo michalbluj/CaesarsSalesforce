@@ -1,0 +1,3 @@
+<apex:page standardController="Case" showHeader="false" sidebar="false">
+  <img src="/img/loading32.gif" width="25" height="25" />
+</apex:page>

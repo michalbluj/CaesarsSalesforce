@@ -39,7 +39,9 @@ public with sharing class MapHandler {
         'caesars$pdb_trip' => 'pdb_trip',
         'caesars$pdb_trip_info' => 'pdb_trip_info',
         'caesars$comp_detail' => 'comp_detail',
-        'caesars$hotel_event' => 'hotel_event'
+        'caesars$hotel_event' => 'hotel_event',
+        'caesars$gst_pdb_trip_day_dtl_bidl' => 'gst_pdb_trip_day_dtl_bidl',
+        'caesars$iot_events' => 'iot_events'
     };
 
     public static final Map<String, String> EXTERNAL_TABLE_TO_CLASSNAME_MAP = new Map<String, String> {
@@ -74,11 +76,24 @@ public with sharing class MapHandler {
         'caesars$pdb_trip' => 'PdbTrip',
         'caesars$pdb_trip_info' => 'PdbTripInfo',
         'caesars$comp_detail' => 'CompDetail',
-        'caesars$hotel_event' => 'HotelEvent'
+        'caesars$hotel_event' => 'HotelEvent',
+        'caesars$gst_pdb_trip_day_dtl_bidl' => 'GstPdbTripDayDtlBidl',
+        'caesars$iot_events' => 'IOTEvent'
     };
 
     private static Map<String, Id> acquisitionCodeMap = null;
+    private static Map<String, Acquisition_Code__c> acquisitionCodeObjectMap = null;
+    
     private static Map<String, Id> associationReasonCodeMap = null;
+    private static Map<String, Association_Reason__c> associationReasonCodeObjectMap = null;
+    
+    private static Map<String, Interest_Description__c> interestDescriptionCodeObjectMap = null;
+    
+    private static Map<String, Zip_Description__c> zipDescriptionCodeObjectMap = null;
+    
+    private static Map<String, Account> propertyCodeObjectMap = null;
+
+    private static Map<String, POS_Revenue_Center__c> revenueCenterObjectMap = null;
 
     /*
     * @description Builds map of acquisition codes
@@ -93,6 +108,21 @@ public with sharing class MapHandler {
         }
         return acquisitionCodeMap;
     }
+    
+    /*
+    * @description Builds map of acquisition codes
+    * @return Acquisition codes map
+    */
+    public static Map<String, Acquisition_Code__c> getAcquisitionCodeObjectMap() {
+        if (acquisitionCodeObjectMap == null) {
+            acquisitionCodeObjectMap = new Map<String, Acquisition_Code__c>();
+            Map<String,sObject> sObjectMap = CacheUtils.getMapFromCache('Acquisition_Code__c',new List<String>{'Id','name'});
+            for (String code : sObjectMap.keySet()) {
+                acquisitionCodeObjectMap.put(code,(Acquisition_Code__c)sObjectMap.get(code));
+            }
+        }
+        return acquisitionCodeObjectMap;
+    }
 
     /*
     * @description Builds map of association reasons
@@ -106,6 +136,81 @@ public with sharing class MapHandler {
             }
         }
         return associationReasonCodeMap;
+    }
+    
+    /*
+    * @description Builds map of association reasons
+    * @return Association reasons map
+    */
+    public static Map<String, Association_Reason__c> getAssociationReasonObjectMap() {
+        if (associationReasonCodeObjectMap == null) {
+            associationReasonCodeObjectMap = new Map<String, Association_Reason__c>();
+            Map<String,sObject> sObjectMap = CacheUtils.getMapFromCache('Association_Reason__c',new List<String>{'Id','name'});
+            for (String code : sObjectMap.keySet()) {
+                associationReasonCodeObjectMap.put(code,(Association_Reason__c)sObjectMap.get(code));
+            }
+        }
+        return associationReasonCodeObjectMap;
+    }
+    
+    /*
+    * @description Builds map of interest descriptions
+    * @return Iterest description map
+    */
+    public static Map<String, Interest_Description__c> getInterestDescriptionCodeObjectMap() {
+    	if (interestDescriptionCodeObjectMap == null) {
+            Map<String,sObject> sObjectMap = CacheUtils.getMapFromCache('Interest_Description__c',new List<String>{'Id','name'});
+            interestDescriptionCodeObjectMap = new Map<String, Interest_Description__c>();
+            for (String code : sObjectMap.keySet()) {
+                interestDescriptionCodeObjectMap.put(code,(Interest_Description__c)sObjectMap.get(code));
+            }
+        }
+        return interestDescriptionCodeObjectMap;
+    }
+    
+    
+    /*
+    * @description Builds map of zip descriptions
+    * @return Zip description map
+    */
+    public static Map<String, Zip_Description__c> getZipDescriptionCodeObjectMap() {
+    	if (zipDescriptionCodeObjectMap == null) {
+            Map<String,sObject> sObjectMap = CacheUtils.getMapFromCache('Zip_Description__c',new List<String>{'Id','name'});
+            zipDescriptionCodeObjectMap = new Map<String, Zip_Description__c>();
+            for (String code : sObjectMap.keySet()) {
+                zipDescriptionCodeObjectMap.put(code,(Zip_Description__c)sObjectMap.get(code));
+            }
+        }
+        return zipDescriptionCodeObjectMap;
+    }
+    
+    /*
+    * @description Builds map of properties
+    * @return Zip description map
+    */
+    public static Map<String, Account> getPropertyCodeObjectMap(){
+    	if(propertyCodeObjectMap == null){
+    		propertyCodeObjectMap = new Map<String, Account>();
+    		for(Account acc : [select id, property_code__c from Account where recordType.name = 'Property']){
+    			propertyCodeObjectMap.put(acc.property_code__c, acc);
+    		}
+    	}
+    	return propertyCodeObjectMap;
+    }
+
+    /*
+    * @description Builds map of pos revenue center
+    * @return Rev center map
+    */
+    public static Map<String, POS_Revenue_Center__c> getRevenueCenterObjectMap(){
+        if(revenueCenterObjectMap == null){
+            revenueCenterObjectMap = new Map<String, POS_Revenue_Center__c>();
+            Map<String,sObject> sObjectMap = CacheUtils.getMapFromCache('POS_Revenue_Center__c',new List<String>{'Id','name'});
+            for(String code : sObjectMap.keySet()){
+                revenueCenterObjectMap.put(code,(POS_Revenue_Center__c)sObjectMap.get(code));
+            }
+        }
+        return revenueCenterObjectMap;
     }
 
 }

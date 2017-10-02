@@ -13,7 +13,8 @@ public with sharing class InterestCustomerInfo implements CustomerInfoInterface 
     * @return row representation
     */
     public Map<String, Object> populateData(Map<String, Object> row, CustomerInfo wrapper) {
-        row.put('c_interest_cd', wrapper.data.c_interest_cd);
+        row.put('interest_cd', wrapper.data.c_interest_cd.trim());
+        row.put('interest_cd_fk', MapHandler.getInterestDescriptionCodeObjectMap().get(wrapper.data.c_interest_cd.trim()).id);
         return row;
     }
 }

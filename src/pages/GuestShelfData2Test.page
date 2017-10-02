@@ -1,0 +1,141 @@
+<apex:page controller="GuestShelfData2CC">
+    <script type="text/javascript">
+    function getMktCampaignContacts() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestShelfData2CC.retrieveMarketingCampaignByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getMktCampaignDetails() {
+        var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestShelfData2CC.retrieveMarketingCampaignDetails}',
+            guestIds, 
+            function(result, event){
+                alert('result' + JSON.stringify(result));
+                alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getMktCampaignPropertyContacts() {
+    	var contactId = document.getElementById('guestSearch').value;
+    	var guestContactIds = [contactId];
+        alert(guestContactIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestShelfData2CC.retrieveMarketingCampaignPropByContacts}',
+            guestContactIds, 
+            function(result, event){
+            	alert('result' + JSON.stringify(result));
+            	alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+    function getMktCampaignPropertyDetails() {
+        var externalId = document.getElementById('guestSearch').value;
+        var guestIds = [externalId];
+        alert(guestIds);
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.GuestShelfData2CC.retrieveMarketingCampaignPropDetails}',
+            guestIds, 
+            function(result, event){
+                alert('result' + JSON.stringify(result));
+                alert('event.status' + event.status);
+                if (event.status) {
+                    // Get DOM IDs for HTML and Visualforce elements like this
+
+                    // document.getElementById('remoteId').innerHTML = result.Id
+                    document.getElementById(
+                        "{!$Component.block.blockSection.secondItem.resultObj}"
+                        ).innerHTML = JSON.stringify(result);
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+
+   
+
+    </script>
+
+    <input id="guestSearch" type="text"/>
+    <button onclick="getMktCampaignContacts()">Retrieve Guest Campaign by Contacts</button>
+    <button onclick="getMktCampaignDetails()">Retrieve Guest Campaign Details</button><br/>
+    <button onclick="getMktCampaignPropertyContacts()">Retrieve Guest Campaign Property by Contacts</button>
+    <button onclick="getMktCampaignPropertyDetails()">Retrieve Guest Campaign Property Details</button><br/>
+   
+    <div id="responseErrors"></div>
+
+    <apex:pageBlock id="block">
+        <apex:pageBlockSection id="blockSection" columns="2">
+            <!-- <apex:pageBlockSectionItem id="firstItem">
+                <span id="remoteId"/>
+            </apex:pageBlockSectionItem> -->
+            <apex:pageBlockSectionItem id="secondItem">
+                <apex:outputText id="resultObj"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>
